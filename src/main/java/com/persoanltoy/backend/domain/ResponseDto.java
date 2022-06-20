@@ -1,9 +1,9 @@
 package com.persoanltoy.backend.domain;
 
 import lombok.*;
-import org.springframework.http.HttpStatus;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @AllArgsConstructor
@@ -12,13 +12,7 @@ import java.util.List;
 public class ResponseDto<T> {
 
     @Builder.Default
-    private Boolean error = false;
-
-    @Builder.Default
-    private int status = HttpStatus.OK.value();
-
-    @Builder.Default
-    private String message = "success";
+    private Object error = new HashMap<>();
 
     @Builder.Default
     private List<T> data = new ArrayList<>();
