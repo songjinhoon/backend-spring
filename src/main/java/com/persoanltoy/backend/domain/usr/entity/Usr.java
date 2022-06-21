@@ -18,6 +18,7 @@ public class Usr extends BaseEntity {
     @Column(name = "usr_id")
     private String id;
 
+    @Builder.Default
     @OneToMany(mappedBy = "usr", cascade = CascadeType.ALL)
     private List<Todo> todos = new ArrayList<>();
 

@@ -8,7 +8,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder @Getter @Setter
+@Builder @Getter
 public class ResponseDto<T> {
 
     @Builder.Default

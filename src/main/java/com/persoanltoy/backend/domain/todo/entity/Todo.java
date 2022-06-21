@@ -38,4 +38,8 @@ public class Todo extends BaseEntity {
                 .build();
     }
 
+    public void updateDone(Boolean done) {
+        this.done = done;
+    }
+
 }

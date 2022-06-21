@@ -22,7 +22,7 @@ public class CustomAdvice {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ResponseDto<?>> methodArgumentNotValidException(){
         return ResponseEntity.ok(ResponseDto.builder()
-                .error(Map.of("code", ExceptionEnum.BAD_REQUEST_EXCEPTION.getCode(), "message", ExceptionEnum.BAD_REQUEST_EXCEPTION.getMessage()))
+                .error(Map.of("code", ExceptionEnum.NOT_VALID_REQUEST_DATA_EXCEPTION.getCode(), "message", ExceptionEnum.NOT_VALID_REQUEST_DATA_EXCEPTION.getMessage()))
                 .build());
     }
 
