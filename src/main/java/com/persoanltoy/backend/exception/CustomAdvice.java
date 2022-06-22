@@ -26,4 +26,11 @@ public class CustomAdvice {
                 .build());
     }
 
+    @ExceptionHandler(IdDuplicationException.class)
+    public ResponseEntity<ResponseDto<?>> idDuplicationException(){
+        return ResponseEntity.ok(ResponseDto.builder()
+                .error(Map.of("code", ExceptionEnum.ID_DUPLICATION_EXCEPTION.getCode(), "message", ExceptionEnum.ID_DUPLICATION_EXCEPTION.getMessage()))
+                .build());
+    }
+
 }

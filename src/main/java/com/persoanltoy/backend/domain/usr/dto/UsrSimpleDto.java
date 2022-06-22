@@ -11,6 +11,8 @@ public class UsrSimpleDto extends BaseDto {
 
     private String id;
 
+    private String pwd;
+
     private String nm;
 
     public static UsrSimpleDto of(Usr usr) {

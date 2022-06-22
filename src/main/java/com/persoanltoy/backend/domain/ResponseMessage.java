@@ -7,7 +7,8 @@ import lombok.Getter;
 @Getter
 public enum ResponseMessage {
 
-    ENTITY_DELETE("ENTITY_DELETE", "data delete success");
+    ENTITY_DELETE("ENTITY_DELETE", "data delete success"),
+    ACCOUNT_DUPLICATION("ACCOUNT_DUPLICATION", "this account available");
 
     private final String key;
 
