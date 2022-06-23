@@ -6,16 +6,24 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.util.Collections;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
 @RestControllerAdvice
 public class CustomAdvice {
 
+    @ExceptionHandler(CustomNoSuchElementException.class)
+    public ResponseEntity<ResponseDto<?>> customNoSuchElementException(){
+        return ResponseEntity.ok(ResponseDto.builder()
+                .error(Map.of("code", ExceptionEnum.DATA_NOT_FOUND_EXCEPTION.getCode(), "message", ExceptionEnum.DATA_NOT_FOUND_EXCEPTION.getMessage()))
+                .build());
+    }
+
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<ResponseDto<?>> noSuchElementException(){
         return ResponseEntity.ok(ResponseDto.builder()
-                .error(Map.of("code", ExceptionEnum.DATA_NOT_FOUND_EXCEPTION.getCode(), "message", ExceptionEnum.DATA_NOT_FOUND_EXCEPTION.getMessage()))
+                .data(Collections.emptyList())
                 .build());
     }
 
