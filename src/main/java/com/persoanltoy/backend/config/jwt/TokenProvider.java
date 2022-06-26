@@ -57,8 +57,7 @@ public class TokenProvider implements InitializingBean {
     }
 
     public Authentication getAuthentication(String token) {
-        final Claims claims = Jwts
-                .parserBuilder()
+        final Claims claims = Jwts.parserBuilder()
                 .setSigningKey(key)
                 .build()
                 .parseClaimsJws(token)
@@ -86,4 +85,14 @@ public class TokenProvider implements InitializingBean {
         }
         return false;
     }
+
+    public String validateAndGetUserId(String token) {
+        final Claims claims = Jwts.parserBuilder()
+                .setSigningKey(key)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+        return claims.getSubject();
+    }
+
 }

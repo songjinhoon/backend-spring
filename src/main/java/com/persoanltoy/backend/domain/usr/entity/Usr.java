@@ -23,6 +23,7 @@ public class Usr extends BaseEntity {
 
     private String pwd;
 
+    @Column(unique = true)
     private String nm;
 
     @ManyToMany
