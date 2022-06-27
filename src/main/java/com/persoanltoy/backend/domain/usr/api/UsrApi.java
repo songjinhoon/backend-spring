@@ -1,18 +1,18 @@
 package com.persoanltoy.backend.domain.usr.api;
 
-import com.persoanltoy.backend.domain.ResponseDto;
-import com.persoanltoy.backend.domain.ResponseMessage;
-import com.persoanltoy.backend.domain.usr.dto.UsrInsertDto;
-import com.persoanltoy.backend.domain.usr.dto.UsrSimpleDto;
+import com.persoanltoy.backend.common.response.ResponseDto;
+import com.persoanltoy.backend.common.response.ResponseMessage;
+import com.persoanltoy.backend.domain.usr.dto.UsrCreateDto;
 import com.persoanltoy.backend.domain.usr.service.UsrService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Collections;
-import java.util.Map;
 
+@Api(tags = {"Usr"})
 @RequiredArgsConstructor
 @RequestMapping("/usr")
 @RestController
@@ -20,19 +20,23 @@ public class UsrApi {
 
     private final UsrService usrService;
 
-    @GetMapping("/idDuplicationCheck/{id}")
-    public ResponseEntity<ResponseDto<Map<String, String>>> idDuplicationCheck(@PathVariable String id) {
-        usrService.idDuplicationCheck(id);
-        return ResponseEntity.ok().body(ResponseDto.<Map<String, String>>builder()
-                .data(Collections.singletonList(Map.of("message", ResponseMessage.ACCOUNT_DUPLICATION.getValue())))
+    @ApiOperation(value = "사용자 등록", notes = "회원가입")
+    @PostMapping("/create")
+    public ResponseEntity<ResponseDto<?>> post(@Valid @RequestBody UsrCreateDto usrCreateDto) {
+        usrService.save(usrCreateDto);
+        return ResponseEntity.ok().body(ResponseDto.builder()
+                .code(ResponseMessage.SUCCESS_CREATE.getCode())
+                .message(ResponseMessage.SUCCESS_CREATE.getValue())
                 .build());
     }
 
-    @PostMapping("/save")
-    public ResponseEntity<ResponseDto<UsrSimpleDto>> save(@Valid @RequestBody UsrInsertDto usrInsertDto) {
-        final UsrSimpleDto usrSimpleDto = usrService.save(usrInsertDto);
-        return ResponseEntity.ok().body(ResponseDto.<UsrSimpleDto>builder()
-                .data(Collections.singletonList(usrSimpleDto))
+    @ApiOperation(value = "아이디 중복 체크", notes = "회원가입시 아이디 중복체크")
+    @GetMapping("/idDuplicationCheck/{id}")
+    public ResponseEntity<ResponseDto<?>> get(@PathVariable String id) {
+        usrService.idDuplicationCheck(id);
+        return ResponseEntity.ok().body(ResponseDto.builder()
+                .code(ResponseMessage.ACCOUNT_AVAILABLE.getCode())
+                .message(ResponseMessage.ACCOUNT_AVAILABLE.getValue())
                 .build());
     }
 

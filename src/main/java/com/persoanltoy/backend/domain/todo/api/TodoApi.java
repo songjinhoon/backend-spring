@@ -1,7 +1,7 @@
 package com.persoanltoy.backend.domain.todo.api;
 
-import com.persoanltoy.backend.domain.ResponseDto;
-import com.persoanltoy.backend.domain.ResponseMessage;
+import com.persoanltoy.backend.common.response.ResponseDto;
+import com.persoanltoy.backend.common.response.ResponseMessage;
 import com.persoanltoy.backend.domain.todo.dto.TodoUpdateDto;
 import com.persoanltoy.backend.domain.todo.dto.TodoDetailDto;
 import com.persoanltoy.backend.domain.todo.dto.TodoInsertDto;
@@ -59,7 +59,7 @@ public class TodoApi {
     public ResponseEntity<ResponseDto<Map<String, String>>> delete(@PathVariable Long id) {
         todoService.delete(id);
         return ResponseEntity.ok(ResponseDto.<Map<String, String>>builder()
-                .data(Collections.singletonList(Map.of("message", ResponseMessage.ENTITY_DELETE.getValue())))
+                .data(Collections.singletonList(Map.of("message", ResponseMessage.SUCCESS_DELETE.getValue())))
                 .build());
     }
 

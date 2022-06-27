@@ -8,13 +8,11 @@ import com.persoanltoy.backend.domain.todo.entity.Todo;
 import com.persoanltoy.backend.domain.todo.repository.TodoRepository;
 import com.persoanltoy.backend.domain.usr.entity.Usr;
 import com.persoanltoy.backend.domain.usr.repository.UsrRepository;
-import com.persoanltoy.backend.exception.CustomNoSuchElementException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @Transactional
 @RequiredArgsConstructor
@@ -26,12 +24,12 @@ public class TodoService {
     private final UsrRepository usrRepository;
 
     public TodoSimpleDto findByIdToSimple(Long id) {
-        final Todo todo = todoRepository.findById(id).orElseThrow(NoSuchElementException::new);
+        final Todo todo = todoRepository.findById(id).orElseThrow(IllegalArgumentException::new);
         return TodoSimpleDto.of(todo);
     }
 
     public TodoSimpleDto save(TodoInsertDto todoInsertDto) {
-        final Usr usr = usrRepository.findById(todoInsertDto.getUsrId()).orElseThrow(CustomNoSuchElementException::new);
+        final Usr usr = usrRepository.findById(todoInsertDto.getUsrId()).orElseThrow(IllegalArgumentException::new);
         return TodoSimpleDto.of(todoRepository.save(Todo.create(todoInsertDto, usr)));
     }
 
@@ -40,13 +38,13 @@ public class TodoService {
     }
 
     public TodoSimpleDto update(Long id, TodoUpdateDto todoUpdateDto) {
-        Todo todo = todoRepository.findById(id).orElseThrow(CustomNoSuchElementException::new);
+        Todo todo = todoRepository.findById(id).orElseThrow(IllegalArgumentException::new);
         todo.updateDone(todoUpdateDto.getDone());
         return TodoSimpleDto.of(todo);
     }
 
     public void delete(Long id) {
-        Todo todo = todoRepository.findById(id).orElseThrow(CustomNoSuchElementException::new);
+        Todo todo = todoRepository.findById(id).orElseThrow(IllegalArgumentException::new);
         todoRepository.delete(todo);
     }
 

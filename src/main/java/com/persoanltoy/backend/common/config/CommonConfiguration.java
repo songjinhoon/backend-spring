@@ -1,4 +1,4 @@
-package com.persoanltoy.backend.common;
+package com.persoanltoy.backend.common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

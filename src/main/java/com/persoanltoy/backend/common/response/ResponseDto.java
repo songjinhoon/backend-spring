@@ -1,18 +1,18 @@
-package com.persoanltoy.backend.domain;
+package com.persoanltoy.backend.common.response;
 
 import lombok.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Builder @Getter
 public class ResponseDto<T> {
 
     @Builder.Default
-    private Object error = new HashMap<>();
+    private String code = ResponseMessage.SUCCESS_READ.getCode();
+
+    @Builder.Default
+    private String message = ResponseMessage.SUCCESS_READ.getValue();
 
     @Builder.Default
     private List<T> data = new ArrayList<>();

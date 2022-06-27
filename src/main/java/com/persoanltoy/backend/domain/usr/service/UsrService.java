@@ -1,10 +1,10 @@
 package com.persoanltoy.backend.domain.usr.service;
 
-import com.persoanltoy.backend.domain.usr.dto.UsrInsertDto;
+import com.persoanltoy.backend.domain.usr.dto.UsrCreateDto;
 import com.persoanltoy.backend.domain.usr.dto.UsrSimpleDto;
 import com.persoanltoy.backend.domain.usr.entity.Usr;
 import com.persoanltoy.backend.domain.usr.repository.UsrRepository;
-import com.persoanltoy.backend.exception.IdDuplicationException;
+import com.persoanltoy.backend.common.exception.IdDuplicationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +23,8 @@ public class UsrService {
         }
     }
 
-    public UsrSimpleDto save(UsrInsertDto usrInsertDto) {
-        return UsrSimpleDto.of(usrRepository.save(Usr.create(usrInsertDto)));
+    public UsrSimpleDto save(UsrCreateDto usrCreateDto) {
+        return UsrSimpleDto.of(usrRepository.save(Usr.create(usrCreateDto)));
     }
 
 }
