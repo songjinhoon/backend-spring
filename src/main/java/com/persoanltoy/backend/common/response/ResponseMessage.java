@@ -17,6 +17,9 @@ public enum ResponseMessage {
 
     ACCOUNT_DUPLICATION("C0000", "계정이 중복되었습니다."),
     ACCOUNT_AVAILABLE("C0001", "계정 사용이 가능합니다."),
+    ERROR_ACCOUNT_LOGIN("C0002", "아이디/비밀버번호를 확인해주세요."),
+    ERROR_AUTHENTICATION("C0003", "인증이 필요합니다."),
+    ERROR_FORBIDDEN("C0004", "권한이 부족합니다."),
 
     NOT_VALID_REQUEST_DATA_EXCEPTION("E00000", "요청 데이터가 유효하지 않습니다.");
 

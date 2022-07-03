@@ -11,4 +11,7 @@ public interface UsrRepository extends JpaRepository<Usr, String> {
     @EntityGraph(attributePaths = "auths")
     Optional<Usr> findOneWithAuthsById(String id);
 
+    @EntityGraph(attributePaths = "auths")
+    Optional<Usr> findOneWithAuthsByNm(String nm);
+
 }

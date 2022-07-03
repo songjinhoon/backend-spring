@@ -5,6 +5,7 @@ import com.persoanltoy.backend.config.jwt.JwtAuthenticationEntryPoint;
 import com.persoanltoy.backend.config.jwt.JwtSecurityConfig;
 import com.persoanltoy.backend.config.jwt.TokenProvider;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -12,7 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 
 @RequiredArgsConstructor
-//@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -49,6 +50,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .authorizeHttpRequests()
                     .antMatchers("/auth/signup").permitAll()
                     .antMatchers("/auth/signin").permitAll()
+                    .antMatchers("/usr/search1").hasAnyRole("ADMIN", "USER")
+                    .antMatchers("/usr/search2/*").hasRole("ADMIN")
                     .anyRequest().authenticated()
                 .and()
                     .apply(new JwtSecurityConfig(tokenProvider));

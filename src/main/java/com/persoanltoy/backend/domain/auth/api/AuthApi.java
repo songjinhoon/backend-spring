@@ -1,12 +1,17 @@
 package com.persoanltoy.backend.domain.auth.api;
 
+import com.persoanltoy.backend.common.response.ResponseDto;
+import com.persoanltoy.backend.common.response.ResponseMessage;
 import com.persoanltoy.backend.config.jwt.JwtFilter;
 import com.persoanltoy.backend.config.jwt.TokenProvider;
 import com.persoanltoy.backend.config.jwt.dto.TokenDto;
-import com.persoanltoy.backend.domain.usr.dto.SignInDto;
+import com.persoanltoy.backend.domain.auth.dto.SignInDto;
+import com.persoanltoy.backend.domain.auth.dto.SignUpDto;
+import com.persoanltoy.backend.domain.usr.service.UsrService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,8 +36,10 @@ public class AuthApi {
 
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
 
+    private final UsrService usrService;
+
     @ApiOperation(value = "로그인", notes = "로그인")
-    @PostMapping(value = "/signin")
+    @PostMapping("/signin")
     public ResponseEntity<TokenDto> signin(@Valid @RequestBody SignInDto signInDto) {
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(signInDto.getId(), signInDto.getPwd());
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(usernamePasswordAuthenticationToken);
@@ -45,5 +52,16 @@ public class AuthApi {
 
         return new ResponseEntity<>(new TokenDto(token), httpHeaders, HttpStatus.OK);
     }
+
+    @ApiOperation(value = "회원가입", notes = "회원가입")
+    @PostMapping("/signup")
+    public ResponseEntity<ResponseDto<?>> signup(@Valid @RequestBody SignUpDto signUpDto) {
+        usrService.save(signUpDto);
+        return ResponseEntity.ok().body(ResponseDto.builder()
+                .code(ResponseMessage.SUCCESS_CREATE.getCode())
+                .message(ResponseMessage.SUCCESS_CREATE.getValue())
+                .build());
+    }
+
 
 }

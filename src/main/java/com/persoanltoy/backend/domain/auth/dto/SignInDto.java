@@ -1,4 +1,4 @@
-package com.persoanltoy.backend.domain.usr.dto;
+package com.persoanltoy.backend.domain.auth.dto;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -14,7 +14,7 @@ public class SignInDto {
     private String id;
 
     @ApiModelProperty(value = "비밀번호", example = "admin", required = true)
-    @NotNull @Size(min = 5, max = 20)
+    @NotNull @Size(min = 4, max = 20)
     private String pwd;
 
 }

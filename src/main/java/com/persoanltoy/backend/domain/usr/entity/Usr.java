@@ -3,7 +3,7 @@ package com.persoanltoy.backend.domain.usr.entity;
 import com.persoanltoy.backend.domain.BaseEntity;
 import com.persoanltoy.backend.domain.auth.entity.Auth;
 import com.persoanltoy.backend.domain.todo.entity.Todo;
-import com.persoanltoy.backend.domain.usr.dto.UsrCreateDto;
+import com.persoanltoy.backend.domain.auth.dto.SignUpDto;
 import lombok.*;
 
 import javax.persistence.*;
@@ -37,11 +37,12 @@ public class Usr extends BaseEntity {
     @OneToMany(mappedBy = "usr", cascade = CascadeType.ALL)
     private List<Todo> todos = new ArrayList<>();
 
-    public static Usr create(UsrCreateDto usrCreateDto) {
+    public static Usr create(SignUpDto signUpDto,Set<Auth> auths) {
         return Usr.builder()
-                .id(usrCreateDto.getId())
-                .pwd(usrCreateDto.getPwd())
-                .nm(usrCreateDto.getNm())
+                .id(signUpDto.getId())
+                .pwd(signUpDto.getPwd())
+                .nm(signUpDto.getNm())
+                .auths(auths)
                 .build();
     }
 
