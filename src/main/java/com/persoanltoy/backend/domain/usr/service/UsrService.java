@@ -28,6 +28,11 @@ public class UsrService {
     private final PasswordEncoder passwordEncoder;
 
     @Transactional(readOnly = true)
+    public UsrSimpleDto findById(String id) {
+        return UsrSimpleDto.of(usrRepository.findById(id).orElseThrow(IllegalArgumentException::new));
+    }
+
+    @Transactional(readOnly = true)
     public void idDuplicationCheck(String id) {
         Optional<Usr> optional = usrRepository.findById(id);
         if (optional.isPresent()) {
