@@ -7,8 +7,8 @@ import com.persoanltoy.backend.config.jwt.TokenProvider;
 import com.persoanltoy.backend.domain.auth.dto.SignInDto;
 import com.persoanltoy.backend.domain.auth.dto.SignUpDto;
 import com.persoanltoy.backend.domain.usr.service.UsrService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import java.util.Collections;
 
-@Api(tags = {"Auth"})
+@Tag(name = "AuthApi", description = "Auth API")
 @RequiredArgsConstructor
 @RequestMapping("/auth")
 @RestController
@@ -37,7 +37,7 @@ public class AuthApi {
 
     private final UsrService usrService;
 
-    @ApiOperation(value = "로그인", notes = "로그인")
+    @Operation(summary = "후")
     @PostMapping("/signin")
     public ResponseEntity<ResponseDto<?>> signin(@Valid @RequestBody SignInDto signInDto) {
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(signInDto.getId(), signInDto.getPwd());
@@ -54,7 +54,7 @@ public class AuthApi {
                 .build(), httpHeaders, HttpStatus.OK);
     }
 
-    @ApiOperation(value = "회원가입", notes = "회원가입")
+//    @ApiOperation(value = "회원가입", notes = "회원가입")
     @PostMapping("/signup")
     public ResponseEntity<ResponseDto<?>> signup(@Valid @RequestBody SignUpDto signUpDto) {
         usrService.save(signUpDto);
