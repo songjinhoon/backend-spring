@@ -5,16 +5,20 @@ import com.persoanltoy.backend.domain.auth.dto.SignUpDto;
 import com.persoanltoy.backend.domain.auth.entity.Auth;
 import com.persoanltoy.backend.domain.auth.repository.AuthRepository;
 import com.persoanltoy.backend.domain.usr.dto.UsrDetailDto;
+import com.persoanltoy.backend.domain.usr.dto.UsrSearchDto;
 import com.persoanltoy.backend.domain.usr.dto.UsrSimpleDto;
 import com.persoanltoy.backend.domain.usr.entity.Usr;
 import com.persoanltoy.backend.domain.usr.repository.UsrRepository;
 import com.persoanltoy.backend.common.exception.IdDuplicationException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -26,6 +30,11 @@ public class UsrService {
     private final AuthRepository authRepository;
 
     private final PasswordEncoder passwordEncoder;
+
+    @Transactional(readOnly = true)
+    public Page<UsrSimpleDto> find(UsrSearchDto usrSearchDto, Pageable pageable) {
+        return usrRepository.find(usrSearchDto, pageable);
+    }
 
     @Transactional(readOnly = true)
     public UsrSimpleDto findById(String id) {

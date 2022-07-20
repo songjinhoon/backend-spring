@@ -6,6 +6,9 @@ import com.persoanltoy.backend.domain.usr.mapper.UsrMapper;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Getter @Setter
 public class UsrSimpleDto extends BaseDto {
 
@@ -17,6 +20,10 @@ public class UsrSimpleDto extends BaseDto {
 
     public static UsrSimpleDto of(Usr usr) {
         return UsrMapper.INSTANCE.toUsrSimpleDto(usr);
+    }
+
+    public static List<UsrSimpleDto> of(List<Usr> usrs) {
+        return usrs.stream().map(UsrSimpleDto::of).collect(Collectors.toList());
     }
 
 }
