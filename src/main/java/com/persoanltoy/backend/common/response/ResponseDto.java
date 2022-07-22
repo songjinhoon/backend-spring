@@ -15,6 +15,6 @@ public class ResponseDto<T> {
     private String message = ResponseMessage.SUCCESS_READ.getValue();
 
     @Builder.Default
-    private List<T> data = new ArrayList<>();
+    private List<T> data = List.of();
 
 }

@@ -51,7 +51,7 @@ public class UsrService {
 
     @Transactional
     public UsrSimpleDto save(SignUpDto signUpDto) {
-        final Auth auth = authRepository.findById("ROLE_USER").orElseThrow(IllegalArgumentException::new);
+        final Auth auth = authRepository.findById(signUpDto.getAuthId()).orElseThrow(IllegalArgumentException::new);
         signUpDto.setPwd(passwordEncoder.encode(signUpDto.getPwd()));
         return UsrSimpleDto.of(usrRepository.save(Usr.create(signUpDto, Collections.singleton(auth))));
     }

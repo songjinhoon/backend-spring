@@ -1,12 +1,13 @@
 package com.persoanltoy.backend.domain.auth.dto;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Builder;
 import lombok.Getter;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@Getter
+@Builder @Getter
 public class SignInDto {
 
     @ApiModelProperty(value = "아이디", example = "admin@jinhoon.com", required = true)

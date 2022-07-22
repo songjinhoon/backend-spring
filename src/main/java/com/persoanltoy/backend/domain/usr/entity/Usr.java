@@ -37,7 +37,7 @@ public class Usr extends BaseEntity {
     @OneToMany(mappedBy = "usr", cascade = CascadeType.ALL)
     private List<Todo> todos = new ArrayList<>();
 
-    public static Usr create(SignUpDto signUpDto,Set<Auth> auths) {
+    public static Usr create(SignUpDto signUpDto, Set<Auth> auths) {
         return Usr.builder()
                 .id(signUpDto.getId())
                 .pwd(signUpDto.getPwd())
