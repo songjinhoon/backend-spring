@@ -26,6 +26,21 @@ public class AuthApiTest {
     ObjectMapper objectMapper;
 
     @Test
+    void signup_valid_empty_param() throws Exception {
+        //given
+        SignUpDto signUpDto = SignUpDto.builder().build();
+
+        //when - then
+        mockMvc.perform(post("/auth/signup")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(signUpDto)))
+                .andDo(print())
+                .andExpect(status().isInternalServerError())
+                .andExpect(jsonPath("code").value(ResponseMessage.NOT_VALID_REQUEST_DATA_EXCEPTION.getCode()))
+                .andExpect(jsonPath("message").value(ResponseMessage.NOT_VALID_REQUEST_DATA_EXCEPTION.getValue()));
+    }
+
+    @Test
     void signup_valid_all_param() throws Exception {
         //given
         SignUpDto signUpDto = SignUpDto.builder()
