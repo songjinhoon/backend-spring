@@ -2,7 +2,7 @@ package com.persoanltoy.backend.domain.todo.dto;
 
 import com.persoanltoy.backend.domain.todo.entity.Todo;
 import com.persoanltoy.backend.domain.todo.mapper.TodoMapper;
-import com.persoanltoy.backend.domain.usr.dto.UsrSimpleDto;
+import com.persoanltoy.backend.domain.member.dto.UsrSimpleDto;
 import lombok.Getter;
 import lombok.Setter;
 

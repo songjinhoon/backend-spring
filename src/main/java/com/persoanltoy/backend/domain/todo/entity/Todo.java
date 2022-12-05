@@ -2,7 +2,7 @@ package com.persoanltoy.backend.domain.todo.entity;
 
 import com.persoanltoy.backend.domain.BaseEntity;
 import com.persoanltoy.backend.domain.todo.dto.TodoInsertDto;
-import com.persoanltoy.backend.domain.usr.entity.Usr;
+import com.persoanltoy.backend.domain.member.entity.Usr;
 import lombok.*;
 
 import javax.persistence.*;

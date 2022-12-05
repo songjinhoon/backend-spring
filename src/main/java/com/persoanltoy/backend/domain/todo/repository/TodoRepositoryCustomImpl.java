@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 import static com.persoanltoy.backend.domain.todo.entity.QTodo.todo;
-import static com.persoanltoy.backend.domain.usr.entity.QUsr.usr;
+import static com.persoanltoy.backend.domain.member.entity.QUsr.usr;
 
 public class TodoRepositoryCustomImpl implements TodoRepositoryCustom {
 

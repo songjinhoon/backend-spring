@@ -1,7 +1,7 @@
 package com.persoanltoy.backend.config.security;
 
-import com.persoanltoy.backend.domain.usr.entity.Usr;
-import com.persoanltoy.backend.domain.usr.repository.UsrRepository;
+import com.persoanltoy.backend.domain.member.entity.Usr;
+import com.persoanltoy.backend.domain.member.repository.UsrRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
