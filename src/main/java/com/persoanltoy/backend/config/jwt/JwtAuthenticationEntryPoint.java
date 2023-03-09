@@ -1,8 +1,8 @@
 package com.persoanltoy.backend.config.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.persoanltoy.backend.domain.common.ResponseDto;
-import com.persoanltoy.backend.domain.common.ResponseMessage;
+import com.persoanltoy.backend.domains.common.ResponseDto;
+import com.persoanltoy.backend.domains.common.ResponseMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

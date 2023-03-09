@@ -1,5 +1,6 @@
 package com.persoanltoy.backend.config.jwt;
 
+import com.persoanltoy.backend.config.AuthConstants;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,8 +21,6 @@ public class JwtFilter extends OncePerRequestFilter {
 
     private final TokenProvider tokenProvider;
 
-    public static final String AUTHORIZATION_HEADER = "Authorization";
-
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String jwt = takeOutToken(request);
@@ -41,7 +40,7 @@ public class JwtFilter extends OncePerRequestFilter {
     }
 
     private String takeOutToken(HttpServletRequest request) {
-        String bearerToken = request.getHeader(AUTHORIZATION_HEADER);
+        String bearerToken = request.getHeader(AuthConstants.AUTHORIZATION_HEADER);
         if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
             return bearerToken.substring(7);
         }
