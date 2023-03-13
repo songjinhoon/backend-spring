@@ -1,10 +1,13 @@
-package com.persoanltoy.backend.domains.member.domain.entity.role;
+package com.persoanltoy.backend.domains.common.model;
 
+import com.persoanltoy.backend.domains.member.domain.entity.Role;
+
+import javax.persistence.AttributeConverter;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class RoleSetConverter implements javax.persistence.AttributeConverter<RoleSet, String> {
+public class RoleSetConverter implements AttributeConverter<RoleSet, String> {
 
     @Override
     public String convertToDatabaseColumn(RoleSet attribute) {

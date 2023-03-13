@@ -43,17 +43,17 @@ public class TokenProvider implements InitializingBean {
     }
 
     public String createToken(Authentication authentication) {
-        String authorities = authentication.getAuthorities().stream()
-                .map(GrantedAuthority::getAuthority)
-                .collect(Collectors.joining(","));
-        long now = (new Date()).getTime();
-        Date validity = new Date(now + this.tokenValidityInMilliseconds);
+        final CustomUserDetails principal = (CustomUserDetails) authentication.getPrincipal();
 
         return Jwts.builder()
-                .setSubject(authentication.getName())
-                .claim(AUTHORITIES_KEY, authorities)
+                .setSubject(principal.getUsername())
+                .claim(AUTHORITIES_KEY, authentication.getAuthorities().stream()
+                        .map(GrantedAuthority::getAuthority)
+                        .collect(Collectors.joining(",")))
+                .claim("memberId", principal.getMemberId())
+                .claim("nickName", principal.getNickName())
                 .signWith(key, SignatureAlgorithm.HS512)
-                .setExpiration(validity)
+                .setExpiration(new Date((new Date()).getTime() + this.tokenValidityInMilliseconds))
                 .compact();
     }
 
@@ -76,7 +76,7 @@ public class TokenProvider implements InitializingBean {
         Collection<? extends GrantedAuthority> authorities = Arrays.stream(claims.get(AUTHORITIES_KEY).toString().split(","))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
-        return new UsernamePasswordAuthenticationToken(new CustomUserDetails(claims.getSubject(), null, authorities), token, authorities);
+        return new UsernamePasswordAuthenticationToken(new CustomUserDetails(claims.get("memberId").toString(), claims.getSubject(), null, claims.get("nickName").toString(), authorities), token, authorities);
     }
 
     public boolean validateToken(String token) {

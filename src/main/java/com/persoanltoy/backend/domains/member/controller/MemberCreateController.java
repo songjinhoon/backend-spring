@@ -35,8 +35,8 @@ public class MemberCreateController {
         WebMvcLinkBuilder webMvcLinkBuilder = linkTo(MemberCreateController.class).slash(memberDto.getId());
         MemberResource memberResource = new MemberResource(memberDto);
         memberResource.add(Link.of("/docs/index.html#resources-sign-up", "profile"));
-        memberResource.add(linkTo(MemberCreateController.class).withRel("query-events"));
-        memberResource.add(webMvcLinkBuilder.withRel("update-events"));
+        memberResource.add(linkTo(MemberCreateController.class).withRel("query"));
+        memberResource.add(webMvcLinkBuilder.withRel("update"));
 
         return ResponseEntity.created(webMvcLinkBuilder.toUri()).body(memberResource);
     }

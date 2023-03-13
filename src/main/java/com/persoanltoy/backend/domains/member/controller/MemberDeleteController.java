@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.UUID;
 
 @RequiredArgsConstructor
 @RequestMapping("/member")
@@ -19,13 +18,13 @@ public class MemberDeleteController {
     private final MemberDeleteService memberDeleteService;
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable UUID id) {
+    public ResponseEntity<?> delete(@PathVariable String id) {
         memberDeleteService.delete(id);
         return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/delete/{ids}")
-    public ResponseEntity<?> delete(@PathVariable List<UUID> ids) {
+    public ResponseEntity<?> delete(@PathVariable List<String> ids) {
         memberDeleteService.delete(ids);
         return ResponseEntity.noContent().build();
     }

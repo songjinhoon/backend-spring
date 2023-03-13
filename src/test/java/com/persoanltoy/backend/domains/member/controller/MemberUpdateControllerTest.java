@@ -1,7 +1,6 @@
 package com.persoanltoy.backend.domains.member.controller;
 
 import com.persoanltoy.backend.common.BaseTest;
-import com.persoanltoy.backend.domains.member.domain.entity.MemberNo;
 import com.persoanltoy.backend.domains.member.dto.request.MemberUpdateDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -21,7 +20,7 @@ class MemberUpdateControllerTest extends BaseTest {
     @DisplayName("update")
     void update() throws Exception {
         //given
-        MemberNo generate = super.memberDummyGenerate.generate();
+        String generate = super.memberDummyGenerate.generate();
         String accessToken = super.memberDummyGenerate.getAccessToken();
         String url = String.format("/member/%s", generate);
         MemberUpdateDto memberUpdateDto = MemberUpdateDto.builder()

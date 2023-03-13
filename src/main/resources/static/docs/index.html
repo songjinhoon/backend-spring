@@ -633,7 +633,7 @@ API 관리 문서 입니다.
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Location: http://localhost:8080/member/cf6812d5-cc96-4a10-bedc-6d02f0542cb8
+Location: http://localhost:8080/member/6c02629c-7b9f-4f78-9a27-685867dd54cc
 Content-Type: application/hal+json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
@@ -641,33 +641,26 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
-Content-Length: 775
+Content-Length: 584
 
 {
-  "rgsDt" : "2023-03-13T14:58:47.3946563",
-  "updDt" : "2023-03-13T14:58:47.3946563",
-  "id" : { },
+  "rgsDt" : "2023-03-14 18:42:10",
+  "updDt" : "2023-03-14 18:42:10",
+  "id" : "6c02629c-7b9f-4f78-9a27-685867dd54cc",
   "username" : "hijinhoon@naver.com",
-  "password" : "$2a$10$cMVeY4ce1GTK6ASISCCcq.M2rV93U7cSkM8JvXYDHHEj61tiky0s6",
   "nickName" : "hijinhoon",
-  "roleSet" : {
-    "roles" : [ "ROLE_USER" ]
-  },
-  "authorities" : [ {
-    "authority" : "ROLE_USER"
-  } ],
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/member/cf6812d5-cc96-4a10-bedc-6d02f0542cb8"
+      "href" : "http://localhost:8080/member/6c02629c-7b9f-4f78-9a27-685867dd54cc"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-sign-up"
     },
-    "query-events" : {
+    "query" : {
       "href" : "http://localhost:8080/member"
     },
-    "update-events" : {
-      "href" : "http://localhost:8080/member/cf6812d5-cc96-4a10-bedc-6d02f0542cb8"
+    "update" : {
+      "href" : "http://localhost:8080/member/6c02629c-7b9f-4f78-9a27-685867dd54cc"
     }
   }
 }</code></pre>
@@ -740,8 +733,8 @@ Content-Length: 775
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Set-Cookie: refresh_token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc3MzU0MH0.cowL_HoVTtlsU3gIrBhsmivRdYhV5GJ-e-wyGCiYkRlHkqbsg03m6mBTnlnAG5eUu29jeJ4Kqi5rSvBdseCOug; Path=/; Max-Age=86400000; Expires=Sun, 7 Dec 2025 05:59:00 GMT; Secure; HttpOnly
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc3MzU0MH0.cowL_HoVTtlsU3gIrBhsmivRdYhV5GJ-e-wyGCiYkRlHkqbsg03m6mBTnlnAG5eUu29jeJ4Kqi5rSvBdseCOug
+Set-Cookie: refresh_token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsIm1lbWJlcklkIjoiNjliZmRlN2YtODg4YS00NGJhLTllMjYtYTk4ODVhYzMwOGY1Iiwibmlja05hbWUiOiJoaWppbmhvb24iLCJleHAiOjE2Nzg4NzMzMzB9.E9i9X-y8wr413kRBcCmo1-EpO48ZFSqiyoYn8BOqT8S9Pz6_RZRv5bKqJMI3u3W5UkUrUtzbO1AVtTaTiJwzqQ; Path=/; Max-Age=86400000; Expires=Mon, 8 Dec 2025 09:42:10 GMT; Secure; HttpOnly
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsIm1lbWJlcklkIjoiNjliZmRlN2YtODg4YS00NGJhLTllMjYtYTk4ODVhYzMwOGY1Iiwibmlja05hbWUiOiJoaWppbmhvb24iLCJleHAiOjE2Nzg4NzMzMzB9.E9i9X-y8wr413kRBcCmo1-EpO48ZFSqiyoYn8BOqT8S9Pz6_RZRv5bKqJMI3u3W5UkUrUtzbO1AVtTaTiJwzqQ
 Content-Type: application/json;charset=UTF-8
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
@@ -803,9 +796,9 @@ X-Frame-Options: SAMEORIGIN</code></pre>
 <h4 id="resources-member-find_curl_request"><a class="link" href="#resources-member-find_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/315638e1-ec18-4d24-9afc-8a2b147277dc' -i -X GET \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/2bc9beda-e708-4ca4-ab3e-77bea6f73cd0' -i -X GET \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc3MzU0MX0.fvwVC1Vpo0VkAxJ8KL-22QM_d3mi3o0xqAA0eWQJ12R6-fxacZfos2eN7Amhae_FVHbF3pieOnOH9dUwJ9WsYw'</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsIm1lbWJlcklkIjoiMmJjOWJlZGEtZTcwOC00Y2E0LWFiM2UtNzdiZWE2ZjczY2QwIiwibmlja05hbWUiOiJoaWppbmhvb24iLCJleHAiOjE2Nzg4NzMzMzB9.6ik9hFMRoWw23gHQlPzX4-d9krK9AcShbpdeHVruB9XwCx0UdFGbeYBvJYXugR7qIUZ7UXh6nTuJ6Kg6FsSnWg'</code></pre>
 </div>
 </div>
 </div>
@@ -824,33 +817,26 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
-Content-Length: 777
+Content-Length: 588
 
 {
-  "rgsDt" : "2023-03-13T14:59:01.148098",
-  "updDt" : "2023-03-13T14:59:01.148098",
-  "id" : { },
+  "rgsDt" : "2023-03-14 18:42:10",
+  "updDt" : "2023-03-14 18:42:10",
+  "id" : "2bc9beda-e708-4ca4-ab3e-77bea6f73cd0",
   "username" : "hijinhoon@naver.com",
-  "password" : "$2a$10$wSI5j9/PfQqQtL7InUciYuHe4Fzus46C50DcVDHPlJZW3TvURRQfK",
   "nickName" : "hijinhoon",
-  "roleSet" : {
-    "roles" : [ "ROLE_USER" ]
-  },
-  "authorities" : [ {
-    "authority" : "ROLE_USER"
-  } ],
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/member/315638e1-ec18-4d24-9afc-8a2b147277dc"
+      "href" : "http://localhost:8080/member/2bc9beda-e708-4ca4-ab3e-77bea6f73cd0"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-member-find"
     },
-    "query-events" : {
+    "query" : {
       "href" : "http://localhost:8080/member"
     },
-    "update-events" : {
-      "href" : "http://localhost:8080/member/315638e1-ec18-4d24-9afc-8a2b147277dc"
+    "update" : {
+      "href" : "http://localhost:8080/member/2bc9beda-e708-4ca4-ab3e-77bea6f73cd0"
     }
   }
 }</code></pre>
@@ -869,7 +855,7 @@ Content-Length: 777
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member?page=1&amp;size=5&amp;sort=username%2Cdesc&amp;sort=nickName%2Casc&amp;username=hijinhoon&amp;nickName=1' -i -X GET \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc3MzU0MH0.cowL_HoVTtlsU3gIrBhsmivRdYhV5GJ-e-wyGCiYkRlHkqbsg03m6mBTnlnAG5eUu29jeJ4Kqi5rSvBdseCOug'</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsIm1lbWJlcklkIjoiZDQ4MjQ5YjctZTcwNS00MTBmLWIxNDItZThmNjc3NGFlM2M1Iiwibmlja05hbWUiOiJoaWppbmhvb24iLCJleHAiOjE2Nzg4NzMzMjl9.sOkMwLf1_O6c1Gq9UCNaVxITSW8eKoXiBiXlPiQSwQ4Y4qAveAYvfiDd5Clz9xgYBgm_oFLQGJtxuGJymwsv1g'</code></pre>
 </div>
 </div>
 </div>
@@ -888,64 +874,64 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
-Content-Length: 1381
+Content-Length: 1556
 
 {
   "content" : [ {
-    "rgsDt" : "2023-03-13 14:59:00",
-    "updDt" : "2023-03-13 14:59:00",
-    "id" : { },
+    "rgsDt" : "2023-03-14 18:42:09",
+    "updDt" : "2023-03-14 18:42:09",
+    "id" : "9786347d-5526-4e91-8180-a88f54653743",
     "username" : "hijinhoon41@naver.com",
     "nickName" : "hijinhoon41"
   }, {
-    "rgsDt" : "2023-03-13 14:59:00",
-    "updDt" : "2023-03-13 14:59:00",
-    "id" : { },
+    "rgsDt" : "2023-03-14 18:42:09",
+    "updDt" : "2023-03-14 18:42:09",
+    "id" : "c76632e3-1107-46b1-aa1c-ab810326504c",
     "username" : "hijinhoon31@naver.com",
     "nickName" : "hijinhoon31"
   }, {
-    "rgsDt" : "2023-03-13 14:59:00",
-    "updDt" : "2023-03-13 14:59:00",
-    "id" : { },
+    "rgsDt" : "2023-03-14 18:42:09",
+    "updDt" : "2023-03-14 18:42:09",
+    "id" : "5541eed3-4692-45e1-ac92-a426f3f4848f",
     "username" : "hijinhoon21@naver.com",
     "nickName" : "hijinhoon21"
   }, {
-    "rgsDt" : "2023-03-13 14:59:00",
-    "updDt" : "2023-03-13 14:59:00",
-    "id" : { },
+    "rgsDt" : "2023-03-14 18:42:09",
+    "updDt" : "2023-03-14 18:42:09",
+    "id" : "febeec07-d496-42e3-bd7a-faf233bae69b",
     "username" : "hijinhoon1@naver.com",
     "nickName" : "hijinhoon1"
   }, {
-    "rgsDt" : "2023-03-13 14:59:00",
-    "updDt" : "2023-03-13 14:59:00",
-    "id" : { },
+    "rgsDt" : "2023-03-14 18:42:09",
+    "updDt" : "2023-03-14 18:42:09",
+    "id" : "853359bb-599e-45d5-9cd7-d2dd3fa542c9",
     "username" : "hijinhoon19@naver.com",
     "nickName" : "hijinhoon19"
   } ],
   "pageable" : {
     "sort" : {
       "empty" : false,
-      "sorted" : true,
-      "unsorted" : false
+      "unsorted" : false,
+      "sorted" : true
     },
     "offset" : 5,
     "pageNumber" : 1,
     "pageSize" : 5,
-    "paged" : true,
-    "unpaged" : false
+    "unpaged" : false,
+    "paged" : true
   },
   "last" : false,
-  "totalPages" : 4,
   "totalElements" : 19,
+  "totalPages" : 4,
   "size" : 5,
   "number" : 1,
   "sort" : {
     "empty" : false,
-    "sorted" : true,
-    "unsorted" : false
+    "unsorted" : false,
+    "sorted" : true
   },
-  "numberOfElements" : 5,
   "first" : false,
+  "numberOfElements" : 5,
   "empty" : false
 }</code></pre>
 </div>
@@ -998,9 +984,9 @@ Content-Length: 1381
 <h4 id="resources-member-update_curl_request"><a class="link" href="#resources-member-update_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/2ad943e9-f90e-4b7a-b148-06e9792cb00e' -i -X PUT \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/2fc97fd6-c9b0-4c75-87eb-7a9e104228ec' -i -X PUT \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc3MzU0MX0.fvwVC1Vpo0VkAxJ8KL-22QM_d3mi3o0xqAA0eWQJ12R6-fxacZfos2eN7Amhae_FVHbF3pieOnOH9dUwJ9WsYw' \
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsIm1lbWJlcklkIjoiMmZjOTdmZDYtYzliMC00Yzc1LTg3ZWItN2E5ZTEwNDIyOGVjIiwibmlja05hbWUiOiJoaWppbmhvb24iLCJleHAiOjE2Nzg4NzMzMzB9.DRvauS4B17_IfuMBN7MBpr4gd6GPZRtaJspP0DjuZPro1_SPY51EfZCgBYpsDOgwOOEjVhqfRsOYwdlzmL_R0Q' \
     -d '{
   "nickName" : "NickName~~"
 }'</code></pre>
@@ -1022,24 +1008,17 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
-Content-Length: 584
+Content-Length: 409
 
 {
-  "rgsDt" : "2023-03-13T14:59:01.311606",
-  "updDt" : "2023-03-13T14:59:01.311606",
-  "id" : { },
+  "rgsDt" : "2023-03-14 18:42:10",
+  "updDt" : "2023-03-14 18:42:10",
+  "id" : "2fc97fd6-c9b0-4c75-87eb-7a9e104228ec",
   "username" : "hijinhoon@naver.com",
-  "password" : "$2a$10$C4UY1GW3YLBLQCWwvLCZOOsZBF1Hmd5Cxi6rdLF97ZyvWIfMbOZ1G",
   "nickName" : "NickName~~",
-  "roleSet" : {
-    "roles" : [ "ROLE_USER" ]
-  },
-  "authorities" : [ {
-    "authority" : "ROLE_USER"
-  } ],
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/member/2ad943e9-f90e-4b7a-b148-06e9792cb00e"
+      "href" : "http://localhost:8080/member/2fc97fd6-c9b0-4c75-87eb-7a9e104228ec"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-member-update"
@@ -1086,9 +1065,9 @@ Content-Length: 584
 <h4 id="resources-member-delete_curl_request"><a class="link" href="#resources-member-delete_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/1faa8169-e6fd-4670-8b67-13ee0f67aa27' -i -X DELETE \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/cdef5423-a6af-4ecc-ad1b-4dea4973a1fa' -i -X DELETE \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc3MzUyN30.U6nWJrt6UoaVKrSeP-KAMt_mKNrI5XPW7xiq_kMKQEXF3oj6u2oEFTYkjFny-IsHZ5uuRwD-8cTtdOJj2v52eA'</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsIm1lbWJlcklkIjoiY2RlZjU0MjMtYTZhZi00ZWNjLWFkMWItNGRlYTQ5NzNhMWZhIiwibmlja05hbWUiOiJoaWppbmhvb24iLCJleHAiOjE2Nzg4NzMzMTd9.Why5XAnnYVlW7ritaUYua3vt6Ehye3nnkogYsQ5IKw7E6Q7SChkxldQ24_Ovrn5nvwsofoAO5frBV8ygVdtZEg'</code></pre>
 </div>
 </div>
 </div>
@@ -1119,9 +1098,9 @@ X-Frame-Options: SAMEORIGIN</code></pre>
 <h4 id="resources-member-delete-all_curl_request"><a class="link" href="#resources-member-delete-all_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/delete/5d480821-bdfe-4055-bff9-3e53a129bbfb,21cbdd41-f0e4-4e72-b22d-773774a5cffa,2d8a0873-b842-486d-a7ea-7a91c8fad551,088acbb7-ff60-4a47-85be-bbae011fcdaa,4a628ce5-ad91-43a2-8cc3-087ad592db21,902b254b-e9d7-4f70-a2fe-d86f5028422f,766e391a-1070-4e39-91a3-52f169a6569d,07251c3f-22ba-4eae-98dd-b4dee957fb7f,c1f5477d-4efc-40f3-8091-2f11d5d0e5ed,0c9452a4-70da-44d3-aefd-00dc4bb06f8e,2fb9853c-daaf-4d46-96d6-97c835f004bf,783d2f0d-ee34-46fe-91f9-dae6ff307f16,23f4523f-a2e0-4f6c-bbd2-82c22bd5dfe6,1ec9b388-29cc-4ee3-ac91-ad4dd711ccc2,ad782a3a-055b-4002-8476-50fb18b935e4,31599800-4a93-4a4c-9f24-592d55c4bf81,cee50a0b-cddf-46e8-b0fb-96ed7ca3c6d2,33c208da-866f-4d32-a7a1-f44a8f427532,79e1fa7e-eba7-46c1-9385-51bb0a0ec7f9,a425fd55-17c3-48e0-9e93-887a868eac2c,e51365df-9433-46fd-ab49-2c2c689898bd,36281d6b-e7b7-430d-b3f5-77f9c81d8a58,4c78e90c-d26c-46b0-9848-43db779e3e14,219d1b2b-7e87-4408-937c-7d59b2f9a738,74ecd0f8-33c5-4654-b872-f6649f41d185,681b3c0b-a3b5-4663-8994-f2a756ee38e9,8e66b733-c4e4-43d3-832b-d87e413db5ef,2a47983f-de74-41c2-8112-24812f774263,37cd7c43-d3c5-484f-98b0-e77e39a0729b,2e8f2ada-9ff8-4538-97e3-2b0be733345e,d7d12484-3584-4d1c-8101-ec2268b0d9bd,cd0a962d-c1e3-49ff-9bdc-98d3e12ce555,edb54e63-8419-4ae6-b957-4f07c6185f12,83b3dc74-6b82-4344-89ec-5a1e15b250e1,6365ece5-8adf-46cc-a501-a20b098c9230,7fd6582c-39c6-4c7a-ba18-0e314f385bac,0032996b-2bd8-4e16-a751-9030e42ca32a,0ea67213-bf66-440f-995d-aa102bf2b9af,7e341aaf-e287-48f6-9c08-0eef12d4c163,cc86d013-8cab-41f0-987e-0a29e6a1cfbc,3d5a3b0b-2a2a-4a0c-a886-be4d4783bedc,538f505d-57f4-4125-8f25-b5a5d833b3b0,971f134d-b1be-4abc-8a7b-098dbf4985f9,317c976e-af86-4b8e-bb10-4d535c47e880,de7c8974-2ce6-4ebf-9620-773800cebf9b,dc2af2e2-ee5c-4529-b08a-b5285779ef9b,f5f6c784-8501-4fa0-ad12-0e61c9fb28be,39cc7e2d-3e50-44eb-8c4f-2cb126ac4fb5,c900dcc4-f1e4-4ffe-b9ef-aa57b92e5ea5,e7a420c5-d0ed-4807-a715-4933ef7a4b44,8874ac8a-f6d9-4845-9ec8-548b286ae938,35014c80-8226-4b41-9b91-03c2f2fcb73e,de17a5cb-23cb-425c-a162-70b3b44e9aae,8c9e2c90-8149-441e-898c-887c5026f9f1,797e921f-b3ba-4346-91f9-78ffbe1b3772,1da66e97-25ea-4178-8b50-9c2632bdcfa1,a104af31-465e-4905-8d0d-e39b8c9cce6b,2d87f2dd-2511-4357-ac34-caff65a1b82f,6f7d0772-6c4d-4e5d-bae8-27c095d31e41,394baab7-5662-4e04-8ab4-a5e1de17f442,2b7da050-6316-4aff-acc3-a34d698cf87d,ad72b9e5-b829-42da-9813-08a5cb8c477b,52d0c882-74d4-42e1-b515-e63f8aae68b6,c1d3101e-95dd-4d00-9434-4b6e6e9ef978,f0fe402a-e832-411b-ae5e-fe4dd5d2a332,65800ab7-38a9-4009-8de9-b007c35c8580,14abd21b-f7e5-4c60-88ab-b9fa29bbe7fe,cc05788d-9341-4107-9f1a-294858500719,a33782b3-601f-4e56-b87b-c82b02950e6e,56130306-71aa-46f9-bd75-6403f16127ef,bd3edd35-12a4-4065-8815-213635f138fa,0be46328-7aa1-49c8-8d2a-45e26fe79771,a83c210a-bb46-4c81-b6ad-5132d307d840,e6191ff8-2549-4467-a366-d415e15ccfb1,288bb924-6302-4c3d-b8e0-2a418904aac0,4af80dd0-32ab-45f2-9c6a-eed000b27a61,1dc3a1a9-84dd-4dfd-8d39-70b1a69e9ed7,901dcf2e-3991-4bbf-948a-ac23908b25cd,0b7e0d77-6946-45a9-b527-c055909b9054,aa0b50dc-dc17-44dd-8027-4d5b17c8f3e2,8965c77f-a891-4266-b03c-d96f5330a731,00fd3c04-7609-40e1-9f1c-9c048edbe554,a00c345d-9e14-4c4e-bda5-59854e6de1d7,e50e85e8-b1b1-461a-a10f-193571fb59d9,32cea2d7-060d-4927-bb41-cceb55a7c642,0674f682-f341-4690-ae71-b24c54085bfe,6a4a288e-e3b0-47f7-9865-8db0e6d79783,813e782f-5084-4e4e-93c3-65f8919181a8,f29260b8-92aa-4ffc-94f3-e6e90dd9ddce,f347a2d3-3c9c-4b61-95d2-2fa7d7f830e4,38085c83-7de8-4227-9045-437d496b03aa,532e7a06-5c91-4800-b5d3-08e7ebb820c2,690ef8e5-a329-4482-816f-69e5448185fc,c2c7ecd3-2ec4-46b6-971b-90c95ccecc4a,cf408c69-95ec-4084-8c32-cd7cfa4d5ea4,36f8923f-07f6-4f67-9f8f-6be666a322ff,4abc198e-675d-4bc8-9988-84ab0e3f64b2,fb04842d-0889-40cf-9fe0-ac46c8fffa1c,58ab2e50-0e68-42a2-88cd-8941f4830b47,856e4826-2ff0-444b-8256-778e540096c4' -i -X DELETE \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/delete/17537990-6290-47fa-b67a-359d16398df9,8b82f315-8f75-4fa6-b080-b9f4d39f3303,c9cc4e37-9d9b-417a-9104-fd44c3b992ea,947bb1af-24f6-4fa5-bbb1-5935b234d104,bdf8b7c9-0e44-4d1c-995b-624a5c085baa,9f4f8cd2-37dc-482a-afc6-6133c8d74cc9,d3109eff-26d7-467b-933a-ad9dbee044b4,4b9cf056-8459-4e63-8644-faa0987f21ff,3ce5291f-3fe1-4c72-8348-96f92cda7463,2a221457-8d52-4552-ab20-bc3620d4c501,ee1b6f1c-fd94-412b-b185-4fb33709c736,6c47d0b4-4715-4c48-84ff-5d4a07da5211,13ff2a1b-721e-414e-a8d7-12e0faa290fe,dbcd7ea8-c723-44cd-b76c-719a89ab4f86,95b4eb22-c417-43b3-9694-16df91fd70b9,ca2e84b5-d83d-4b1b-932e-01cfe597ab68,8464b57b-1f71-403a-b397-fdffb30daf6c,a239746f-8cf5-4614-aff5-dd8cc5af49ee,51b5217a-84d1-45f3-90e2-e6eaffa8eb21,88cfa616-3af5-48e6-8334-2d96b4ac579f,4fccfaa8-cbf2-49a6-965c-8d497eb5a25f,92888b56-3182-4dbc-ae18-00c83b30800f,53a435d4-47ef-4c4b-a05c-f2a6a5497935,23ae5bcd-9945-43f4-85d0-99694e8c7da9,017b00d4-c5e8-45e9-875c-dc7e5152e0e4,4231bd5f-febb-47d4-af58-12f9e5a8416d,e05c1e0d-fe45-4336-b3f6-bf9b303b65df,424933df-91c1-4ca6-8586-3c1f3faa0b61,aaaf0b7c-ea8f-4551-b2fa-4b2419071ae6,e8e637bf-6f40-4308-9e94-9d6262263284,ab9a85ad-6824-4329-a08d-0406774bfe33,a50d217a-a465-4df3-ba88-e408bfeb441e,378cc7f8-a34a-4edf-a1cf-4c8b0e668e6d,daf7e1f4-8c56-40e4-afe8-37ea742d8138,7122332b-95f0-4a5b-a7a1-2921b227a5ac,808e1d32-8eaf-4eed-bc4c-f5746bec4bd2,a6059ff2-3c93-4290-833f-54d87bf7fef3,93416d72-90a2-4199-a1f3-8de03087e62e,0cafc903-1196-4f07-bcf4-a15683b6e063,8b573721-6693-422e-a2a9-a8e8266fe9ef,697852d5-e957-4445-a362-1b2d1e4ca46c,c3033c17-3d95-46a0-b0b6-316b47e02924,27c20ce4-8d2f-418b-ba4f-a16896f6cbe9,3b39630a-64e3-4d72-8542-5e348f28347f,18848371-1ad5-4dc8-a6eb-b178df4bcabf,2b94f19b-d3a5-43fb-8626-61b75a3bf4c4,26ad768b-36bd-4a08-9451-05960ae5c2a4,b57930be-fd31-495c-bd9b-087d1dee1dac,f42d4aff-d525-46b6-9153-dbc059591db5,0a1fce84-7088-49ef-936d-714b6f8535eb,d14a7e67-7bf5-4d8c-a767-d414b728445f,a1183d8e-e694-4c26-8419-d5b93540413b,d7d0817b-b687-44ee-b7c6-728a52b73f62,77529cc7-c431-4b43-8475-b7c5e359f633,c7097722-6cee-442f-9af6-3c35cef7f23d,9bc08a1d-7c4f-4ea8-8609-fd670634d5a5,509d4797-0989-4207-a863-a87fb1b8b221,22e0a540-172f-4101-b90a-1663fb92e568,efcaf060-5e25-45cd-ba8a-bf0967f38294,8cbe0577-23ec-46f5-8a3a-766bf3b58091,bf542c4a-3c7c-4c85-9022-1da047f9649e,e89e9d3b-8e64-4eb1-bb17-3b2b3f1a1ad4,b270eaf0-864c-462e-b0d3-253ed0a323ed,f3540897-6383-4c21-8245-e430de3b34fa,ea137265-f870-413f-849e-0a9b506ff12d,253fb809-c94c-4630-8919-a7888e17ccf8,d39414ba-11ca-44ca-966f-69a6996145df,25ad044f-4c46-4de6-bc27-90fa2a66fb7c,701df425-f55c-4773-bd0a-2e209ae0f16a,29d13116-2421-4c7b-91f4-26c56a91b0f6,ff90b76d-7275-466e-a375-bf53c7f4bbc8,76712cdb-5ef9-431b-ba7c-278717b6d12c,104d96e6-5018-4681-9f95-bdedeb05375b,5d5b8e3f-5183-4af0-a87a-49c79528653a,47bb6912-8737-469d-a70c-32abd8fd0ab9,872f09f7-3f31-4eb6-903a-6faa455ae50d,3617cb1b-6899-4c0f-a968-c05f0fe77b89,8ec02581-2e9e-4007-bd18-9a8c548918f0,c2f26394-1067-4b06-888a-a9bc77889853,862307d3-a0c1-4b51-9c70-ea6bf85b5499,98bf2b1d-3d1b-4b1e-8996-b3fce02666ea,a7ca72fa-b2fb-471c-8159-14c0e153644d,2b973a51-5950-4f53-995a-76d801a52d21,21c93d1d-d6ae-40a0-88aa-027303050bce,8d3d76cd-3eb9-46ae-8ce8-f2bd70a52fd7,73b99d2b-175c-4570-9a4a-aa15bf6f996e,46464d53-7b56-4ddd-bd13-533af0a3398f,0027f1ac-1187-4a7c-bc6f-e114f15cba21,129b0346-f4c6-40c9-8dbf-f7ebb7ccba2d,994f3b3a-48b4-458f-8884-0853caa17c1b,11df4ef7-a2b2-4ba5-9a5c-5211a110357e,bea403df-acda-4897-87ea-f84e156465f7,f1bebc5f-79b4-40bc-acae-8b3aed83d36d,9e0d13e1-9e84-455d-930e-c1c65761883e,d90191b1-cfaf-4e1a-b3c0-611ad8906aca,1154e1a8-4db0-4e0f-83be-dbd5a918fc39,a3c1a917-46af-415d-a7e3-819a593de731,6e97a287-0d9b-4421-97d7-2410516d9d19,2b6106b5-ed84-4bfa-a70c-2656c8db974b,ce843a27-75a0-41b7-8ee5-c9388f8b6cfe' -i -X DELETE \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc3MzUyOH0.2w0eYmmWXAyXmsVmFn30PZrSNo-2Q5z8WqGV6S095caX5KdfSqdBQb1AL1IlnIjRcGNLp6W4xQoW3PzPooxqqA'</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsIm1lbWJlcklkIjoiOTY0YzExYTEtZjA2OS00NGNjLWI0YWItZDhiNTlhYmUwZTdlIiwibmlja05hbWUiOiJoaWppbmhvb24iLCJleHAiOjE2Nzg4NzMzMTd9.DPqTpooJ4-a-TUolYkDm5UmxNKZj5Qll3nADWdLtITZMAyabPwXZFFbw52BHJSmFqC4vzXbdACMIGuReEVdnJQ'</code></pre>
 </div>
 </div>
 </div>

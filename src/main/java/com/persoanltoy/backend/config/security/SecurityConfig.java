@@ -7,7 +7,7 @@ import com.persoanltoy.backend.config.jwt.TokenProvider;
 import com.persoanltoy.backend.config.security.custom.CustomAuthenticationProvider;
 import com.persoanltoy.backend.config.security.custom.CustomLoginFailureHandler;
 import com.persoanltoy.backend.config.security.filter.CustomAuthenticationFilter;
-import com.persoanltoy.backend.domains.member.domain.entity.role.Role;
+import com.persoanltoy.backend.domains.member.domain.entity.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

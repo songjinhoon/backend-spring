@@ -1,7 +1,6 @@
 package com.persoanltoy.backend.domains.member.controller;
 
 import com.persoanltoy.backend.common.BaseTest;
-import com.persoanltoy.backend.domains.member.domain.entity.MemberNo;
 import com.persoanltoy.backend.domains.member.dto.request.SignInDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -90,7 +89,7 @@ class MemberFindControllerTest extends BaseTest {
     @DisplayName("find")
     void find_success() throws Exception {
         //given
-        MemberNo generate = super.memberDummyGenerate.generate();
+        String generate = super.memberDummyGenerate.generate();
         String accessToken = super.memberDummyGenerate.getAccessToken();
         String url = String.format("/member/%s", generate);
 
@@ -112,7 +111,7 @@ class MemberFindControllerTest extends BaseTest {
     void query() throws Exception {
         //given
         super.memberDummyGenerate.generate(100);
-        MemberNo generate = super.memberDummyGenerate.generate();
+        String generate = super.memberDummyGenerate.generate();
         String accessToken = super.memberDummyGenerate.getAccessToken();
         String url = "/member";
 
@@ -151,7 +150,7 @@ class MemberFindControllerTest extends BaseTest {
     @DisplayName("401 error")
     void find_fail() throws Exception {
         //given
-        MemberNo generate = super.memberDummyGenerate.generate();
+        String generate = super.memberDummyGenerate.generate();
         String url = String.format("/member/%s", generate);
 
         //when-then

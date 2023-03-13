@@ -7,14 +7,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Getter
 @Setter
 public class MemberDto extends BaseDto {
 
-    private UUID id;
+    private String id;
 
     private String username;
 
@@ -22,7 +21,7 @@ public class MemberDto extends BaseDto {
 
     public static MemberDto of(Member member) {
         MemberDto memberDto = MemberMapper.INSTANCE.toMemberDto(member);
-        memberDto.setId(member.getNumber().getId());
+        memberDto.setId(member.getId());
         return memberDto;
     }
 

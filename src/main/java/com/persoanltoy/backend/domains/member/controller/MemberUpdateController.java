@@ -22,7 +22,7 @@ public class MemberUpdateController {
 
     //    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable UUID id, @RequestBody @Valid MemberUpdateDto memberUpdateDto, Errors errors) {
+    public ResponseEntity<?> update(@PathVariable String id, @RequestBody @Valid MemberUpdateDto memberUpdateDto, Errors errors) {
         if (errors.hasErrors()) {
             return ResponseEntity.badRequest().body(errors);
         }

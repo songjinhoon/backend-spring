@@ -1,9 +1,8 @@
 package com.persoanltoy.backend.domains.member.domain.entity;
 
 import com.persoanltoy.backend.domains.common.BaseTimeEntity;
-import com.persoanltoy.backend.domains.member.domain.entity.role.Role;
-import com.persoanltoy.backend.domains.member.domain.entity.role.RoleSet;
-import com.persoanltoy.backend.domains.member.domain.entity.role.RoleSetConverter;
+import com.persoanltoy.backend.domains.common.model.RoleSet;
+import com.persoanltoy.backend.domains.common.model.RoleSetConverter;
 import com.persoanltoy.backend.domains.member.dto.request.MemberUpdateDto;
 import com.persoanltoy.backend.domains.member.dto.request.SignUpDto;
 import lombok.*;
@@ -11,23 +10,23 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.persistence.Column;
-import javax.persistence.Convert;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
+@Getter
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder(access = AccessLevel.PROTECTED)
+@Table(name = "tn_member")
 @Entity
-@Getter
 public class Member extends BaseTimeEntity {
 
-    @EmbeddedId
-    private MemberNo number;
+    @Id
+    @Column(name = "member_id")
+    private String id;
 
     @Column(unique = true)
     private String username;
@@ -46,7 +45,7 @@ public class Member extends BaseTimeEntity {
 
     public static Member create(SignUpDto signUpDto, PasswordEncoder passwordEncoder) {
         return Member.builder()
-                .number(MemberNo.create())
+                .id(UUID.randomUUID().toString())
                 .username(signUpDto.getUsername())
                 .password(passwordEncoder.encode(signUpDto.getPassword()))
                 .nickName(signUpDto.getNickName())

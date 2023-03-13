@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.UUID;
-
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
 @RequiredArgsConstructor
@@ -27,14 +25,14 @@ public class MemberFindController {
     private final MemberFindService memberFindService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> find(@PathVariable UUID id) {
+    public ResponseEntity<?> find(@PathVariable String id) {
         MemberDto find = MemberDto.of(memberFindService.find(id));
 
         WebMvcLinkBuilder webMvcLinkBuilder = linkTo(MemberCreateController.class).slash(find.getId());
         MemberResource memberResource = new MemberResource(find);
         memberResource.add(Link.of("/docs/index.html#resources-member-find", "profile"));
-        memberResource.add(linkTo(MemberCreateController.class).withRel("query-events"));
-        memberResource.add(webMvcLinkBuilder.withRel("update-events"));
+        memberResource.add(linkTo(MemberCreateController.class).withRel("query"));
+        memberResource.add(webMvcLinkBuilder.withRel("update"));
 
         return ResponseEntity.ok().body(memberResource);
     }
