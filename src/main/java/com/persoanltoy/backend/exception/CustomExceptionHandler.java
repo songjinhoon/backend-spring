@@ -2,8 +2,10 @@ package com.persoanltoy.backend.exception;
 
 import com.persoanltoy.backend.domains.common.ResponseDto;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -21,6 +23,12 @@ public class CustomExceptionHandler {
     public ResponseEntity<ResponseDto<?>> emptyResultDataAccessException(Exception e) {
         log.error(e.getMessage());
         return ResponseEntity.notFound().build();
+    }
+
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity<ResponseDto<?>> constraintViolationException(Exception e) {
+        log.error(e.getMessage());
+        return ResponseEntity.badRequest().build();
     }
 
     /*@ExceptionHandler(RuntimeException.class)

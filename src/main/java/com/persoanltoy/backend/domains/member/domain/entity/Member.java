@@ -1,6 +1,5 @@
 package com.persoanltoy.backend.domains.member.domain.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.persoanltoy.backend.domains.common.BaseTimeEntity;
 import com.persoanltoy.backend.domains.member.domain.entity.role.Role;
 import com.persoanltoy.backend.domains.member.domain.entity.role.RoleSet;
@@ -20,7 +19,6 @@ import java.util.Collection;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@JsonIgnoreProperties
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder(access = AccessLevel.PROTECTED)
@@ -45,11 +43,6 @@ public class Member extends BaseTimeEntity {
     @Column(name = "roles")
     @Convert(converter = RoleSetConverter.class)
     private RoleSet roleSet;
-
-    /*@ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "member_access_log", joinColumns = @JoinColumn(name = "member_id"))
-    @OrderColumn(name = "idx")
-    private List<MemberAccessLog> memberAccessLogs;*/
 
     public static Member create(SignUpDto signUpDto, PasswordEncoder passwordEncoder) {
         return Member.builder()
