@@ -1,6 +1,7 @@
 package com.persoanltoy.backend.domains.member.service;
 
 import com.persoanltoy.backend.domains.member.domain.entity.Member;
+import com.persoanltoy.backend.domains.member.domain.entity.MemberNo;
 import com.persoanltoy.backend.domains.member.domain.repository.MemberRepository;
 import com.persoanltoy.backend.domains.member.dto.request.MemberUpdateDto;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,7 @@ public class MemberUpdateService {
 
     @Transactional
     public Member update(UUID id, MemberUpdateDto memberUpdateDto) {
-        Member member = memberRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+        Member member = memberRepository.findById(MemberNo.of(id)).orElseThrow(IllegalArgumentException::new);
         member.update(memberUpdateDto);
         return member;
     }

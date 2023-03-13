@@ -1,7 +1,6 @@
 package com.persoanltoy.backend.domains.member.controller;
 
 import com.persoanltoy.backend.common.BaseTest;
-import com.persoanltoy.backend.domains.member.dto.request.SignInDto;
 import com.persoanltoy.backend.domains.member.dto.request.SignUpDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

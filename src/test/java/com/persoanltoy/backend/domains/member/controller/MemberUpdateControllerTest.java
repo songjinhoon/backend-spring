@@ -1,13 +1,12 @@
 package com.persoanltoy.backend.domains.member.controller;
 
 import com.persoanltoy.backend.common.BaseTest;
+import com.persoanltoy.backend.domains.member.domain.entity.MemberNo;
 import com.persoanltoy.backend.domains.member.dto.request.MemberUpdateDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-
-import java.util.UUID;
 
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
@@ -22,7 +21,7 @@ class MemberUpdateControllerTest extends BaseTest {
     @DisplayName("update")
     void update() throws Exception {
         //given
-        UUID generate = super.memberDummyGenerate.generate();
+        MemberNo generate = super.memberDummyGenerate.generate();
         String accessToken = super.memberDummyGenerate.getAccessToken();
         String url = String.format("/member/%s", generate);
         MemberUpdateDto memberUpdateDto = MemberUpdateDto.builder()

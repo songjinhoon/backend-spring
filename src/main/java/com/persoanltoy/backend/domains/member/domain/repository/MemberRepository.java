@@ -1,18 +1,17 @@
 package com.persoanltoy.backend.domains.member.domain.repository;
 
 import com.persoanltoy.backend.domains.member.domain.entity.Member;
-import org.springframework.data.jpa.repository.EntityGraph;
+import com.persoanltoy.backend.domains.member.domain.entity.MemberNo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
-import java.util.UUID;
 
-public interface MemberRepository extends JpaRepository<Member, UUID>, MemberRepositoryCustom {
+public interface MemberRepository extends JpaRepository<Member, MemberNo>, MemberRepositoryCustom {
 
-//    @EntityGraph(attributePaths = "auths")
+    //    @EntityGraph(attributePaths = "auths")
     Optional<Member> findByUsername(String username);
 
-//    @EntityGraph(attributePaths = "auths")
+    //    @EntityGraph(attributePaths = "auths")
     Optional<Member> findByNickName(String nickName);
 
 }

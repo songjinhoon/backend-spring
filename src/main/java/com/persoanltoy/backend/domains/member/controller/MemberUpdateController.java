@@ -20,14 +20,14 @@ public class MemberUpdateController {
 
     private final MemberUpdateService memberUpdateService;
 
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    //    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable UUID id, @RequestBody @Valid MemberUpdateDto memberUpdateDto, Errors errors) {
         if (errors.hasErrors()) {
             return ResponseEntity.badRequest().body(errors);
         }
-        Member update = memberUpdateService.update(id, memberUpdateDto);
-        MemberResource memberResource = new MemberResource(MemberDto.of(update));
+        MemberDto of = MemberDto.of(memberUpdateService.update(id, memberUpdateDto));
+        MemberResource memberResource = new MemberResource(of);
         memberResource.add(Link.of("/docs/index.html#resources-member-update", "profile"));
         return ResponseEntity.ok().body(memberResource);
     }

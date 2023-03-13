@@ -21,7 +21,9 @@ public class MemberDto extends BaseDto {
     private String nickName;
 
     public static MemberDto of(Member member) {
-        return MemberMapper.INSTANCE.toSimpleDto(member);
+        MemberDto memberDto = MemberMapper.INSTANCE.toMemberDto(member);
+        memberDto.setId(member.getNumber().getId());
+        return memberDto;
     }
 
     public static List<MemberDto> of(List<Member> members) {

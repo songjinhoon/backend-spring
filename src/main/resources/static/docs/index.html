@@ -494,8 +494,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel3">
 <li><a href="#resources-member-delete_curl_request">Example request</a></li>
 <li><a href="#resources-member-delete_http_response">Example response</a></li>
-<li><a href="#resources-member-delete_curl_request">Example request</a></li>
-<li><a href="#resources-member-delete_http_response">Example response</a></li>
+</ul>
+</li>
+<li><a href="#resources-member-delete-all">회원 일괄 삭제</a>
+<ul class="sectlevel3">
+<li><a href="#resources-member-delete-all_curl_request">Example request</a></li>
+<li><a href="#resources-member-delete-all_http_response">Example response</a></li>
 </ul>
 </li>
 </ul>
@@ -629,7 +633,7 @@ API 관리 문서 입니다.
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Location: http://localhost:8080/member/4e917580-d016-4638-8ca7-8204942e2bba
+Location: http://localhost:8080/member/cf6812d5-cc96-4a10-bedc-6d02f0542cb8
 Content-Type: application/hal+json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
@@ -637,17 +641,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
-Content-Length: 598
+Content-Length: 775
 
 {
-  "rgsDt" : "2023-03-13 12:09:13",
-  "updDt" : "2023-03-13 12:09:13",
-  "id" : "4e917580-d016-4638-8ca7-8204942e2bba",
+  "rgsDt" : "2023-03-13T14:58:47.3946563",
+  "updDt" : "2023-03-13T14:58:47.3946563",
+  "id" : { },
   "username" : "hijinhoon@naver.com",
+  "password" : "$2a$10$cMVeY4ce1GTK6ASISCCcq.M2rV93U7cSkM8JvXYDHHEj61tiky0s6",
   "nickName" : "hijinhoon",
+  "roleSet" : {
+    "roles" : [ "ROLE_USER" ]
+  },
+  "authorities" : [ {
+    "authority" : "ROLE_USER"
+  } ],
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/member/4e917580-d016-4638-8ca7-8204942e2bba"
+      "href" : "http://localhost:8080/member/cf6812d5-cc96-4a10-bedc-6d02f0542cb8"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-sign-up"
@@ -656,7 +667,7 @@ Content-Length: 598
       "href" : "http://localhost:8080/member"
     },
     "update-events" : {
-      "href" : "http://localhost:8080/member/4e917580-d016-4638-8ca7-8204942e2bba"
+      "href" : "http://localhost:8080/member/cf6812d5-cc96-4a10-bedc-6d02f0542cb8"
     }
   }
 }</code></pre>
@@ -729,8 +740,8 @@ Content-Length: 598
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Set-Cookie: refresh_token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc2MzM2MH0.5VmU0Ju1TvM7X4c41oT1pY0bwvJD-SbdvMnGLqOahla7IzE9M4lh4SwgC8D3W1ydfAV4yK0Fam18PDiXyGNnjA; Path=/; Max-Age=86400000; Expires=Sun, 7 Dec 2025 03:09:20 GMT; Secure; HttpOnly
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc2MzM2MH0.5VmU0Ju1TvM7X4c41oT1pY0bwvJD-SbdvMnGLqOahla7IzE9M4lh4SwgC8D3W1ydfAV4yK0Fam18PDiXyGNnjA
+Set-Cookie: refresh_token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc3MzU0MH0.cowL_HoVTtlsU3gIrBhsmivRdYhV5GJ-e-wyGCiYkRlHkqbsg03m6mBTnlnAG5eUu29jeJ4Kqi5rSvBdseCOug; Path=/; Max-Age=86400000; Expires=Sun, 7 Dec 2025 05:59:00 GMT; Secure; HttpOnly
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc3MzU0MH0.cowL_HoVTtlsU3gIrBhsmivRdYhV5GJ-e-wyGCiYkRlHkqbsg03m6mBTnlnAG5eUu29jeJ4Kqi5rSvBdseCOug
 Content-Type: application/json;charset=UTF-8
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
@@ -792,9 +803,9 @@ X-Frame-Options: SAMEORIGIN</code></pre>
 <h4 id="resources-member-find_curl_request"><a class="link" href="#resources-member-find_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/33377d14-5251-49ca-94df-cb254c8430f2' -i -X GET \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/315638e1-ec18-4d24-9afc-8a2b147277dc' -i -X GET \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc2MzM2N30.hBXWEDB3_R2VVrYBDYbAKGzsEQhfaHb4evs04wSrEoMAW8qpPUV6FgFK6P9e89-9m1NsyaNsT6HUb45hFDZebA'</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc3MzU0MX0.fvwVC1Vpo0VkAxJ8KL-22QM_d3mi3o0xqAA0eWQJ12R6-fxacZfos2eN7Amhae_FVHbF3pieOnOH9dUwJ9WsYw'</code></pre>
 </div>
 </div>
 </div>
@@ -813,17 +824,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
-Content-Length: 602
+Content-Length: 777
 
 {
-  "rgsDt" : "2023-03-13 12:09:27",
-  "updDt" : "2023-03-13 12:09:27",
-  "id" : "33377d14-5251-49ca-94df-cb254c8430f2",
+  "rgsDt" : "2023-03-13T14:59:01.148098",
+  "updDt" : "2023-03-13T14:59:01.148098",
+  "id" : { },
   "username" : "hijinhoon@naver.com",
+  "password" : "$2a$10$wSI5j9/PfQqQtL7InUciYuHe4Fzus46C50DcVDHPlJZW3TvURRQfK",
   "nickName" : "hijinhoon",
+  "roleSet" : {
+    "roles" : [ "ROLE_USER" ]
+  },
+  "authorities" : [ {
+    "authority" : "ROLE_USER"
+  } ],
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/member/33377d14-5251-49ca-94df-cb254c8430f2"
+      "href" : "http://localhost:8080/member/315638e1-ec18-4d24-9afc-8a2b147277dc"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-member-find"
@@ -832,7 +850,7 @@ Content-Length: 602
       "href" : "http://localhost:8080/member"
     },
     "update-events" : {
-      "href" : "http://localhost:8080/member/33377d14-5251-49ca-94df-cb254c8430f2"
+      "href" : "http://localhost:8080/member/315638e1-ec18-4d24-9afc-8a2b147277dc"
     }
   }
 }</code></pre>
@@ -851,7 +869,7 @@ Content-Length: 602
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member?page=1&amp;size=5&amp;sort=username%2Cdesc&amp;sort=nickName%2Casc&amp;username=hijinhoon&amp;nickName=1' -i -X GET \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc2MzM2Nn0.IFVPRfrzvK20wJAx9h5MNkB7ZQqYt3Y-OyRa2St7ob-7jz_jRYXMLHNpSjJAN4pCobJQpXwJG_lBsLVekT5w-Q'</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc3MzU0MH0.cowL_HoVTtlsU3gIrBhsmivRdYhV5GJ-e-wyGCiYkRlHkqbsg03m6mBTnlnAG5eUu29jeJ4Kqi5rSvBdseCOug'</code></pre>
 </div>
 </div>
 </div>
@@ -870,64 +888,64 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
-Content-Length: 1556
+Content-Length: 1381
 
 {
   "content" : [ {
-    "rgsDt" : "2023-03-13 12:09:26",
-    "updDt" : "2023-03-13 12:09:26",
-    "id" : "3c13907e-0e7f-49b7-a95f-9c5dd80c415d",
+    "rgsDt" : "2023-03-13 14:59:00",
+    "updDt" : "2023-03-13 14:59:00",
+    "id" : { },
     "username" : "hijinhoon41@naver.com",
     "nickName" : "hijinhoon41"
   }, {
-    "rgsDt" : "2023-03-13 12:09:26",
-    "updDt" : "2023-03-13 12:09:26",
-    "id" : "2fcc1faf-059a-44d3-a714-de60afa526b6",
+    "rgsDt" : "2023-03-13 14:59:00",
+    "updDt" : "2023-03-13 14:59:00",
+    "id" : { },
     "username" : "hijinhoon31@naver.com",
     "nickName" : "hijinhoon31"
   }, {
-    "rgsDt" : "2023-03-13 12:09:26",
-    "updDt" : "2023-03-13 12:09:26",
-    "id" : "1e12688a-0665-4ae9-91df-a62aa23f7979",
+    "rgsDt" : "2023-03-13 14:59:00",
+    "updDt" : "2023-03-13 14:59:00",
+    "id" : { },
     "username" : "hijinhoon21@naver.com",
     "nickName" : "hijinhoon21"
   }, {
-    "rgsDt" : "2023-03-13 12:09:26",
-    "updDt" : "2023-03-13 12:09:26",
-    "id" : "0ddd3478-0c5c-46dc-83b7-b30e2b1e4522",
+    "rgsDt" : "2023-03-13 14:59:00",
+    "updDt" : "2023-03-13 14:59:00",
+    "id" : { },
     "username" : "hijinhoon1@naver.com",
     "nickName" : "hijinhoon1"
   }, {
-    "rgsDt" : "2023-03-13 12:09:26",
-    "updDt" : "2023-03-13 12:09:26",
-    "id" : "905efdf6-494e-46df-b81b-afb338b93e9f",
+    "rgsDt" : "2023-03-13 14:59:00",
+    "updDt" : "2023-03-13 14:59:00",
+    "id" : { },
     "username" : "hijinhoon19@naver.com",
     "nickName" : "hijinhoon19"
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : false,
+      "empty" : false,
       "sorted" : true,
-      "empty" : false
+      "unsorted" : false
     },
+    "offset" : 5,
     "pageNumber" : 1,
     "pageSize" : 5,
-    "offset" : 5,
-    "unpaged" : false,
-    "paged" : true
+    "paged" : true,
+    "unpaged" : false
   },
   "last" : false,
   "totalPages" : 4,
   "totalElements" : 19,
-  "first" : false,
-  "numberOfElements" : 5,
   "size" : 5,
   "number" : 1,
   "sort" : {
-    "unsorted" : false,
+    "empty" : false,
     "sorted" : true,
-    "empty" : false
+    "unsorted" : false
   },
+  "numberOfElements" : 5,
+  "first" : false,
   "empty" : false
 }</code></pre>
 </div>
@@ -980,9 +998,9 @@ Content-Length: 1556
 <h4 id="resources-member-update_curl_request"><a class="link" href="#resources-member-update_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/4051481b-a34f-4b51-b83b-c6d2d09bc022' -i -X PUT \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/2ad943e9-f90e-4b7a-b148-06e9792cb00e' -i -X PUT \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc2MzM2N30.hBXWEDB3_R2VVrYBDYbAKGzsEQhfaHb4evs04wSrEoMAW8qpPUV6FgFK6P9e89-9m1NsyaNsT6HUb45hFDZebA' \
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc3MzU0MX0.fvwVC1Vpo0VkAxJ8KL-22QM_d3mi3o0xqAA0eWQJ12R6-fxacZfos2eN7Amhae_FVHbF3pieOnOH9dUwJ9WsYw' \
     -d '{
   "nickName" : "NickName~~"
 }'</code></pre>
@@ -1004,17 +1022,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
-Content-Length: 409
+Content-Length: 584
 
 {
-  "rgsDt" : "2023-03-13 12:09:27",
-  "updDt" : "2023-03-13 12:09:27",
-  "id" : "4051481b-a34f-4b51-b83b-c6d2d09bc022",
+  "rgsDt" : "2023-03-13T14:59:01.311606",
+  "updDt" : "2023-03-13T14:59:01.311606",
+  "id" : { },
   "username" : "hijinhoon@naver.com",
+  "password" : "$2a$10$C4UY1GW3YLBLQCWwvLCZOOsZBF1Hmd5Cxi6rdLF97ZyvWIfMbOZ1G",
   "nickName" : "NickName~~",
+  "roleSet" : {
+    "roles" : [ "ROLE_USER" ]
+  },
+  "authorities" : [ {
+    "authority" : "ROLE_USER"
+  } ],
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/member/4051481b-a34f-4b51-b83b-c6d2d09bc022"
+      "href" : "http://localhost:8080/member/2ad943e9-f90e-4b7a-b148-06e9792cb00e"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-member-update"
@@ -1061,9 +1086,9 @@ Content-Length: 409
 <h4 id="resources-member-delete_curl_request"><a class="link" href="#resources-member-delete_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/064cd6c0-a598-4ef3-a8fe-08ae39072514' -i -X DELETE \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/1faa8169-e6fd-4670-8b67-13ee0f67aa27' -i -X DELETE \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc2MzM1NH0.p10nhnHaayQbo7juqd3A2UVsleQin7J0BX80hnOy1RaHMxjrS8vyb_i74FtgT-jqWACdK9ujp7kqUfT-kqXlcw'</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc3MzUyN30.U6nWJrt6UoaVKrSeP-KAMt_mKNrI5XPW7xiq_kMKQEXF3oj6u2oEFTYkjFny-IsHZ5uuRwD-8cTtdOJj2v52eA'</code></pre>
 </div>
 </div>
 </div>
@@ -1084,25 +1109,24 @@ X-Frame-Options: SAMEORIGIN</code></pre>
 </div>
 </div>
 </div>
-<div class="paragraph">
-<p>[[resources-member-delete-all]
-=== 회원 일괄 삭제</p>
 </div>
+<div class="sect2">
+<h3 id="resources-member-delete-all"><a class="link" href="#resources-member-delete-all">회원 일괄 삭제</a></h3>
 <div class="paragraph">
 <p><code>DELETE</code> 요청을 사용하여 회원 데이터를 일괄 삭제한다.</p>
 </div>
 <div class="sect3">
-<h4 id="resources-member-delete_curl_request"><a class="link" href="#resources-member-delete_curl_request">Example request</a></h4>
+<h4 id="resources-member-delete-all_curl_request"><a class="link" href="#resources-member-delete-all_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/delete/04e13919-66ce-49e4-bf21-8ed8a6858498,a4fcf2f7-c8f0-444a-8974-c5fe214f41b1,6f3aa2fc-c3f6-487b-a9cb-3c4a2bbe3224,0e4b683b-673d-4f4b-9dac-d5c1f58d0372,4af78b3e-8853-440a-923e-70f3b0677768,a548dcea-6307-49e1-810a-8f5915870f91,9ffb2aa3-cbee-418e-8a77-e063033ea55e,ae745d39-6e62-45ce-9980-ad0b42048eda,ec331fc3-1b28-4697-8e61-4a8159528685,7208fe28-f231-4d1c-9741-7de6a5543ba0,c3027ff6-4ee7-4115-8746-1562e9baf242,e81145e2-605e-4fd3-bd0b-86d911d33a4d,0697fff8-c358-4ca5-ac83-5a9c7241b782,7058906a-fdfd-4ee3-b070-167812f4fb44,58a3c48d-6f6b-430e-9c47-7e7125b073e7,1196ce42-52cc-4bd4-a403-92b568672143,a50e3ac0-82d2-4fd1-b5b3-62aa9eb3fbe2,24ecf9d9-d094-48a7-a6fd-6bb2898ce54f,2ee3a285-725e-4c62-9f14-a102dd7587b3,7eaf6381-b552-4203-bd92-d4842fff573a,e8728a64-7305-4eeb-97cf-1a7ebbe71db3,ca5f8942-7412-449e-b1f9-d15c9ff800dd,872fd52c-3baf-4615-817a-1df349481e05,be7e85a5-b895-4703-afc4-3b21b6aade02,8f007cdc-d998-4158-81bd-1f8618fea5de,ba1cc7b8-08c2-4dd8-9486-220e46c4ed27,44cbc4d1-a514-4df0-b054-9f6c32a0c59f,6c7dd655-131e-498a-94b9-336be0074a7a,b8ceafc3-3efe-433d-941a-3f7fc22262c7,ed5c3a49-656c-4d4d-836a-7c5f2651e608,98cbb52f-a339-44a0-ba55-2c20f9f78bb3,3238ea52-5285-4abe-a7c0-50242e3c2ed0,e958c940-a848-4ede-b789-d405cc14d4f1,b6b02b91-b0c7-4469-a9cc-a7f3ab030831,aae9b4d7-6fe9-4328-857a-51319f775a10,eb67c472-dd02-465f-911e-4a64dce79b55,5ce19dc8-d6ce-4d86-8d8c-af69ab6f2c43,7df0ab2e-e3d1-49d6-8ac8-5c83b0437e49,ca270436-aaa2-4368-9bf2-6bb69d872160,b2a071e2-8123-463f-8091-e25d0b167cfe,c80f4eb6-c860-4b5b-a92a-a9cb35bdaa5f,66ee5ddc-5c95-491f-bdc6-38294d0a27eb,69172d20-648d-40c5-afdb-b06c3331431e,5c1588a0-2f15-457c-8488-bbb426b0d3f4,84e1062f-9205-4a6c-9617-e957a6a997b5,b3a72acd-904f-4073-bdac-a58f1b35d8e2,0302825e-f7a0-444e-affa-666091eff620,fffb80bf-a348-4e99-9bf1-12e80ef8f8cf,adda22f3-3a40-4427-b7dc-566a799b76b3,6a973bb8-d52f-4b55-b326-540a6cd90ab7,be73e462-9253-4603-8d51-56e265c0b56d,b5bb6520-fee7-4f2a-8663-bc25a1b0d7a7,4f885a9a-ed6b-4154-939e-69ff6fe6bbc3,3b356b3e-80e8-4894-aeb9-87d76e188f46,2cfa6b54-533b-4241-9ae1-120ecb5dd72f,296c4d5c-5e35-4a1f-9016-820d73a3cecb,21d65316-fa82-43f4-b971-9e9c62fe93b1,9cdb250b-ab97-4cb4-8fb9-6738fe645bfe,f9c60e4e-e31d-41ce-8d9c-44572ca3956c,6a5874c7-14ed-4b23-a176-e52a0c2dde0e,e0e6ecc1-10d9-42f9-a7e7-712a62276eb6,b18b0e9b-e43f-45e1-902e-e6bfa1e15ddc,15027b4c-7b9e-45ad-80f9-f38a2a360d88,f07427a1-415a-4124-872f-2d9ced06f170,be54c57e-e332-4892-9b52-d95d09011a13,cf62d154-63c5-4305-84ae-947a7e9f3ad7,841ecd74-9886-438a-9fe8-f3e5419248be,7ac9acc9-a96d-40bb-87ac-c301a40e43bf,3cdcc64d-7593-4aa7-90ef-3b497ba5b705,1493cfae-29e2-49e0-9049-349a36b48ce9,b1a5ddb9-8ec1-48a7-9ad9-e0cb1ba43730,5c541da2-e4ef-4590-abf0-16578bbbdf10,e35f176b-48d2-4aca-ba30-886daef8c817,d36cc3cc-c342-49eb-ab67-29c22629b333,9e16dcdf-08ab-4e3e-9338-a4f53d950d3c,def3f992-1a99-4c53-b2a9-bb2d51069b2d,fef0b0a9-11c7-43b0-8733-8cdf82133f0b,72797ad0-ec7a-4d3e-b30d-bf0ae033c2f6,ab5aa7eb-ddcb-4187-bfe8-a10635972e6a,2de87dcc-e6ee-4143-b2ed-3cf5f83f385b,badb23fd-cefe-4f16-8816-a740add95bcd,89412223-376f-4580-b7c8-647050f26d1a,dd0b5dd1-a3e1-4118-8871-541673b63840,536625b4-f70d-4683-9e94-0e189ecaad4b,926cf722-23a9-4949-bc9b-1b9ac5715494,3f5e4ce7-fbf2-4a55-ac4f-ea9ff609a26e,26a03cb8-4a35-4667-9f50-74ffbe1c0d91,2e0bb7b9-f8ff-4c23-8206-0f3dabbae86c,28f2ef55-2294-4dbe-895e-0b890cffb1ad,22fd3630-22a2-4f7e-834e-b4c523ea47e1,eb26cd6e-e021-4337-9fb4-632a6ea74a8a,76fc2d8b-0844-47e7-96eb-e79b855816cf,842c35eb-7b5d-4dc5-8bb8-8a5ddabb6339,c98d8f21-c457-4b2c-adc9-d78176b5f9e7,6b1a90c7-7054-41b3-a2d7-59ed6fe21479,92e18dd6-6ae3-4073-aa3a-ce1851b1a185,a2485eca-3ab4-493d-93f2-5f231c5052e8,8443bf01-ac63-4cee-afba-58643eda3c59,18b734b7-50a4-4907-b1ac-424943f855c7,856bd1f7-d6a6-4b03-b292-72c16da04b4b' -i -X DELETE \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/delete/5d480821-bdfe-4055-bff9-3e53a129bbfb,21cbdd41-f0e4-4e72-b22d-773774a5cffa,2d8a0873-b842-486d-a7ea-7a91c8fad551,088acbb7-ff60-4a47-85be-bbae011fcdaa,4a628ce5-ad91-43a2-8cc3-087ad592db21,902b254b-e9d7-4f70-a2fe-d86f5028422f,766e391a-1070-4e39-91a3-52f169a6569d,07251c3f-22ba-4eae-98dd-b4dee957fb7f,c1f5477d-4efc-40f3-8091-2f11d5d0e5ed,0c9452a4-70da-44d3-aefd-00dc4bb06f8e,2fb9853c-daaf-4d46-96d6-97c835f004bf,783d2f0d-ee34-46fe-91f9-dae6ff307f16,23f4523f-a2e0-4f6c-bbd2-82c22bd5dfe6,1ec9b388-29cc-4ee3-ac91-ad4dd711ccc2,ad782a3a-055b-4002-8476-50fb18b935e4,31599800-4a93-4a4c-9f24-592d55c4bf81,cee50a0b-cddf-46e8-b0fb-96ed7ca3c6d2,33c208da-866f-4d32-a7a1-f44a8f427532,79e1fa7e-eba7-46c1-9385-51bb0a0ec7f9,a425fd55-17c3-48e0-9e93-887a868eac2c,e51365df-9433-46fd-ab49-2c2c689898bd,36281d6b-e7b7-430d-b3f5-77f9c81d8a58,4c78e90c-d26c-46b0-9848-43db779e3e14,219d1b2b-7e87-4408-937c-7d59b2f9a738,74ecd0f8-33c5-4654-b872-f6649f41d185,681b3c0b-a3b5-4663-8994-f2a756ee38e9,8e66b733-c4e4-43d3-832b-d87e413db5ef,2a47983f-de74-41c2-8112-24812f774263,37cd7c43-d3c5-484f-98b0-e77e39a0729b,2e8f2ada-9ff8-4538-97e3-2b0be733345e,d7d12484-3584-4d1c-8101-ec2268b0d9bd,cd0a962d-c1e3-49ff-9bdc-98d3e12ce555,edb54e63-8419-4ae6-b957-4f07c6185f12,83b3dc74-6b82-4344-89ec-5a1e15b250e1,6365ece5-8adf-46cc-a501-a20b098c9230,7fd6582c-39c6-4c7a-ba18-0e314f385bac,0032996b-2bd8-4e16-a751-9030e42ca32a,0ea67213-bf66-440f-995d-aa102bf2b9af,7e341aaf-e287-48f6-9c08-0eef12d4c163,cc86d013-8cab-41f0-987e-0a29e6a1cfbc,3d5a3b0b-2a2a-4a0c-a886-be4d4783bedc,538f505d-57f4-4125-8f25-b5a5d833b3b0,971f134d-b1be-4abc-8a7b-098dbf4985f9,317c976e-af86-4b8e-bb10-4d535c47e880,de7c8974-2ce6-4ebf-9620-773800cebf9b,dc2af2e2-ee5c-4529-b08a-b5285779ef9b,f5f6c784-8501-4fa0-ad12-0e61c9fb28be,39cc7e2d-3e50-44eb-8c4f-2cb126ac4fb5,c900dcc4-f1e4-4ffe-b9ef-aa57b92e5ea5,e7a420c5-d0ed-4807-a715-4933ef7a4b44,8874ac8a-f6d9-4845-9ec8-548b286ae938,35014c80-8226-4b41-9b91-03c2f2fcb73e,de17a5cb-23cb-425c-a162-70b3b44e9aae,8c9e2c90-8149-441e-898c-887c5026f9f1,797e921f-b3ba-4346-91f9-78ffbe1b3772,1da66e97-25ea-4178-8b50-9c2632bdcfa1,a104af31-465e-4905-8d0d-e39b8c9cce6b,2d87f2dd-2511-4357-ac34-caff65a1b82f,6f7d0772-6c4d-4e5d-bae8-27c095d31e41,394baab7-5662-4e04-8ab4-a5e1de17f442,2b7da050-6316-4aff-acc3-a34d698cf87d,ad72b9e5-b829-42da-9813-08a5cb8c477b,52d0c882-74d4-42e1-b515-e63f8aae68b6,c1d3101e-95dd-4d00-9434-4b6e6e9ef978,f0fe402a-e832-411b-ae5e-fe4dd5d2a332,65800ab7-38a9-4009-8de9-b007c35c8580,14abd21b-f7e5-4c60-88ab-b9fa29bbe7fe,cc05788d-9341-4107-9f1a-294858500719,a33782b3-601f-4e56-b87b-c82b02950e6e,56130306-71aa-46f9-bd75-6403f16127ef,bd3edd35-12a4-4065-8815-213635f138fa,0be46328-7aa1-49c8-8d2a-45e26fe79771,a83c210a-bb46-4c81-b6ad-5132d307d840,e6191ff8-2549-4467-a366-d415e15ccfb1,288bb924-6302-4c3d-b8e0-2a418904aac0,4af80dd0-32ab-45f2-9c6a-eed000b27a61,1dc3a1a9-84dd-4dfd-8d39-70b1a69e9ed7,901dcf2e-3991-4bbf-948a-ac23908b25cd,0b7e0d77-6946-45a9-b527-c055909b9054,aa0b50dc-dc17-44dd-8027-4d5b17c8f3e2,8965c77f-a891-4266-b03c-d96f5330a731,00fd3c04-7609-40e1-9f1c-9c048edbe554,a00c345d-9e14-4c4e-bda5-59854e6de1d7,e50e85e8-b1b1-461a-a10f-193571fb59d9,32cea2d7-060d-4927-bb41-cceb55a7c642,0674f682-f341-4690-ae71-b24c54085bfe,6a4a288e-e3b0-47f7-9865-8db0e6d79783,813e782f-5084-4e4e-93c3-65f8919181a8,f29260b8-92aa-4ffc-94f3-e6e90dd9ddce,f347a2d3-3c9c-4b61-95d2-2fa7d7f830e4,38085c83-7de8-4227-9045-437d496b03aa,532e7a06-5c91-4800-b5d3-08e7ebb820c2,690ef8e5-a329-4482-816f-69e5448185fc,c2c7ecd3-2ec4-46b6-971b-90c95ccecc4a,cf408c69-95ec-4084-8c32-cd7cfa4d5ea4,36f8923f-07f6-4f67-9f8f-6be666a322ff,4abc198e-675d-4bc8-9988-84ab0e3f64b2,fb04842d-0889-40cf-9fe0-ac46c8fffa1c,58ab2e50-0e68-42a2-88cd-8941f4830b47,856e4826-2ff0-444b-8256-778e540096c4' -i -X DELETE \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc2MzM1NH0.p10nhnHaayQbo7juqd3A2UVsleQin7J0BX80hnOy1RaHMxjrS8vyb_i74FtgT-jqWACdK9ujp7kqUfT-kqXlcw'</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc3MzUyOH0.2w0eYmmWXAyXmsVmFn30PZrSNo-2Q5z8WqGV6S095caX5KdfSqdBQb1AL1IlnIjRcGNLp6W4xQoW3PzPooxqqA'</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="resources-member-delete_http_response"><a class="link" href="#resources-member-delete_http_response">Example response</a></h4>
+<h4 id="resources-member-delete-all_http_response"><a class="link" href="#resources-member-delete-all_http_response">Example response</a></h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 204 No Content
@@ -1125,7 +1149,7 @@ X-Frame-Options: SAMEORIGIN</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2023-03-13 12:08:56 +0900
+Last updated 2023-03-13 12:11:13 +0900
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">

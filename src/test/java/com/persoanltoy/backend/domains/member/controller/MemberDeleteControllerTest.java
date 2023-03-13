@@ -1,6 +1,7 @@
 package com.persoanltoy.backend.domains.member.controller;
 
 import com.persoanltoy.backend.common.BaseTest;
+import com.persoanltoy.backend.domains.member.domain.entity.MemberNo;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpHeaders;
@@ -21,7 +22,7 @@ public class MemberDeleteControllerTest extends BaseTest {
     @DisplayName("delete")
     void deleteSuccess() throws Exception {
         //given
-        UUID generate = super.memberDummyGenerate.generate();
+        MemberNo generate = super.memberDummyGenerate.generate();
         String accessToken = super.memberDummyGenerate.getAccessToken();
         String url = String.format("/member/%s", generate);
 
@@ -44,7 +45,7 @@ public class MemberDeleteControllerTest extends BaseTest {
         //given
         super.memberDummyGenerate.generate();
         String accessToken = super.memberDummyGenerate.getAccessToken();
-        List<String> generate = super.memberDummyGenerate.generate(100).stream().map(UUID::toString).collect(Collectors.toList());
+        List<String> generate = super.memberDummyGenerate.generate(100).stream().map(MemberNo::toString).collect(Collectors.toList());
         String url = String.format("/member/delete/%s", String.join(",", generate));
 
         //when-then
@@ -64,7 +65,7 @@ public class MemberDeleteControllerTest extends BaseTest {
     @DisplayName("delete fail not found")
     void deleteFailNotFound() throws Exception {
         //given
-        UUID generate = memberDummyGenerate.generate();
+        MemberNo generate = memberDummyGenerate.generate();
         String accessToken = super.memberDummyGenerate.getAccessToken();
         String url = String.format("/member/%s", UUID.randomUUID());
 

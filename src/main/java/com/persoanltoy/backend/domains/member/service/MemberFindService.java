@@ -1,6 +1,7 @@
 package com.persoanltoy.backend.domains.member.service;
 
 import com.persoanltoy.backend.domains.member.domain.entity.Member;
+import com.persoanltoy.backend.domains.member.domain.entity.MemberNo;
 import com.persoanltoy.backend.domains.member.domain.repository.MemberRepository;
 import com.persoanltoy.backend.domains.member.dto.request.MemberQueryDto;
 import com.persoanltoy.backend.domains.member.dto.response.MemberDto;
@@ -19,8 +20,8 @@ public class MemberFindService {
     private final MemberRepository memberRepository;
 
     @Transactional(readOnly = true)
-    public MemberDto find(UUID id) {
-        return MemberDto.of(memberRepository.findById(id).orElseThrow(IllegalArgumentException::new));
+    public Member find(UUID id) {
+        return memberRepository.findById(MemberNo.of(id)).orElseThrow(IllegalArgumentException::new);
     }
 
     @Transactional(readOnly = true)

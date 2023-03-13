@@ -10,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -40,10 +39,10 @@ class MemberRepositoryTest {
                 })
                 .collect(Collectors.toList());
         this.memberRepository.saveAll(members);
-        List<UUID> collect = members.stream().map(Member::getId).collect(Collectors.toList());
+//        List<UUID> collect = members.stream().map(Member::getId).map(MemberId::).collect(Collectors.toList());
 
         //when
-        this.memberRepository.deleteAllByIdInBatch(collect);
+//        this.memberRepository.deleteAllByIdInBatch(collect);
     }
 
 }

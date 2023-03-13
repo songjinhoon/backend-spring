@@ -28,7 +28,7 @@ public class MemberFindController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> find(@PathVariable UUID id) {
-        MemberDto find = memberFindService.find(id);
+        MemberDto find = MemberDto.of(memberFindService.find(id));
 
         WebMvcLinkBuilder webMvcLinkBuilder = linkTo(MemberCreateController.class).slash(find.getId());
         MemberResource memberResource = new MemberResource(find);
