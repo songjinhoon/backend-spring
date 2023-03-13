@@ -97,3 +97,10 @@ operation::member-find[snippets='curl-request,http-response']
 `GET` 요청을 사용하여 회원 데이터를 쿼리한다.
 
 operation::member-query[snippets='curl-request,http-response,request-parameters']
+
+[[resources-member-update]]
+=== 회원 수정
+
+`PUT` 요청을 사용하여 회원 데이터를 수정한다.
+
+operation::member-update[snippets='curl-request,http-response,request-fields']

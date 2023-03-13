@@ -479,12 +479,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#resources-member-query">회원 쿼리 조회</a>
 <ul class="sectlevel3">
 <li><a href="#resources-member-query_curl_request">Example request</a></li>
-<li><a href="#resources-member-query_http_request">HTTP request</a></li>
 <li><a href="#resources-member-query_http_response">Example response</a></li>
-<li><a href="#resources-member-query_httpie_request">HTTPie request</a></li>
-<li><a href="#resources-member-query_request_body">Request body</a></li>
 <li><a href="#resources-member-query_request_parameters">Request parameters</a></li>
-<li><a href="#resources-member-query_response_body">Response body</a></li>
+</ul>
+</li>
+<li><a href="#resources-member-update">회원 쿼리 조회</a>
+<ul class="sectlevel3">
+<li><a href="#resources-member-update_curl_request">Example request</a></li>
+<li><a href="#resources-member-update_http_response">Example response</a></li>
+<li><a href="#resources-member-update_request_fields">Request fields</a></li>
 </ul>
 </li>
 </ul>
@@ -618,7 +621,7 @@ API 관리 문서 입니다.
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Location: http://localhost:8080/member/18bcc10e-b748-4a43-a2af-e90f9e63db0d
+Location: http://localhost:8080/member/7972ba0a-4c13-41c7-8ed4-2f844814c4fc
 Content-Type: application/hal+json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
@@ -626,17 +629,17 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
-Content-Length: 578
+Content-Length: 598
 
 {
-  "rgsDt" : "2023-03-12 15:10:04",
-  "updDt" : "2023-03-12 15:10:04",
-  "id" : "18bcc10e-b748-4a43-a2af-e90f9e63db0d",
+  "rgsDt" : "2023-03-13 10:34:44",
+  "updDt" : "2023-03-13 10:34:44",
+  "id" : "7972ba0a-4c13-41c7-8ed4-2f844814c4fc",
   "username" : "hijinhoon@naver.com",
   "nickName" : "hijinhoon",
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/member/18bcc10e-b748-4a43-a2af-e90f9e63db0d"
+      "href" : "http://localhost:8080/member/7972ba0a-4c13-41c7-8ed4-2f844814c4fc"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-sign-up"
@@ -645,7 +648,7 @@ Content-Length: 578
       "href" : "http://localhost:8080/member"
     },
     "update-events" : {
-      "href" : "http://localhost:8080/member/18bcc10e-b748-4a43-a2af-e90f9e63db0d"
+      "href" : "http://localhost:8080/member/7972ba0a-4c13-41c7-8ed4-2f844814c4fc"
     }
   }
 }</code></pre>
@@ -718,8 +721,8 @@ Content-Length: 578
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Set-Cookie: refresh_token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODY4NzgwNH0.rH0jbMB4HxQgcnyE3FF2Jo7P644e52Tz_VH97_Ac4d7VTZwHul2f3JgQlVSfezJFiWewc9o2CtXSDuSmu84_0A; Path=/; Max-Age=86400000; Expires=Sat, 6 Dec 2025 06:10:04 GMT; Secure; HttpOnly
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODY4NzgwNH0.rH0jbMB4HxQgcnyE3FF2Jo7P644e52Tz_VH97_Ac4d7VTZwHul2f3JgQlVSfezJFiWewc9o2CtXSDuSmu84_0A
+Set-Cookie: refresh_token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc1NzY4NH0.wb2bE-2iEolJeyFcrPPHJ32xcLrAp07jJ1Z2GD-evYfV5hvZpBTwlO_xOOhrF703tl8w2Dh4pgKT_pyReST-jw; Path=/; Max-Age=86400000; Expires=Sun, 7 Dec 2025 01:34:44 GMT; Secure; HttpOnly
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc1NzY4NH0.wb2bE-2iEolJeyFcrPPHJ32xcLrAp07jJ1Z2GD-evYfV5hvZpBTwlO_xOOhrF703tl8w2Dh4pgKT_pyReST-jw
 Content-Type: application/json;charset=UTF-8
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
@@ -781,9 +784,9 @@ X-Frame-Options: SAMEORIGIN</code></pre>
 <h4 id="resources-member-find_curl_request"><a class="link" href="#resources-member-find_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/0bc6a286-2c80-495c-8bf3-b9293dab2a6d' -i -X GET \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/253c9c28-b9f4-4ad7-8873-565e95badd45' -i -X GET \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODY4NzgxMn0.2U-BewOgBxEsbIi_rSER9EUkJC5YHmTrlrXyy8odcx46s1PVrJYmS_sCSiwFmCd3sINmqAE--_f9pC70661S7Q'</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc1NzY5MX0.R8N2hSCfclgwgqWuzc73R8c3a3qIPa26djCk9YIay5chOIsTegToc6u6CyE05zrR_GSwNUoxbAQGIcEjpopbQA'</code></pre>
 </div>
 </div>
 </div>
@@ -802,17 +805,17 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
-Content-Length: 582
+Content-Length: 602
 
 {
-  "rgsDt" : "2023-03-12 15:10:12",
-  "updDt" : "2023-03-12 15:10:12",
-  "id" : "0bc6a286-2c80-495c-8bf3-b9293dab2a6d",
+  "rgsDt" : "2023-03-13 10:34:51",
+  "updDt" : "2023-03-13 10:34:51",
+  "id" : "253c9c28-b9f4-4ad7-8873-565e95badd45",
   "username" : "hijinhoon@naver.com",
   "nickName" : "hijinhoon",
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/member/0bc6a286-2c80-495c-8bf3-b9293dab2a6d"
+      "href" : "http://localhost:8080/member/253c9c28-b9f4-4ad7-8873-565e95badd45"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-member-find"
@@ -821,7 +824,7 @@ Content-Length: 582
       "href" : "http://localhost:8080/member"
     },
     "update-events" : {
-      "href" : "http://localhost:8080/member/0bc6a286-2c80-495c-8bf3-b9293dab2a6d"
+      "href" : "http://localhost:8080/member/253c9c28-b9f4-4ad7-8873-565e95badd45"
     }
   }
 }</code></pre>
@@ -840,18 +843,7 @@ Content-Length: 582
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member?page=1&amp;size=5&amp;sort=username%2Cdesc&amp;sort=nickName%2Casc&amp;username=hijinhoon&amp;nickName=1' -i -X GET \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODY4NzgxMn0.2U-BewOgBxEsbIi_rSER9EUkJC5YHmTrlrXyy8odcx46s1PVrJYmS_sCSiwFmCd3sINmqAE--_f9pC70661S7Q'</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="resources-member-query_http_request"><a class="link" href="#resources-member-query_http_request">HTTP request</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /member?page=1&amp;size=5&amp;sort=username%2Cdesc&amp;sort=nickName%2Casc&amp;username=hijinhoon&amp;nickName=1 HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODY4NzgxMn0.2U-BewOgBxEsbIi_rSER9EUkJC5YHmTrlrXyy8odcx46s1PVrJYmS_sCSiwFmCd3sINmqAE--_f9pC70661S7Q
-Host: localhost:8080</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc1NzY5MX0.R8N2hSCfclgwgqWuzc73R8c3a3qIPa26djCk9YIay5chOIsTegToc6u6CyE05zrR_GSwNUoxbAQGIcEjpopbQA'</code></pre>
 </div>
 </div>
 </div>
@@ -870,37 +862,37 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
-Content-Length: 1499
+Content-Length: 1556
 
 {
   "content" : [ {
-    "rgsDt" : "2023-03-12 15:10:12",
-    "updDt" : "2023-03-12 15:10:12",
-    "id" : "e9fb872d-d22e-4819-8f11-ef87d377f64b",
+    "rgsDt" : "2023-03-13 10:34:51",
+    "updDt" : "2023-03-13 10:34:51",
+    "id" : "3e0fe66b-027f-49d2-85ae-e5cbac8a8ef2",
     "username" : "hijinhoon41@naver.com",
     "nickName" : "hijinhoon41"
   }, {
-    "rgsDt" : "2023-03-12 15:10:12",
-    "updDt" : "2023-03-12 15:10:12",
-    "id" : "9646797d-2933-4233-a941-f41ab465256a",
+    "rgsDt" : "2023-03-13 10:34:51",
+    "updDt" : "2023-03-13 10:34:51",
+    "id" : "9906b077-435e-427a-9950-0057b6f80967",
     "username" : "hijinhoon31@naver.com",
     "nickName" : "hijinhoon31"
   }, {
-    "rgsDt" : "2023-03-12 15:10:12",
-    "updDt" : "2023-03-12 15:10:12",
-    "id" : "43862f56-83e1-4bd9-b00e-5c877298b7af",
+    "rgsDt" : "2023-03-13 10:34:51",
+    "updDt" : "2023-03-13 10:34:51",
+    "id" : "fba4725d-4985-4764-ba14-cc22e7bf1a54",
     "username" : "hijinhoon21@naver.com",
     "nickName" : "hijinhoon21"
   }, {
-    "rgsDt" : "2023-03-12 15:10:12",
-    "updDt" : "2023-03-12 15:10:12",
-    "id" : "0fdfa243-3061-4486-9ec9-380973c7be16",
+    "rgsDt" : "2023-03-13 10:34:51",
+    "updDt" : "2023-03-13 10:34:51",
+    "id" : "cb7a313f-66f5-4d89-80f1-aa585f7e1fe2",
     "username" : "hijinhoon1@naver.com",
     "nickName" : "hijinhoon1"
   }, {
-    "rgsDt" : "2023-03-12 15:10:12",
-    "updDt" : "2023-03-12 15:10:12",
-    "id" : "f07659bc-b629-4504-944a-53acfeb2c359",
+    "rgsDt" : "2023-03-13 10:34:51",
+    "updDt" : "2023-03-13 10:34:51",
+    "id" : "19c55797-9ee2-4469-9305-661eb9bb158c",
     "username" : "hijinhoon19@naver.com",
     "nickName" : "hijinhoon19"
   } ],
@@ -919,7 +911,6 @@ Content-Length: 1499
   "last" : false,
   "totalPages" : 4,
   "totalElements" : 19,
-  "first" : false,
   "size" : 5,
   "number" : 1,
   "sort" : {
@@ -927,27 +918,10 @@ Content-Length: 1499
     "sorted" : true,
     "unsorted" : false
   },
+  "first" : false,
   "numberOfElements" : 5,
   "empty" : false
 }</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="resources-member-query_httpie_request"><a class="link" href="#resources-member-query_httpie_request">HTTPie request</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ http GET 'http://localhost:8080/member?page=1&amp;size=5&amp;sort=username%2Cdesc&amp;sort=nickName%2Casc&amp;username=hijinhoon&amp;nickName=1' \
-    'Content-Type:application/json;charset=UTF-8' \
-    'authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODY4NzgxMn0.2U-BewOgBxEsbIi_rSER9EUkJC5YHmTrlrXyy8odcx46s1PVrJYmS_sCSiwFmCd3sINmqAE--_f9pC70661S7Q'</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="resources-member-query_request_body"><a class="link" href="#resources-member-query_request_body">Request body</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs"></code></pre>
 </div>
 </div>
 </div>
@@ -988,70 +962,86 @@ Content-Length: 1499
 </tbody>
 </table>
 </div>
+</div>
+<div class="sect2">
+<h3 id="resources-member-update"><a class="link" href="#resources-member-update">회원 쿼리 조회</a></h3>
+<div class="paragraph">
+<p><code>PUT</code> 요청을 사용하여 회원 데이터를 수정한다.</p>
+</div>
 <div class="sect3">
-<h4 id="resources-member-query_response_body"><a class="link" href="#resources-member-query_response_body">Response body</a></h4>
+<h4 id="resources-member-update_curl_request"><a class="link" href="#resources-member-update_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "content" : [ {
-    "rgsDt" : "2023-03-12 15:10:12",
-    "updDt" : "2023-03-12 15:10:12",
-    "id" : "e9fb872d-d22e-4819-8f11-ef87d377f64b",
-    "username" : "hijinhoon41@naver.com",
-    "nickName" : "hijinhoon41"
-  }, {
-    "rgsDt" : "2023-03-12 15:10:12",
-    "updDt" : "2023-03-12 15:10:12",
-    "id" : "9646797d-2933-4233-a941-f41ab465256a",
-    "username" : "hijinhoon31@naver.com",
-    "nickName" : "hijinhoon31"
-  }, {
-    "rgsDt" : "2023-03-12 15:10:12",
-    "updDt" : "2023-03-12 15:10:12",
-    "id" : "43862f56-83e1-4bd9-b00e-5c877298b7af",
-    "username" : "hijinhoon21@naver.com",
-    "nickName" : "hijinhoon21"
-  }, {
-    "rgsDt" : "2023-03-12 15:10:12",
-    "updDt" : "2023-03-12 15:10:12",
-    "id" : "0fdfa243-3061-4486-9ec9-380973c7be16",
-    "username" : "hijinhoon1@naver.com",
-    "nickName" : "hijinhoon1"
-  }, {
-    "rgsDt" : "2023-03-12 15:10:12",
-    "updDt" : "2023-03-12 15:10:12",
-    "id" : "f07659bc-b629-4504-944a-53acfeb2c359",
-    "username" : "hijinhoon19@naver.com",
-    "nickName" : "hijinhoon19"
-  } ],
-  "pageable" : {
-    "sort" : {
-      "empty" : false,
-      "sorted" : true,
-      "unsorted" : false
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/ce572f1b-51f1-4809-9717-93c968b707a2' -i -X PUT \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc1NzY5MX0.R8N2hSCfclgwgqWuzc73R8c3a3qIPa26djCk9YIay5chOIsTegToc6u6CyE05zrR_GSwNUoxbAQGIcEjpopbQA' \
+    -d '{
+  "nickName" : "NickName~~"
+}'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="resources-member-update_http_response"><a class="link" href="#resources-member-update_http_response">Example response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/hal+json
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: SAMEORIGIN
+Content-Length: 409
+
+{
+  "rgsDt" : "2023-03-13 10:34:51",
+  "updDt" : "2023-03-13 10:34:51",
+  "id" : "ce572f1b-51f1-4809-9717-93c968b707a2",
+  "username" : "hijinhoon@naver.com",
+  "nickName" : "NickName~~",
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/member/ce572f1b-51f1-4809-9717-93c968b707a2"
     },
-    "offset" : 5,
-    "pageNumber" : 1,
-    "pageSize" : 5,
-    "paged" : true,
-    "unpaged" : false
-  },
-  "last" : false,
-  "totalPages" : 4,
-  "totalElements" : 19,
-  "first" : false,
-  "size" : 5,
-  "number" : 1,
-  "sort" : {
-    "empty" : false,
-    "sorted" : true,
-    "unsorted" : false
-  },
-  "numberOfElements" : 5,
-  "empty" : false
+    "profile" : {
+      "href" : "/docs/index.html#resources-member-update"
+    }
+  }
 }</code></pre>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="resources-member-update_request_fields"><a class="link" href="#resources-member-update_request_fields">Request fields</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">필드명</th>
+<th class="tableblock halign-left valign-top">타입</th>
+<th class="tableblock halign-left valign-top">설명</th>
+<th class="tableblock halign-left valign-top">필수값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nickName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">닉네임</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -1060,7 +1050,7 @@ Content-Length: 1499
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2023-03-12 15:09:21 +0900
+Last updated 2023-03-13 10:34:15 +0900
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">

@@ -28,7 +28,7 @@ public class MemberUpdateController {
         }
         Member update = memberUpdateService.update(id, memberUpdateDto);
         MemberResource memberResource = new MemberResource(MemberDto.of(update));
-        memberResource.add(Link.of("/docs/index.html#resources-events-update", "profile"));
+        memberResource.add(Link.of("/docs/index.html#resources-member-update", "profile"));
         return ResponseEntity.ok().body(memberResource);
     }
 

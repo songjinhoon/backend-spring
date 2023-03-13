@@ -9,6 +9,9 @@ import org.springframework.http.MediaType;
 
 import java.util.UUID;
 
+import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
+import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
+import static org.springframework.restdocs.payload.PayloadDocumentation.requestFields;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -23,7 +26,7 @@ class MemberUpdateControllerTest extends BaseTest {
         String accessToken = super.memberDummyGenerate.getAccessToken();
         String url = String.format("/member/%s", generate);
         MemberUpdateDto memberUpdateDto = MemberUpdateDto.builder()
-                .nickName("changeNickName")
+                .nickName("NickName~~")
                 .build();
 
         //when-then
@@ -34,6 +37,14 @@ class MemberUpdateControllerTest extends BaseTest {
                 )
                 .andDo(print())
                 .andExpect(status().isOk())
+                .andDo(
+                        document(
+                                "member-update",
+                                requestFields(
+                                        fieldWithPath("nickName").description("닉네임")
+                                )
+                        )
+                )
         ;
     }
 
