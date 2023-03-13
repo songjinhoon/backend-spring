@@ -57,7 +57,7 @@ API 관리 문서 입니다.
 | 잘못된 요청을 보낸 경우. 응답 본문에 더 오류에 대한 정보가 담겨있다.
 
 | `404 Not Found`
-| 요청한 리소스가 없음.
+| 요청한 리소스가 없음.(리소스가 없거나 수정/삭제에 해당하는 데이터가 존재하지 않을 경우)
 |===
 
 [[resources-Auth]]
@@ -104,3 +104,17 @@ operation::member-query[snippets='curl-request,http-response,request-parameters'
 `PUT` 요청을 사용하여 회원 데이터를 수정한다.
 
 operation::member-update[snippets='curl-request,http-response,request-fields']
+
+[[resources-member-delete]]
+=== 회원 삭제
+
+`DELETE` 요청을 사용하여 회원 데이터를 삭제한다.
+
+operation::member-delete[snippets='curl-request,http-response']
+
+[[resources-member-delete-all]]
+=== 회원 일괄 삭제
+
+`DELETE` 요청을 사용하여 회원 데이터를 일괄 삭제한다.
+
+operation::member-delete-all[snippets='curl-request,http-response']

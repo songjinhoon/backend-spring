@@ -2,6 +2,7 @@ package com.persoanltoy.backend.exception;
 
 import com.persoanltoy.backend.domains.common.ResponseDto;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -14,6 +15,12 @@ public class CustomExceptionHandler {
     public ResponseEntity<ResponseDto<?>> illegalArgumentException(Exception e) {
         log.error(e.getMessage());
         return ResponseEntity.ok().build();
+    }
+
+    @ExceptionHandler(EmptyResultDataAccessException.class)
+    public ResponseEntity<ResponseDto<?>> emptyResultDataAccessException(Exception e) {
+        log.error(e.getMessage());
+        return ResponseEntity.notFound().build();
     }
 
     /*@ExceptionHandler(RuntimeException.class)

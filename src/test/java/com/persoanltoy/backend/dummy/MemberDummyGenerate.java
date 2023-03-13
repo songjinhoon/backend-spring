@@ -14,7 +14,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
 import javax.persistence.EntityManager;
-import java.io.InputStream;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -73,7 +72,7 @@ public class MemberDummyGenerate {
         return resultActions.andReturn().getResponse().getHeader(AuthConstants.AUTHORIZATION_HEADER);
     }
 
-    public void generate(int i) {
+    public List<UUID> generate(int i) {
         List<Member> members = IntStream.range(0, i)
                 .mapToObj(data -> {
                     SignUpDto signUpDto = SignUpDto.builder()
@@ -85,5 +84,6 @@ public class MemberDummyGenerate {
                 })
                 .collect(Collectors.toList());
         memberRepository.saveAll(members);
+        return members.stream().map(Member::getId).collect(Collectors.toList());
     }
 }

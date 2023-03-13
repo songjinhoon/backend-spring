@@ -483,11 +483,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#resources-member-query_request_parameters">Request parameters</a></li>
 </ul>
 </li>
-<li><a href="#resources-member-update">회원 쿼리 조회</a>
+<li><a href="#resources-member-update">회원 수정</a>
 <ul class="sectlevel3">
 <li><a href="#resources-member-update_curl_request">Example request</a></li>
 <li><a href="#resources-member-update_http_response">Example response</a></li>
 <li><a href="#resources-member-update_request_fields">Request fields</a></li>
+</ul>
+</li>
+<li><a href="#resources-member-delete">회원 삭제</a>
+<ul class="sectlevel3">
+<li><a href="#resources-member-delete_curl_request">Example request</a></li>
+<li><a href="#resources-member-delete_http_response">Example response</a></li>
+<li><a href="#resources-member-delete_curl_request">Example request</a></li>
+<li><a href="#resources-member-delete_http_response">Example response</a></li>
 </ul>
 </li>
 </ul>
@@ -582,7 +590,7 @@ API 관리 문서 입니다.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>404 Not Found</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">요청한 리소스가 없음.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">요청한 리소스가 없음.(리소스가 없거나 수정/삭제에 해당하는 데이터가 존재하지 않을 경우)</p></td>
 </tr>
 </tbody>
 </table>
@@ -621,7 +629,7 @@ API 관리 문서 입니다.
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Location: http://localhost:8080/member/7972ba0a-4c13-41c7-8ed4-2f844814c4fc
+Location: http://localhost:8080/member/4e917580-d016-4638-8ca7-8204942e2bba
 Content-Type: application/hal+json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
@@ -632,14 +640,14 @@ X-Frame-Options: SAMEORIGIN
 Content-Length: 598
 
 {
-  "rgsDt" : "2023-03-13 10:34:44",
-  "updDt" : "2023-03-13 10:34:44",
-  "id" : "7972ba0a-4c13-41c7-8ed4-2f844814c4fc",
+  "rgsDt" : "2023-03-13 12:09:13",
+  "updDt" : "2023-03-13 12:09:13",
+  "id" : "4e917580-d016-4638-8ca7-8204942e2bba",
   "username" : "hijinhoon@naver.com",
   "nickName" : "hijinhoon",
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/member/7972ba0a-4c13-41c7-8ed4-2f844814c4fc"
+      "href" : "http://localhost:8080/member/4e917580-d016-4638-8ca7-8204942e2bba"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-sign-up"
@@ -648,7 +656,7 @@ Content-Length: 598
       "href" : "http://localhost:8080/member"
     },
     "update-events" : {
-      "href" : "http://localhost:8080/member/7972ba0a-4c13-41c7-8ed4-2f844814c4fc"
+      "href" : "http://localhost:8080/member/4e917580-d016-4638-8ca7-8204942e2bba"
     }
   }
 }</code></pre>
@@ -721,8 +729,8 @@ Content-Length: 598
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Set-Cookie: refresh_token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc1NzY4NH0.wb2bE-2iEolJeyFcrPPHJ32xcLrAp07jJ1Z2GD-evYfV5hvZpBTwlO_xOOhrF703tl8w2Dh4pgKT_pyReST-jw; Path=/; Max-Age=86400000; Expires=Sun, 7 Dec 2025 01:34:44 GMT; Secure; HttpOnly
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc1NzY4NH0.wb2bE-2iEolJeyFcrPPHJ32xcLrAp07jJ1Z2GD-evYfV5hvZpBTwlO_xOOhrF703tl8w2Dh4pgKT_pyReST-jw
+Set-Cookie: refresh_token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc2MzM2MH0.5VmU0Ju1TvM7X4c41oT1pY0bwvJD-SbdvMnGLqOahla7IzE9M4lh4SwgC8D3W1ydfAV4yK0Fam18PDiXyGNnjA; Path=/; Max-Age=86400000; Expires=Sun, 7 Dec 2025 03:09:20 GMT; Secure; HttpOnly
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc2MzM2MH0.5VmU0Ju1TvM7X4c41oT1pY0bwvJD-SbdvMnGLqOahla7IzE9M4lh4SwgC8D3W1ydfAV4yK0Fam18PDiXyGNnjA
 Content-Type: application/json;charset=UTF-8
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
@@ -784,9 +792,9 @@ X-Frame-Options: SAMEORIGIN</code></pre>
 <h4 id="resources-member-find_curl_request"><a class="link" href="#resources-member-find_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/253c9c28-b9f4-4ad7-8873-565e95badd45' -i -X GET \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/33377d14-5251-49ca-94df-cb254c8430f2' -i -X GET \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc1NzY5MX0.R8N2hSCfclgwgqWuzc73R8c3a3qIPa26djCk9YIay5chOIsTegToc6u6CyE05zrR_GSwNUoxbAQGIcEjpopbQA'</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc2MzM2N30.hBXWEDB3_R2VVrYBDYbAKGzsEQhfaHb4evs04wSrEoMAW8qpPUV6FgFK6P9e89-9m1NsyaNsT6HUb45hFDZebA'</code></pre>
 </div>
 </div>
 </div>
@@ -808,14 +816,14 @@ X-Frame-Options: SAMEORIGIN
 Content-Length: 602
 
 {
-  "rgsDt" : "2023-03-13 10:34:51",
-  "updDt" : "2023-03-13 10:34:51",
-  "id" : "253c9c28-b9f4-4ad7-8873-565e95badd45",
+  "rgsDt" : "2023-03-13 12:09:27",
+  "updDt" : "2023-03-13 12:09:27",
+  "id" : "33377d14-5251-49ca-94df-cb254c8430f2",
   "username" : "hijinhoon@naver.com",
   "nickName" : "hijinhoon",
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/member/253c9c28-b9f4-4ad7-8873-565e95badd45"
+      "href" : "http://localhost:8080/member/33377d14-5251-49ca-94df-cb254c8430f2"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-member-find"
@@ -824,7 +832,7 @@ Content-Length: 602
       "href" : "http://localhost:8080/member"
     },
     "update-events" : {
-      "href" : "http://localhost:8080/member/253c9c28-b9f4-4ad7-8873-565e95badd45"
+      "href" : "http://localhost:8080/member/33377d14-5251-49ca-94df-cb254c8430f2"
     }
   }
 }</code></pre>
@@ -843,7 +851,7 @@ Content-Length: 602
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member?page=1&amp;size=5&amp;sort=username%2Cdesc&amp;sort=nickName%2Casc&amp;username=hijinhoon&amp;nickName=1' -i -X GET \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc1NzY5MX0.R8N2hSCfclgwgqWuzc73R8c3a3qIPa26djCk9YIay5chOIsTegToc6u6CyE05zrR_GSwNUoxbAQGIcEjpopbQA'</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc2MzM2Nn0.IFVPRfrzvK20wJAx9h5MNkB7ZQqYt3Y-OyRa2St7ob-7jz_jRYXMLHNpSjJAN4pCobJQpXwJG_lBsLVekT5w-Q'</code></pre>
 </div>
 </div>
 </div>
@@ -866,60 +874,60 @@ Content-Length: 1556
 
 {
   "content" : [ {
-    "rgsDt" : "2023-03-13 10:34:51",
-    "updDt" : "2023-03-13 10:34:51",
-    "id" : "3e0fe66b-027f-49d2-85ae-e5cbac8a8ef2",
+    "rgsDt" : "2023-03-13 12:09:26",
+    "updDt" : "2023-03-13 12:09:26",
+    "id" : "3c13907e-0e7f-49b7-a95f-9c5dd80c415d",
     "username" : "hijinhoon41@naver.com",
     "nickName" : "hijinhoon41"
   }, {
-    "rgsDt" : "2023-03-13 10:34:51",
-    "updDt" : "2023-03-13 10:34:51",
-    "id" : "9906b077-435e-427a-9950-0057b6f80967",
+    "rgsDt" : "2023-03-13 12:09:26",
+    "updDt" : "2023-03-13 12:09:26",
+    "id" : "2fcc1faf-059a-44d3-a714-de60afa526b6",
     "username" : "hijinhoon31@naver.com",
     "nickName" : "hijinhoon31"
   }, {
-    "rgsDt" : "2023-03-13 10:34:51",
-    "updDt" : "2023-03-13 10:34:51",
-    "id" : "fba4725d-4985-4764-ba14-cc22e7bf1a54",
+    "rgsDt" : "2023-03-13 12:09:26",
+    "updDt" : "2023-03-13 12:09:26",
+    "id" : "1e12688a-0665-4ae9-91df-a62aa23f7979",
     "username" : "hijinhoon21@naver.com",
     "nickName" : "hijinhoon21"
   }, {
-    "rgsDt" : "2023-03-13 10:34:51",
-    "updDt" : "2023-03-13 10:34:51",
-    "id" : "cb7a313f-66f5-4d89-80f1-aa585f7e1fe2",
+    "rgsDt" : "2023-03-13 12:09:26",
+    "updDt" : "2023-03-13 12:09:26",
+    "id" : "0ddd3478-0c5c-46dc-83b7-b30e2b1e4522",
     "username" : "hijinhoon1@naver.com",
     "nickName" : "hijinhoon1"
   }, {
-    "rgsDt" : "2023-03-13 10:34:51",
-    "updDt" : "2023-03-13 10:34:51",
-    "id" : "19c55797-9ee2-4469-9305-661eb9bb158c",
+    "rgsDt" : "2023-03-13 12:09:26",
+    "updDt" : "2023-03-13 12:09:26",
+    "id" : "905efdf6-494e-46df-b81b-afb338b93e9f",
     "username" : "hijinhoon19@naver.com",
     "nickName" : "hijinhoon19"
   } ],
   "pageable" : {
     "sort" : {
-      "empty" : false,
+      "unsorted" : false,
       "sorted" : true,
-      "unsorted" : false
+      "empty" : false
     },
-    "offset" : 5,
     "pageNumber" : 1,
     "pageSize" : 5,
-    "paged" : true,
-    "unpaged" : false
+    "offset" : 5,
+    "unpaged" : false,
+    "paged" : true
   },
   "last" : false,
   "totalPages" : 4,
   "totalElements" : 19,
+  "first" : false,
+  "numberOfElements" : 5,
   "size" : 5,
   "number" : 1,
   "sort" : {
-    "empty" : false,
+    "unsorted" : false,
     "sorted" : true,
-    "unsorted" : false
+    "empty" : false
   },
-  "first" : false,
-  "numberOfElements" : 5,
   "empty" : false
 }</code></pre>
 </div>
@@ -964,7 +972,7 @@ Content-Length: 1556
 </div>
 </div>
 <div class="sect2">
-<h3 id="resources-member-update"><a class="link" href="#resources-member-update">회원 쿼리 조회</a></h3>
+<h3 id="resources-member-update"><a class="link" href="#resources-member-update">회원 수정</a></h3>
 <div class="paragraph">
 <p><code>PUT</code> 요청을 사용하여 회원 데이터를 수정한다.</p>
 </div>
@@ -972,9 +980,9 @@ Content-Length: 1556
 <h4 id="resources-member-update_curl_request"><a class="link" href="#resources-member-update_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/ce572f1b-51f1-4809-9717-93c968b707a2' -i -X PUT \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/4051481b-a34f-4b51-b83b-c6d2d09bc022' -i -X PUT \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc1NzY5MX0.R8N2hSCfclgwgqWuzc73R8c3a3qIPa26djCk9YIay5chOIsTegToc6u6CyE05zrR_GSwNUoxbAQGIcEjpopbQA' \
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc2MzM2N30.hBXWEDB3_R2VVrYBDYbAKGzsEQhfaHb4evs04wSrEoMAW8qpPUV6FgFK6P9e89-9m1NsyaNsT6HUb45hFDZebA' \
     -d '{
   "nickName" : "NickName~~"
 }'</code></pre>
@@ -999,14 +1007,14 @@ X-Frame-Options: SAMEORIGIN
 Content-Length: 409
 
 {
-  "rgsDt" : "2023-03-13 10:34:51",
-  "updDt" : "2023-03-13 10:34:51",
-  "id" : "ce572f1b-51f1-4809-9717-93c968b707a2",
+  "rgsDt" : "2023-03-13 12:09:27",
+  "updDt" : "2023-03-13 12:09:27",
+  "id" : "4051481b-a34f-4b51-b83b-c6d2d09bc022",
   "username" : "hijinhoon@naver.com",
   "nickName" : "NickName~~",
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/member/ce572f1b-51f1-4809-9717-93c968b707a2"
+      "href" : "http://localhost:8080/member/4051481b-a34f-4b51-b83b-c6d2d09bc022"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-member-update"
@@ -1044,13 +1052,80 @@ Content-Length: 409
 </table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="resources-member-delete"><a class="link" href="#resources-member-delete">회원 삭제</a></h3>
+<div class="paragraph">
+<p><code>DELETE</code> 요청을 사용하여 회원 데이터를 삭제한다.</p>
+</div>
+<div class="sect3">
+<h4 id="resources-member-delete_curl_request"><a class="link" href="#resources-member-delete_curl_request">Example request</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/064cd6c0-a598-4ef3-a8fe-08ae39072514' -i -X DELETE \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc2MzM1NH0.p10nhnHaayQbo7juqd3A2UVsleQin7J0BX80hnOy1RaHMxjrS8vyb_i74FtgT-jqWACdK9ujp7kqUfT-kqXlcw'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="resources-member-delete_http_response"><a class="link" href="#resources-member-delete_http_response">Example response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 204 No Content
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: SAMEORIGIN</code></pre>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>[[resources-member-delete-all]
+=== 회원 일괄 삭제</p>
+</div>
+<div class="paragraph">
+<p><code>DELETE</code> 요청을 사용하여 회원 데이터를 일괄 삭제한다.</p>
+</div>
+<div class="sect3">
+<h4 id="resources-member-delete_curl_request"><a class="link" href="#resources-member-delete_curl_request">Example request</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/delete/04e13919-66ce-49e4-bf21-8ed8a6858498,a4fcf2f7-c8f0-444a-8974-c5fe214f41b1,6f3aa2fc-c3f6-487b-a9cb-3c4a2bbe3224,0e4b683b-673d-4f4b-9dac-d5c1f58d0372,4af78b3e-8853-440a-923e-70f3b0677768,a548dcea-6307-49e1-810a-8f5915870f91,9ffb2aa3-cbee-418e-8a77-e063033ea55e,ae745d39-6e62-45ce-9980-ad0b42048eda,ec331fc3-1b28-4697-8e61-4a8159528685,7208fe28-f231-4d1c-9741-7de6a5543ba0,c3027ff6-4ee7-4115-8746-1562e9baf242,e81145e2-605e-4fd3-bd0b-86d911d33a4d,0697fff8-c358-4ca5-ac83-5a9c7241b782,7058906a-fdfd-4ee3-b070-167812f4fb44,58a3c48d-6f6b-430e-9c47-7e7125b073e7,1196ce42-52cc-4bd4-a403-92b568672143,a50e3ac0-82d2-4fd1-b5b3-62aa9eb3fbe2,24ecf9d9-d094-48a7-a6fd-6bb2898ce54f,2ee3a285-725e-4c62-9f14-a102dd7587b3,7eaf6381-b552-4203-bd92-d4842fff573a,e8728a64-7305-4eeb-97cf-1a7ebbe71db3,ca5f8942-7412-449e-b1f9-d15c9ff800dd,872fd52c-3baf-4615-817a-1df349481e05,be7e85a5-b895-4703-afc4-3b21b6aade02,8f007cdc-d998-4158-81bd-1f8618fea5de,ba1cc7b8-08c2-4dd8-9486-220e46c4ed27,44cbc4d1-a514-4df0-b054-9f6c32a0c59f,6c7dd655-131e-498a-94b9-336be0074a7a,b8ceafc3-3efe-433d-941a-3f7fc22262c7,ed5c3a49-656c-4d4d-836a-7c5f2651e608,98cbb52f-a339-44a0-ba55-2c20f9f78bb3,3238ea52-5285-4abe-a7c0-50242e3c2ed0,e958c940-a848-4ede-b789-d405cc14d4f1,b6b02b91-b0c7-4469-a9cc-a7f3ab030831,aae9b4d7-6fe9-4328-857a-51319f775a10,eb67c472-dd02-465f-911e-4a64dce79b55,5ce19dc8-d6ce-4d86-8d8c-af69ab6f2c43,7df0ab2e-e3d1-49d6-8ac8-5c83b0437e49,ca270436-aaa2-4368-9bf2-6bb69d872160,b2a071e2-8123-463f-8091-e25d0b167cfe,c80f4eb6-c860-4b5b-a92a-a9cb35bdaa5f,66ee5ddc-5c95-491f-bdc6-38294d0a27eb,69172d20-648d-40c5-afdb-b06c3331431e,5c1588a0-2f15-457c-8488-bbb426b0d3f4,84e1062f-9205-4a6c-9617-e957a6a997b5,b3a72acd-904f-4073-bdac-a58f1b35d8e2,0302825e-f7a0-444e-affa-666091eff620,fffb80bf-a348-4e99-9bf1-12e80ef8f8cf,adda22f3-3a40-4427-b7dc-566a799b76b3,6a973bb8-d52f-4b55-b326-540a6cd90ab7,be73e462-9253-4603-8d51-56e265c0b56d,b5bb6520-fee7-4f2a-8663-bc25a1b0d7a7,4f885a9a-ed6b-4154-939e-69ff6fe6bbc3,3b356b3e-80e8-4894-aeb9-87d76e188f46,2cfa6b54-533b-4241-9ae1-120ecb5dd72f,296c4d5c-5e35-4a1f-9016-820d73a3cecb,21d65316-fa82-43f4-b971-9e9c62fe93b1,9cdb250b-ab97-4cb4-8fb9-6738fe645bfe,f9c60e4e-e31d-41ce-8d9c-44572ca3956c,6a5874c7-14ed-4b23-a176-e52a0c2dde0e,e0e6ecc1-10d9-42f9-a7e7-712a62276eb6,b18b0e9b-e43f-45e1-902e-e6bfa1e15ddc,15027b4c-7b9e-45ad-80f9-f38a2a360d88,f07427a1-415a-4124-872f-2d9ced06f170,be54c57e-e332-4892-9b52-d95d09011a13,cf62d154-63c5-4305-84ae-947a7e9f3ad7,841ecd74-9886-438a-9fe8-f3e5419248be,7ac9acc9-a96d-40bb-87ac-c301a40e43bf,3cdcc64d-7593-4aa7-90ef-3b497ba5b705,1493cfae-29e2-49e0-9049-349a36b48ce9,b1a5ddb9-8ec1-48a7-9ad9-e0cb1ba43730,5c541da2-e4ef-4590-abf0-16578bbbdf10,e35f176b-48d2-4aca-ba30-886daef8c817,d36cc3cc-c342-49eb-ab67-29c22629b333,9e16dcdf-08ab-4e3e-9338-a4f53d950d3c,def3f992-1a99-4c53-b2a9-bb2d51069b2d,fef0b0a9-11c7-43b0-8733-8cdf82133f0b,72797ad0-ec7a-4d3e-b30d-bf0ae033c2f6,ab5aa7eb-ddcb-4187-bfe8-a10635972e6a,2de87dcc-e6ee-4143-b2ed-3cf5f83f385b,badb23fd-cefe-4f16-8816-a740add95bcd,89412223-376f-4580-b7c8-647050f26d1a,dd0b5dd1-a3e1-4118-8871-541673b63840,536625b4-f70d-4683-9e94-0e189ecaad4b,926cf722-23a9-4949-bc9b-1b9ac5715494,3f5e4ce7-fbf2-4a55-ac4f-ea9ff609a26e,26a03cb8-4a35-4667-9f50-74ffbe1c0d91,2e0bb7b9-f8ff-4c23-8206-0f3dabbae86c,28f2ef55-2294-4dbe-895e-0b890cffb1ad,22fd3630-22a2-4f7e-834e-b4c523ea47e1,eb26cd6e-e021-4337-9fb4-632a6ea74a8a,76fc2d8b-0844-47e7-96eb-e79b855816cf,842c35eb-7b5d-4dc5-8bb8-8a5ddabb6339,c98d8f21-c457-4b2c-adc9-d78176b5f9e7,6b1a90c7-7054-41b3-a2d7-59ed6fe21479,92e18dd6-6ae3-4073-aa3a-ce1851b1a185,a2485eca-3ab4-493d-93f2-5f231c5052e8,8443bf01-ac63-4cee-afba-58643eda3c59,18b734b7-50a4-4907-b1ac-424943f855c7,856bd1f7-d6a6-4b03-b292-72c16da04b4b' -i -X DELETE \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaWppbmhvb25AbmF2ZXIuY29tIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY3ODc2MzM1NH0.p10nhnHaayQbo7juqd3A2UVsleQin7J0BX80hnOy1RaHMxjrS8vyb_i74FtgT-jqWACdK9ujp7kqUfT-kqXlcw'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="resources-member-delete_http_response"><a class="link" href="#resources-member-delete_http_response">Example response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 204 No Content
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: SAMEORIGIN</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2023-03-13 10:34:15 +0900
+Last updated 2023-03-13 12:08:56 +0900
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
