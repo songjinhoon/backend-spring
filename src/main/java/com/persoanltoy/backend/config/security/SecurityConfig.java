@@ -7,7 +7,7 @@ import com.persoanltoy.backend.config.jwt.TokenProvider;
 import com.persoanltoy.backend.config.security.custom.CustomAuthenticationProvider;
 import com.persoanltoy.backend.config.security.custom.CustomLoginFailureHandler;
 import com.persoanltoy.backend.config.security.filter.CustomAuthenticationFilter;
-import com.persoanltoy.backend.domains.member.domain.entity.role.Role;
+import com.persoanltoy.backend.domains.member.domain.entity.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -66,14 +66,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.httpBasic().disable();
         http.cors()
                 .and()
-                .headers()
-                .frameOptions()
-                .sameOrigin()
-                //세션 사용 하지 않음
+                //h2
+                .headers().frameOptions().sameOrigin()
                 .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-
+                //세션 사용 하지 않음
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeHttpRequests()
                 .antMatchers(PERMIT_URL_ARRAY).permitAll()

@@ -3,7 +3,6 @@ package com.persoanltoy.backend.dummy;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.persoanltoy.backend.config.AuthConstants;
 import com.persoanltoy.backend.domains.member.domain.entity.Member;
-import com.persoanltoy.backend.domains.member.domain.entity.MemberNo;
 import com.persoanltoy.backend.domains.member.domain.repository.MemberRepository;
 import com.persoanltoy.backend.domains.member.dto.request.SignInDto;
 import com.persoanltoy.backend.domains.member.dto.request.SignUpDto;
@@ -46,7 +45,7 @@ public class MemberDummyGenerate {
 
     private static final String PASSWORD = "password";
 
-    public MemberNo generate() {
+    public String generate() {
         Member save = memberRepository.save(Member.create(SignUpDto.builder()
                 .username(USERNAME)
                 .password(PASSWORD)
@@ -54,7 +53,7 @@ public class MemberDummyGenerate {
                 .build(), passwordEncoder));
         entityManager.flush();
         entityManager.clear();
-        return save.getNumber();
+        return save.getId();
     }
 
     public String getAccessToken() throws Exception {
@@ -72,7 +71,7 @@ public class MemberDummyGenerate {
         return resultActions.andReturn().getResponse().getHeader(AuthConstants.AUTHORIZATION_HEADER);
     }
 
-    public List<MemberNo> generate(int i) {
+    public List<String> generate(int i) {
         List<Member> members = IntStream.range(0, i)
                 .mapToObj(data -> {
                     SignUpDto signUpDto = SignUpDto.builder()
@@ -84,6 +83,6 @@ public class MemberDummyGenerate {
                 })
                 .collect(Collectors.toList());
         memberRepository.saveAll(members);
-        return members.stream().map(Member::getNumber).collect(Collectors.toList());
+        return members.stream().map(Member::getId).collect(Collectors.toList());
     }
 }
