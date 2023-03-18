@@ -48,6 +48,7 @@ public class TokenProvider implements InitializingBean {
         return Jwts.builder()
                 // header
                 .signWith(key, SignatureAlgorithm.HS512)
+                .setExpiration(new Date((new Date()).getTime() + this.tokenValidityInMilliseconds))
                 // payload
                 .setSubject(principal.getUsername())
                 .claim(
@@ -82,7 +83,7 @@ public class TokenProvider implements InitializingBean {
         Collection<? extends GrantedAuthority> authorities = Arrays.stream(claims.get(AUTHORITIES_KEY).toString().split(","))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
-        return new UsernamePasswordAuthenticationToken(new CustomUserDetails(claims.get("memberId").toString(), claims.getSubject(), null, claims.get("nickName").toString(), authorities), token, authorities);
+        return new UsernamePasswordAuthenticationToken(new CustomUserDetails(claims.getSubject(), null, authorities), token, authorities);
     }
 
     public boolean validateToken(String token) {
