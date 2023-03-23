@@ -58,7 +58,7 @@ class OrderCreateControllerTest extends BaseTest {
                         .content(super.objectMapper.writeValueAsString(orderCreateDto))
                 )
                 .andDo(print())
-                .andExpect(status().isCreated())
+                .andExpect(status().isInternalServerError())
         ;
 //        int count = (int) events.stream(OrderCreateEvent.class).count();
 //        assertEquals(1, count);

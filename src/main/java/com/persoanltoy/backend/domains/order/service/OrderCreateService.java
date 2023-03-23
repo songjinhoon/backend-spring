@@ -41,6 +41,7 @@ public class OrderCreateService {
         Order save = orderRepository.save(Order.create(orderer, orderLines, orderCreateDto.getShippingInfo()));
 
         PaymentStrategy paymentStrategy = PaymentStrategyFactory.getPaymentStrategy(orderCreateDto.getPaymentType());
+
         try {
             paymentStrategy.pay(save.getTotalAmounts().getValue());
         } catch (Exception e) {

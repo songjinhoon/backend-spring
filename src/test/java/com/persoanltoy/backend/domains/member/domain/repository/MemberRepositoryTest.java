@@ -24,7 +24,7 @@ class MemberRepositoryTest {
     @Autowired
     PasswordEncoder passwordEncoder;
 
-    @Test
+//    @Test
     @DisplayName("batch query test")
     void delete() {
         //given

@@ -83,7 +83,7 @@ public class TokenProvider implements InitializingBean {
         Collection<? extends GrantedAuthority> authorities = Arrays.stream(claims.get(AUTHORITIES_KEY).toString().split(","))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
-        return new UsernamePasswordAuthenticationToken(new CustomUserDetails(claims.getSubject(), null, authorities), token, authorities);
+        return new UsernamePasswordAuthenticationToken(new CustomUserDetails((String) claims.get("memberId"), claims.getSubject(), null, (String) claims.get("nickName"), authorities), token, authorities);
     }
 
     public boolean validateToken(String token) {
