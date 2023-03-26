@@ -8,7 +8,7 @@ import com.persoanltoy.backend.domains.common.payment.exception.KakaoStrategyExc
 import com.persoanltoy.backend.domains.order.domain.entity.Order;
 import com.persoanltoy.backend.domains.order.domain.entity.value.OrderLine;
 import com.persoanltoy.backend.domains.order.domain.entity.value.Orderer;
-import com.persoanltoy.backend.domains.order.domain.repository.OrderRepository;
+import com.persoanltoy.backend.domains.order.infra.OrderRepository;
 import com.persoanltoy.backend.domains.order.dto.reqeust.OrderCreateDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

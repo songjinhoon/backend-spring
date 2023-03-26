@@ -1,4 +1,4 @@
-package com.persoanltoy.backend.domains.order.domain.repository;
+package com.persoanltoy.backend.domains.order.infra;
 
 import com.persoanltoy.backend.domains.common.CustomQueryDsl;
 import com.persoanltoy.backend.domains.order.domain.entity.Order;
