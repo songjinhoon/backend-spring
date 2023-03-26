@@ -1,6 +1,7 @@
 package com.persoanltoy.backend.dummy;
 
 import com.persoanltoy.backend.domains.common.model.Money;
+import com.persoanltoy.backend.domains.common.payment.PaymentType;
 import com.persoanltoy.backend.domains.member.domain.entity.Member;
 import com.persoanltoy.backend.domains.order.domain.entity.Order;
 import com.persoanltoy.backend.domains.order.domain.entity.value.*;
@@ -36,7 +37,7 @@ public class OrderDummyGenerate {
                             new OrderLine("4", new Money(4000), 2),
                             new OrderLine("5", new Money(5000), 1)
                     );
-                    return Order.create(orderer, orderLines, shippingInfo);
+                    return Order.create(orderer, orderLines, shippingInfo, PaymentType.CARD);
                 })
                 .collect(Collectors.toList());
 

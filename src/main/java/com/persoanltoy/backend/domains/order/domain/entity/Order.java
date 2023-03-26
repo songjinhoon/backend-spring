@@ -5,6 +5,7 @@ import com.persoanltoy.backend.domains.common.BaseTimeEntity;
 import com.persoanltoy.backend.domains.common.event.Events;
 import com.persoanltoy.backend.domains.common.model.Money;
 import com.persoanltoy.backend.domains.common.model.MoneyConverter;
+import com.persoanltoy.backend.domains.common.payment.PaymentType;
 import com.persoanltoy.backend.domains.order.domain.entity.event.OrderCancelEvent;
 import com.persoanltoy.backend.domains.order.domain.entity.value.OrderLine;
 import com.persoanltoy.backend.domains.order.domain.entity.value.Orderer;
@@ -55,7 +56,10 @@ public class Order extends BaseTimeEntity {
 
     private LocalDateTime orderDate;
 
-    public static Order create(Orderer orderer, List<OrderLine> orderLines, ShippingInfo shippingInfo) {
+    @Enumerated(EnumType.STRING)
+    private PaymentType paymentType;
+
+    public static Order create(Orderer orderer, List<OrderLine> orderLines, ShippingInfo shippingInfo, PaymentType paymentType) {
         return Order.builder()
                 .id(UUID.randomUUID().toString())
                 .orderer(orderer)
@@ -64,6 +68,7 @@ public class Order extends BaseTimeEntity {
                 .shippingInfo(shippingInfo)
                 .orderState(OrderState.PAYMENT_WAITING)
                 .orderDate(LocalDateTime.now())
+                .paymentType(paymentType)
                 .build();
     }
 
@@ -72,10 +77,10 @@ public class Order extends BaseTimeEntity {
     }
 
     public void update(OrderUpdateDto orderUpdateDto) {
-        if (!isNotYetShipped()) {
+        if (!this.isNotYetShipped()) {
             throw new AlreadyShippedException();
         }
-        this.totalAmounts = this.totalAmounts.multiply(2);
+        this.shippingInfo = orderUpdateDto.getShippingInfo();
     }
 
     public void update(OrderStateUpdateDto orderUpdateDto) {
@@ -87,7 +92,7 @@ public class Order extends BaseTimeEntity {
             throw new AlreadyShippedException();
         }
         this.orderState = OrderState.CANCELED;
-        Events.raise(new OrderCancelEvent(this.id));
+        Events.raise(new OrderCancelEvent(this.id, this.totalAmounts, this.paymentType));
     }
 
     public boolean isNotYetShipped() {

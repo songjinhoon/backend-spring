@@ -2,10 +2,7 @@ package com.persoanltoy.backend.domains.order.domain.entity.event;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.event.TransactionPhase;
-import org.springframework.transaction.event.TransactionalEventListener;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -18,17 +15,19 @@ public class OrderEventHandler {
      * 2. 주문이 저장되었을 경우에만 실행한다.
      * 3. 주문 저장 실패 시 실행 할 필요가 없다.
      */
-    @Async
-    @TransactionalEventListener(classes = OrderCreateEvent.class, phase = TransactionPhase.AFTER_COMMIT)
-    public void handle(final OrderCreateEvent orderCreateEvent) {
-        log.info("order create event start!");
-        try {
-            orderCreateEvent.getPaymentStrategy().pay(orderCreateEvent.getTotalAmounts().getValue());
-            log.info("KAKAO payment request success");
-        } catch (Exception e) {
-            log.error("KAKAO payment request error");
-        }
-        log.info("order create event end!");
-    }
+//    @Async
+//    @TransactionalEventListener(classes = OrderCreateEvent.class, phase = TransactionPhase.AFTER_COMMIT)
+//    public void handle(final OrderCreateEvent orderCreateEvent) {
+//        log.info("order create event start!");
+//        try {
+//            orderCreateEvent.getPaymentStrategy().pay(orderCreateEvent.getTotalAmounts().getValue());
+//            log.info("KAKAO payment request success");
+//        } catch (Exception e) {
+//            log.error("KAKAO payment request error");
+//        }
+//        log.info("order create event end!");
+//    }
+
+
 
 }

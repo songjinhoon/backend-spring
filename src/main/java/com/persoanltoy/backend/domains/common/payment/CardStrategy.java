@@ -15,4 +15,14 @@ public class CardStrategy implements PaymentStrategy {
         }
     }
 
+    @Override
+    public void refund(int amount) {
+        try {
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            throw new KakaoStrategyException(e.getMessage());
+        }
+
+    }
+
 }

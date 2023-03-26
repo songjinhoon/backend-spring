@@ -1,12 +1,12 @@
 package com.persoanltoy.backend.domains.order.dto.reqeust;
 
 import com.persoanltoy.backend.domains.order.domain.entity.OrderState;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.validation.constraints.NotNull;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @Setter
 @Getter

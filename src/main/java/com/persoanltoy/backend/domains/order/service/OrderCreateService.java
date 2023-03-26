@@ -38,7 +38,7 @@ public class OrderCreateService {
                 )
                 .collect(Collectors.toList());
 
-        Order save = orderRepository.save(Order.create(orderer, orderLines, orderCreateDto.getShippingInfo()));
+        Order save = orderRepository.save(Order.create(orderer, orderLines, orderCreateDto.getShippingInfo(), orderCreateDto.getPaymentType()));
 
         PaymentStrategy paymentStrategy = PaymentStrategyFactory.getPaymentStrategy(orderCreateDto.getPaymentType());
 

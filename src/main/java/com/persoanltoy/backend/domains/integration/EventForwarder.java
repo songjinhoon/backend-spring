@@ -1,13 +1,17 @@
 package com.persoanltoy.backend.domains.integration;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.persoanltoy.backend.domains.event.api.EventEntry;
 import com.persoanltoy.backend.domains.event.api.EventStore;
+import com.persoanltoy.backend.domains.order.domain.entity.event.OrderCancelEvent;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Slf4j
 @RequiredArgsConstructor
 @Component
 public class EventForwarder {
@@ -19,6 +23,8 @@ public class EventForwarder {
     private final OffsetStore offsetStore;
 
     private final EventSender eventSender;
+
+    private final ObjectMapper objectMapper;
 
     @Scheduled(initialDelay = 1000, fixedDelay = 5000)
     public void getAndSend() {
@@ -40,11 +46,17 @@ public class EventForwarder {
         int processedCount = 0;
         try {
             for (EventEntry entry : events) {
-                eventSender.send(entry);
+                if (entry.getType().contains("OrderCancelEvent")) {
+                    OrderCancelEvent orderCancelEvent = this.objectMapper.readValue(entry.getPayload(), OrderCancelEvent.class);
+                    log.info("refund check ==> " + orderCancelEvent.toString());
+                } else {
+                    eventSender.send(entry);
+                }
                 processedCount++;
             }
-        } catch (Exception ex) {
+        } catch (Exception e) {
             // 로깅 처리
+            e.printStackTrace();
         }
         return processedCount;
     }

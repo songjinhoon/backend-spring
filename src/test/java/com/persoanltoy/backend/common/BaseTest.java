@@ -12,6 +12,8 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+
 @Import(RestDocsConfig.class)
 @AutoConfigureRestDocs
 @Transactional
@@ -25,6 +27,9 @@ public class BaseTest {
 
     @Autowired
     protected ObjectMapper objectMapper;
+
+    @Autowired
+    protected EntityManager entityManager;
 
     @Autowired
     protected MemberDummyGenerate memberDummyGenerate;
