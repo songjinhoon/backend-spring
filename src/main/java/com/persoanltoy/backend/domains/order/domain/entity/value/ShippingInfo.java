@@ -13,7 +13,6 @@ import javax.persistence.*;
 @Embeddable
 public class ShippingInfo {
 
-
     @Embedded
     @AttributeOverrides({
             @AttributeOverride(name = "zipCode", column = @Column(name = "shipping_zip_code")),

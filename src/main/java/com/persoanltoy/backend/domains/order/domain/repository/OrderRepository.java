@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 import javax.persistence.LockModeType;
 import java.util.Optional;
 
-public interface OrderRepository extends JpaRepository<Order, String> {
+public interface OrderRepository extends JpaRepository<Order, String>, OrderRepositoryCustom {
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("select o from Order o where o.id = :id")

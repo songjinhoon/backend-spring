@@ -48,17 +48,17 @@ class OrderCreateControllerTest extends BaseTest {
                                 new Receiver("홍길동", "01000000000")
                         )
                 )
-                .paymentType(PaymentType.KAKAO)
+                .paymentType(PaymentType.CARD)
                 .build();
 
         //when - then
         super.mockMvc.perform(post(url)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .header(HttpHeaders.AUTHORIZATION.toLowerCase(), accessToken)
+                        .header(HttpHeaders.AUTHORIZATION, accessToken)
                         .content(super.objectMapper.writeValueAsString(orderCreateDto))
                 )
                 .andDo(print())
-                .andExpect(status().isInternalServerError())
+                .andExpect(status().isCreated())
         ;
 //        int count = (int) events.stream(OrderCreateEvent.class).count();
 //        assertEquals(1, count);

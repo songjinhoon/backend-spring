@@ -118,3 +118,22 @@ operation::member-delete[snippets='curl-request,http-response']
 `DELETE` 요청을 사용하여 회원 데이터를 일괄 삭제한다.
 
 operation::member-delete-all[snippets='curl-request,http-response']
+
+[[resources-order]]
+== Order
+
+주문 데이터를 조회하거나 관리할 때 사용한다.
+
+[[resources-order-find]]
+=== 주문 단건 조회
+
+`GET` 요청을 사용하여 주문 데이터를 조회한다.
+
+operation::order-find[snippets='curl-request,http-response']
+
+[[resources-order-query]]
+=== 주문 쿼리 조회
+
+`GET` 요청을 사용하여 주문 데이터를 쿼리한다.
+
+operation::order-query[snippets='curl-request,http-response,request-parameters']

@@ -2,6 +2,7 @@ package com.persoanltoy.backend.common;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.persoanltoy.backend.dummy.MemberDummyGenerate;
+import com.persoanltoy.backend.dummy.OrderDummyGenerate;
 import org.junit.jupiter.api.Disabled;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
@@ -27,5 +28,8 @@ public class BaseTest {
 
     @Autowired
     protected MemberDummyGenerate memberDummyGenerate;
+
+    @Autowired
+    protected OrderDummyGenerate orderDummyGenerate;
 
 }
