@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @AllArgsConstructor
@@ -13,16 +16,21 @@ import javax.persistence.*;
 @Embeddable
 public class ShippingInfo {
 
+    @NotNull
     @Embedded
     @AttributeOverrides({
             @AttributeOverride(name = "zipCode", column = @Column(name = "shipping_zip_code")),
             @AttributeOverride(name = "address1", column = @Column(name = "shipping_addr1")),
             @AttributeOverride(name = "address2", column = @Column(name = "shipping_addr2"))
     })
-    private Address address;
+    private @Valid Address address;
+
+    @NotBlank
     @Column(name = "shipping_message")
     private String message;
+
+    @NotNull
     @Embedded
-    private Receiver receiver;
+    private @Valid Receiver receiver;
 
 }

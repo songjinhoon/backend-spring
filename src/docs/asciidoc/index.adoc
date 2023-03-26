@@ -137,3 +137,10 @@ operation::order-find[snippets='curl-request,http-response']
 `GET` 요청을 사용하여 주문 데이터를 쿼리한다.
 
 operation::order-query[snippets='curl-request,http-response,request-parameters']
+
+[[resources-order-create]]
+=== 주문 등록
+
+`POST` 요청을 사용하여 주문 데이터를 등록한다.
+
+operation::order-create[snippets='curl-request,http-response,request-fields']

@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Embeddable;
+import javax.validation.constraints.NotBlank;
 
 @Getter
 @AllArgsConstructor
@@ -13,10 +14,13 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Address {
 
+    @NotBlank
     private String zipCode;
 
+    @NotBlank
     private String address1;
 
+    @NotBlank
     private String address2;
 
 }
