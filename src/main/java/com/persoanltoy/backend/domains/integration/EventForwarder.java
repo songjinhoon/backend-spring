@@ -26,7 +26,7 @@ public class EventForwarder {
 
     private final ObjectMapper objectMapper;
 
-    @Scheduled(initialDelay = 1000, fixedDelay = 5000)
+//    @Scheduled(initialDelay = 1000, fixedDelay = 5000)
     public void getAndSend() {
         long nextOffset = getNextOffset();
         List<EventEntry> events = eventStore.get(nextOffset, DEFAULT_LIMIT_SIZE);

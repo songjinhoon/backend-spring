@@ -21,7 +21,7 @@ configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
-    asciidoctorExtensions
+//    asciidoctorExtensions
 }
 
 repositories {
@@ -59,11 +59,11 @@ dependencies {
     runtimeOnly 'com.h2database:h2'
 //    testRuntimeOnly 'com.h2database:h2'
 
-    asciidoctorExtensions 'org.springframework.restdocs:spring-restdocs-asciidoctor'
+//    asciidoctorExtensions 'org.springframework.restdocs:spring-restdocs-asciidoctor'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
-	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+//	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 }
 
 tasks.named('test') {
@@ -97,6 +97,7 @@ test {
     outputs.dir snippetsDir
 }
 
+/*
 asciidoctor {
     configurations "asciidoctorExtensions"
     inputs.dir snippetsDir
@@ -118,3 +119,4 @@ task copyDocument(type: Copy) {
     into file("src/main/resources/static/docs")
     delete file('BOOT-INF')
 }
+*/
