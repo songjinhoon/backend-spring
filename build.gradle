@@ -12,16 +12,21 @@ plugins {
     id 'org.asciidoctor.jvm.convert' version '3.3.2' // gradle 7 이상 일경우 사용
 }
 
-group = 'com.persoanl-toy'
+group = 'com.personal-toy'
 //version = '0.0.1-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
 version = '1.0'
-sourceCompatibility = '11'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
 
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
-//    asciidoctorExtensions
+    asciidoctorExtensions
 }
 
 repositories {
@@ -59,11 +64,11 @@ dependencies {
     runtimeOnly 'com.h2database:h2'
 //    testRuntimeOnly 'com.h2database:h2'
 
-//    asciidoctorExtensions 'org.springframework.restdocs:spring-restdocs-asciidoctor'
+    asciidoctorExtensions 'org.springframework.restdocs:spring-restdocs-asciidoctor'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
-//	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 }
 
 tasks.named('test') {
@@ -97,7 +102,6 @@ test {
     outputs.dir snippetsDir
 }
 
-/*
 asciidoctor {
     configurations "asciidoctorExtensions"
     inputs.dir snippetsDir
@@ -119,4 +123,3 @@ task copyDocument(type: Copy) {
     into file("src/main/resources/static/docs")
     delete file('BOOT-INF')
 }
-*/

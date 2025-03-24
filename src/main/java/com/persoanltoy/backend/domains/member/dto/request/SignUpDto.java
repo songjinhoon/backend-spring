@@ -16,6 +16,7 @@ public class SignUpDto {
     @Size(min = 10, max = 25)
     private String username;
 
+
     @NotBlank
     @Size(min = 4, max = 20)
     private String password;
