@@ -657,7 +657,7 @@ API 관리 문서 입니다.
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Location: http://localhost:8080/member/d14633bf-40ed-4735-9c98-641412b77711
+Location: http://localhost:8080/member/ff8ab63c-4642-488d-a62f-a4ca7bbd6f33
 Content-Type: application/hal+json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
@@ -668,14 +668,14 @@ X-Frame-Options: SAMEORIGIN
 Content-Length: 584
 
 {
-  "rgsDt" : "2025-03-24 16:03:06",
-  "updDt" : "2025-03-24 16:03:06",
-  "id" : "d14633bf-40ed-4735-9c98-641412b77711",
+  "rgsDt" : "2025-03-24 16:35:06",
+  "updDt" : "2025-03-24 16:35:06",
+  "id" : "ff8ab63c-4642-488d-a62f-a4ca7bbd6f33",
   "username" : "hijinhoon@naver.com",
   "nickName" : "hijinhoon",
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/member/d14633bf-40ed-4735-9c98-641412b77711"
+      "href" : "http://localhost:8080/member/ff8ab63c-4642-488d-a62f-a4ca7bbd6f33"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-sign-up"
@@ -684,7 +684,7 @@ Content-Length: 584
       "href" : "http://localhost:8080/member"
     },
     "update" : {
-      "href" : "http://localhost:8080/member/d14633bf-40ed-4735-9c98-641412b77711"
+      "href" : "http://localhost:8080/member/ff8ab63c-4642-488d-a62f-a4ca7bbd6f33"
     }
   }
 }</code></pre>
@@ -757,8 +757,8 @@ Content-Length: 584
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Set-Cookie: refresh_token=eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODYxOTksInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiJkMzdlNDQyMS1lM2JjLTQxZGMtOGRlYy01MzAyYmM2ZmFlMTYiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.Ov17kn6tL_JW5wtN-k5r9u_8I7Cuuhe9e9qbDyZd8A-rSEn9jgoZV64gqnJ-yN0nHPCux_BZwFRTXKYU1TpQwg; Path=/; Max-Age=86400000; Expires=Sun, 19 Dec 2027 07:03:19 GMT; Secure; HttpOnly
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODYxOTksInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiJkMzdlNDQyMS1lM2JjLTQxZGMtOGRlYy01MzAyYmM2ZmFlMTYiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.Ov17kn6tL_JW5wtN-k5r9u_8I7Cuuhe9e9qbDyZd8A-rSEn9jgoZV64gqnJ-yN0nHPCux_BZwFRTXKYU1TpQwg
+Set-Cookie: refresh_token=eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODgxMTgsInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiIyZjdhMjI4Yi0xMjI3LTQ3NTUtOGFjMS1iMzAyZWI5ZjU4YjYiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.RE0vhkrGNrh9fCgwY4KSZ3UyFV8SJG1Iq3r-628PCXPeAdmi9Dr4Miye5q1DtmpXlBhuOmbZASLmz4lVbtU0Hw; Path=/; Max-Age=86400000; Expires=Sun, 19 Dec 2027 07:35:18 GMT; Secure; HttpOnly
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODgxMTgsInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiIyZjdhMjI4Yi0xMjI3LTQ3NTUtOGFjMS1iMzAyZWI5ZjU4YjYiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.RE0vhkrGNrh9fCgwY4KSZ3UyFV8SJG1Iq3r-628PCXPeAdmi9Dr4Miye5q1DtmpXlBhuOmbZASLmz4lVbtU0Hw
 Content-Type: application/json;charset=UTF-8
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
@@ -820,9 +820,9 @@ X-Frame-Options: SAMEORIGIN</code></pre>
 <h4 id="resources-member-find_curl_request"><a class="link" href="#resources-member-find_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/4ee23f74-17c7-4be4-80d6-0a8d0b3eeb51' -i -X GET \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/bb3cde2e-9a9a-484a-8822-4749eafa01d5' -i -X GET \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODYxOTksInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiI0ZWUyM2Y3NC0xN2M3LTRiZTQtODBkNi0wYThkMGIzZWViNTEiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.ZeERp5bTx0Hsh8m7HL8Pi0mxqTHDYNV_BPhuQ-mnDLyYyjsRJ3ssfi5au9qtKxpkRsenYGaRNCP17ggWpPzJLQ'</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODgxMTgsInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiJiYjNjZGUyZS05YTlhLTQ4NGEtODgyMi00NzQ5ZWFmYTAxZDUiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.NXMKeASEjkACuTsx2oa0vRksfM1n8J3c8MxpvL6KWt7okHzIxAqpAbzFveh6dlfOMTVwTzgm1EPBf2Pt3KL0cQ'</code></pre>
 </div>
 </div>
 </div>
@@ -844,14 +844,14 @@ X-Frame-Options: SAMEORIGIN
 Content-Length: 588
 
 {
-  "rgsDt" : "2025-03-24 16:03:19",
-  "updDt" : "2025-03-24 16:03:19",
-  "id" : "4ee23f74-17c7-4be4-80d6-0a8d0b3eeb51",
+  "rgsDt" : "2025-03-24 16:35:18",
+  "updDt" : "2025-03-24 16:35:18",
+  "id" : "bb3cde2e-9a9a-484a-8822-4749eafa01d5",
   "username" : "hijinhoon@naver.com",
   "nickName" : "hijinhoon",
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/member/4ee23f74-17c7-4be4-80d6-0a8d0b3eeb51"
+      "href" : "http://localhost:8080/member/bb3cde2e-9a9a-484a-8822-4749eafa01d5"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-member-find"
@@ -860,7 +860,7 @@ Content-Length: 588
       "href" : "http://localhost:8080/member"
     },
     "update" : {
-      "href" : "http://localhost:8080/member/4ee23f74-17c7-4be4-80d6-0a8d0b3eeb51"
+      "href" : "http://localhost:8080/member/bb3cde2e-9a9a-484a-8822-4749eafa01d5"
     }
   }
 }</code></pre>
@@ -879,7 +879,7 @@ Content-Length: 588
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member?page=1&amp;size=5&amp;sort=username%2Cdesc&amp;sort=nickName%2Casc&amp;username=hijinhoon&amp;nickName=1' -i -X GET \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODYxOTgsInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiIyMTA5YzM3Mi1hNjdmLTRjZjAtYThhZi1jZDFiYmU3MDU0YjUiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.BjVH7EUKJVOrMg5xmzVb9gsuSfQYbjDoPRyuFTAPyGEboQ214wbmBiGchJI53NDadSY10XWMmPha-qsPKjJsKw'</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODgxMTgsInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiI1OTAwNDVlNS1kODA1LTRkNmItODc2Mi03Y2U4MmIzOGI3ZjQiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.QfmCasFosu46jYkHlrpCmkurmZlP1HXmGuZZ1Sxy__HubBbRaXlYBERvGA0zyhjkdcbxa8t0VI4R9iPzPZZ1UA'</code></pre>
 </div>
 </div>
 </div>
@@ -902,41 +902,41 @@ Content-Length: 1556
 
 {
   "content" : [ {
-    "rgsDt" : "2025-03-24 16:03:18",
-    "updDt" : "2025-03-24 16:03:18",
-    "id" : "6ede4e46-3643-4d2d-a4ef-e0f3ffd604e3",
+    "rgsDt" : "2025-03-24 16:35:18",
+    "updDt" : "2025-03-24 16:35:18",
+    "id" : "13bb38a5-56b6-41e8-b7a0-594ef2778316",
     "username" : "hijinhoon41@naver.com",
     "nickName" : "hijinhoon41"
   }, {
-    "rgsDt" : "2025-03-24 16:03:18",
-    "updDt" : "2025-03-24 16:03:18",
-    "id" : "f8b50ad0-7edc-4a8e-942f-514270cece5d",
+    "rgsDt" : "2025-03-24 16:35:18",
+    "updDt" : "2025-03-24 16:35:18",
+    "id" : "9f22e171-6470-43d8-81c3-32a0cc1c287d",
     "username" : "hijinhoon31@naver.com",
     "nickName" : "hijinhoon31"
   }, {
-    "rgsDt" : "2025-03-24 16:03:18",
-    "updDt" : "2025-03-24 16:03:18",
-    "id" : "3833c992-6f12-4943-9145-56616615a11f",
+    "rgsDt" : "2025-03-24 16:35:18",
+    "updDt" : "2025-03-24 16:35:18",
+    "id" : "b6b65810-1af0-430f-a584-4925a6c288ef",
     "username" : "hijinhoon21@naver.com",
     "nickName" : "hijinhoon21"
   }, {
-    "rgsDt" : "2025-03-24 16:03:18",
-    "updDt" : "2025-03-24 16:03:18",
-    "id" : "613281a3-deef-41e9-9ade-432074371975",
+    "rgsDt" : "2025-03-24 16:35:18",
+    "updDt" : "2025-03-24 16:35:18",
+    "id" : "f9227031-cab3-4d0b-991c-c9e9b8036e47",
     "username" : "hijinhoon1@naver.com",
     "nickName" : "hijinhoon1"
   }, {
-    "rgsDt" : "2025-03-24 16:03:18",
-    "updDt" : "2025-03-24 16:03:18",
-    "id" : "d96828b2-4c0a-4b57-9302-ae08196e6e55",
+    "rgsDt" : "2025-03-24 16:35:18",
+    "updDt" : "2025-03-24 16:35:18",
+    "id" : "41306a86-7d77-4cd6-8bf5-f4855280196d",
     "username" : "hijinhoon19@naver.com",
     "nickName" : "hijinhoon19"
   } ],
   "pageable" : {
     "sort" : {
       "empty" : false,
-      "unsorted" : false,
-      "sorted" : true
+      "sorted" : true,
+      "unsorted" : false
     },
     "offset" : 5,
     "pageNumber" : 1,
@@ -945,17 +945,17 @@ Content-Length: 1556
     "paged" : true
   },
   "last" : false,
-  "totalPages" : 4,
   "totalElements" : 19,
+  "totalPages" : 4,
   "size" : 5,
   "number" : 1,
   "sort" : {
     "empty" : false,
-    "unsorted" : false,
-    "sorted" : true
+    "sorted" : true,
+    "unsorted" : false
   },
-  "first" : false,
   "numberOfElements" : 5,
+  "first" : false,
   "empty" : false
 }</code></pre>
 </div>
@@ -1008,9 +1008,9 @@ Content-Length: 1556
 <h4 id="resources-member-update_curl_request"><a class="link" href="#resources-member-update_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/bbc16356-0ae2-4dfe-acd0-e7abd4d69e73' -i -X PUT \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/e9793564-25f0-44a5-b72a-e508fb9c61e1' -i -X PUT \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODYxOTksInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiJiYmMxNjM1Ni0wYWUyLTRkZmUtYWNkMC1lN2FiZDRkNjllNzMiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.-4TP_fsO_WC8qGchSpOGCTC01mg15PeJNDZjObNoNLq54UP8fkuk04qDHUBXoOgBZNGtQAc6IaGCEJVhGuRDeQ' \
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODgxMTksInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiJlOTc5MzU2NC0yNWYwLTQ0YTUtYjcyYS1lNTA4ZmI5YzYxZTEiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.SQm6hf-xMryEtvJMMyvPiT2B6IaB7rWsR-h5tyYYoplCPie5CCVvLzO7dlHUhkmZ1YMPAn4gZXBOCj8pmJ9Thg' \
     -d '{
   "nickName" : "NickName~~"
 }'</code></pre>
@@ -1035,14 +1035,14 @@ X-Frame-Options: SAMEORIGIN
 Content-Length: 409
 
 {
-  "rgsDt" : "2025-03-24 16:03:19",
-  "updDt" : "2025-03-24 16:03:19",
-  "id" : "bbc16356-0ae2-4dfe-acd0-e7abd4d69e73",
+  "rgsDt" : "2025-03-24 16:35:19",
+  "updDt" : "2025-03-24 16:35:19",
+  "id" : "e9793564-25f0-44a5-b72a-e508fb9c61e1",
   "username" : "hijinhoon@naver.com",
   "nickName" : "NickName~~",
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/member/bbc16356-0ae2-4dfe-acd0-e7abd4d69e73"
+      "href" : "http://localhost:8080/member/e9793564-25f0-44a5-b72a-e508fb9c61e1"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-member-update"
@@ -1089,9 +1089,9 @@ Content-Length: 409
 <h4 id="resources-member-delete_curl_request"><a class="link" href="#resources-member-delete_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/0ea981d0-c327-40df-b0bc-f134cf5f4810' -i -X DELETE \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/1d69713a-b383-4609-85a4-8341108f5dea' -i -X DELETE \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODYxODcsInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiIwZWE5ODFkMC1jMzI3LTQwZGYtYjBiYy1mMTM0Y2Y1ZjQ4MTAiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.IoXl_NskOh3yt8yXhNvr2uzIomD7mbrfC5P0QYoeo0WQ1Vo6Iyz4NdonaOmXrTlIBbw8Zt8aJzZi-y5CzYC8iQ'</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODgxMDYsInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiIxZDY5NzEzYS1iMzgzLTQ2MDktODVhNC04MzQxMTA4ZjVkZWEiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.u5PaQWUMnoIQ0P1ASjWMLghnqF_W06FVRqHdjp3zc7-L9wrUgtqq5vUso5blZsNMz-2xXo-ENigDTy_8_2B7AQ'</code></pre>
 </div>
 </div>
 </div>
@@ -1122,9 +1122,9 @@ X-Frame-Options: SAMEORIGIN</code></pre>
 <h4 id="resources-member-delete-all_curl_request"><a class="link" href="#resources-member-delete-all_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/delete/7a01afc2-073d-44a3-9b44-bc043af674d7,5ec19d93-4087-4c69-9cc0-e14839ef43e5,3758e200-8b01-4f86-ae80-7e956c13b916,721553fe-b87e-4a34-9a57-a361787cd0e3,2c6bdca1-57e6-4a9e-9138-6af6e234efff,6baa3df1-b4b0-4f45-9ec4-786df9b3b04e,d2294cdb-67cb-4377-9040-8ad5a0743a59,7abf7bb5-b8e5-452b-9830-6caeee4fd127,23741a09-3ad6-4a25-ab5e-d794d59f3b33,c012b0c2-de3e-416b-ab0c-82329ca8a3b1,4ea0015b-f82b-4392-a56b-9ecb18ae255e,d5e70743-1280-4ecf-9d98-f814b250a1f0,abdecf13-8c39-438b-8347-d493f7097f9f,86735d2b-f74e-4d65-ac8a-7d1573528232,5df34228-7e1b-4e45-80cc-2edff4361c49,8a92dbf3-d4c8-46d8-8f81-025049620505,29fa4d3f-93c3-4c9b-8783-3ebd6e4c740c,51dd8ce6-512e-462c-9280-c24496d0eae6,dd4dc991-a64f-4dd1-97c9-0210a28e9ab1,145c0c88-22ae-4e70-a54f-a365cf7b3c00,9c89e0d0-2eea-4ab4-a3fb-343e2ccdb99a,7714021b-1bc3-4511-8475-a70c48c7c467,59d3a88f-4675-41d8-93bc-1c3db58b534d,e0ed7dee-9cba-4ce2-aa87-567a33196898,e1ddbf6f-f583-4944-a9a6-59ab089f86ee,7dca4939-466b-4af7-96c5-9887892ebb30,a7d01c3b-dfdb-4a64-9d5c-450c33699c2c,7aef5d18-2872-475d-ae48-7d0d74ef3d7d,55df47f3-8b3a-4000-8e9d-6906fdb8a301,3b4cb3e8-5c29-457c-a8f8-0c8ac686280b,59d35bc1-24fd-4d27-8835-e8164dd58baf,ccfbc802-1ecf-4cea-9146-1915d8334964,122ddd74-6d18-48ca-8f1d-7c17b575dc45,5be0db15-b27b-454f-aff2-ed32943f6f04,57d3c9fb-881c-49c0-b802-a88c5f6a956a,e340773c-455e-4846-93fa-d55ebb090f6a,cf4cca21-d6b6-4fa7-89eb-99974b06e2bd,ca6e9841-fdf3-4554-b50d-f5e630416092,8f4e2543-a7b4-41c8-aace-8417c6268fb2,1e1c99d8-94ab-4738-9737-3482a5723db7,0e9d5c96-de2b-4677-9e2b-7d7210465902,6918ab8c-ad78-477c-bc3b-1a70e1d813bc,7d862de1-5a66-4ebc-b61a-a2b553e54e0f,9f7bf119-9caa-489e-b946-cf83a00f9978,2ecacccc-9894-4789-a485-4cd1e970faa8,ccb9afcf-13b1-4d53-b9e3-8a5ef6e5800d,d24aebb8-9919-4aa1-b7e2-d1cbdb6dde8a,3c98cc00-99de-4df4-b9a8-a57eaab14450,7148cde0-8511-4869-84ba-c20a028af8c7,f426811b-1175-4134-b330-b77d34747ac3,f0f4f7ca-e902-49b0-b9d3-f9618a55425f,5211c06d-42b5-41d4-bf8d-033c05f1140a,bfd2de22-fdac-46d0-a4ac-917e9bdd468b,79b5432b-a678-4276-90f6-3067ce52b621,4fcc9910-d9a9-44a6-8111-71b498ad6f8c,08e77a43-f766-4093-a21d-33f7f512e2ac,36ef3e9f-aed5-4267-9b31-911b0407eec2,fdbe2130-3a31-467f-9082-80069105abf2,e421b284-5c24-4006-813d-ea936f96d710,e3f7fc62-91fd-44c9-a7c1-61eb41adbbbd,2eb73df2-8eca-4574-939e-d741c3020ec1,cf2d5d74-a7ef-45d8-9534-b953d6285db4,d53b9c75-5fe8-4fa4-8b4b-67d92826cfb4,21cee442-15b1-452b-a82f-92114ff1707b,30c9f7dc-d259-47fa-8dea-8cb329647c05,25755170-d0d2-4572-99b9-29997fd3454b,8a576e57-7309-46d8-a1bf-e8b92973458d,be87207e-2047-495b-b034-5b2df33f5405,3694d505-f646-41ef-88dc-b23860634e93,d386d900-e495-4cf6-950f-e841b0b3fd6f,26a99053-9b13-4d16-9330-5b600b5cea96,9b17fd61-0031-46b0-b48f-9e6db829a8b1,024bc072-1e7c-4db2-8090-42954bda6713,31d1aa8f-0162-4f4b-8921-05d984e6b0b1,5b00791c-111b-44cf-9ef5-7f16cff747cb,adac047e-c5ef-4676-868a-8cb993da6cd4,62a81d43-bed3-45e0-a0d3-01b1e0229812,dd0cfd03-2603-417b-8839-80469caa17b6,9d65ae0c-0a87-45a4-8ecc-6bf1c6be0ba9,17e99ae0-ace0-4bb7-9c55-c1b5713a5bda,ff31199b-b245-4c13-9301-e05cb0f16bd7,abc58516-e87a-4067-8f7d-f6a7d4a01e89,0fc02508-6d61-4e06-8d1b-19e02835627f,fa8c5a54-6af6-4947-aef2-5203dce8056f,59806788-d79d-4e77-9b20-76f1202b96a6,ead953b1-544e-4215-840a-2c41767909c5,a1a39436-44de-4ff1-90e5-6d01bf20393b,b9816e18-bd13-4de7-aa4f-cc9490b8e793,a80548cb-ba29-4450-b0bb-555c12faf0bc,dce2b1e7-a5b0-40e7-99f2-ece4e642aeb2,47124289-a4c3-44db-9d23-514622384701,1b5565c7-c35e-4efa-926c-698b7f1f675c,87cf7586-188b-43c0-8b4e-f8207d6971e9,b8ecf8c1-0bd8-4d53-b730-c7cbafc3dbf8,38c65201-f711-4242-98fd-b0993e1bd9bd,692093d2-3f0d-47b7-a19c-f3ff3ecf0fad,33f3fc9c-d080-4482-b702-6c8b8e170d79,ff4415d4-6507-4f48-ba87-976f3e9134d2,43f2cfc3-e331-4cc0-8d0d-1833dd4250ee,553d9809-d98b-4b89-ae4f-008fa0518c4e' -i -X DELETE \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/member/delete/83fa0bb4-5876-4f3e-967e-544eb44a68ad,a05a82f8-051f-48ce-a03e-c0247a277a6a,62643f0f-6186-4add-9bf5-cfcac8bc50d2,0e7fd843-9b6b-47f6-b36f-7fcd17262116,2b2ddefc-f888-4392-8c28-4648f215bcad,2b3adbac-1a45-4129-a242-cd8b430392df,7bfc4bff-b79d-4da2-a92f-89221e4370a3,09fbd7b9-ef51-44e5-8aed-ec83e609d018,f3472294-2728-4941-b55e-da5fe294608d,813c85a7-c18e-43f2-b4b8-bedce3bc82d1,a55c31ea-0612-4869-91bc-9dd3ac13fdc0,93e78ea8-0dbe-4d59-a2fb-776a4f231d93,6feacb82-8ffe-407d-bfef-fa2003935c72,0bf41bc7-4607-446c-8935-408247a0cbbe,2674cfe4-2a5b-4b98-a772-4de02e737725,b8e05413-8962-4585-86b9-b143dbb48bae,0603c2a4-d1a2-4f42-87de-e8edb14c85f8,9d901be7-ad8e-4e4c-ac0e-92795b826426,e276548b-ec53-4077-8d35-da37ff3c7a39,4fe5a5b2-960e-4ead-bd96-82675e6ecf1c,f47cb21d-a60f-4445-a88d-efa51cc13477,247933b3-85e4-4848-aef5-3ce22fa7db10,3df47c06-ce83-4f3a-8997-c47a6730390f,33600dfa-ade0-43b3-968a-e3ee7c8ece69,9087910e-606f-4abd-87a8-36d6bea0fdba,8396980c-c4a2-4f46-be62-6afea298844d,7cd9b989-4a51-4a12-a9c0-5711a3977314,2f596a42-094d-4606-aa4d-8c4ec1695112,90991096-ed85-40cd-bced-c602074ab3c5,0b8b61ef-6740-4c33-8714-7f466ef91988,c9e6c699-f8dc-4c3f-a167-6bcf92b7bd88,dd1032b9-f347-4e55-ac02-9920905b4fbd,dbcfada8-f59e-4374-bcbb-ce60e94c2032,9de68d06-712d-4d29-9c41-1a1e8d900ec4,56dbae70-5a1b-4c05-8595-dad12d3ca1db,a4b61cf9-1e48-40c2-9025-86bbf68b3d73,0e8a2af0-335a-4a6d-a6d0-1585ae6a601c,04688a20-db2a-4a45-a461-fa1d5a6a160f,5c8592fd-74d0-4de5-8b2e-dcb3bfc6767a,e4b8d931-66cf-4bf6-bde7-e7c5c3018e35,edf58831-81ce-4adc-95e4-fde2fc76788f,739a0f0e-0f7c-4cdb-a8cc-fd6fb691e878,1ad2c09e-aa33-48d4-a2ec-9bf9d3a01647,8bd2c0e5-99ee-40c6-b200-6755b36d73ca,7b8f2fca-cdef-482d-80a7-ee0626307f9a,67268b49-bc34-4224-97b1-e2724a41978e,ea968cdc-e364-437f-a87b-6410abab0493,0574bf4c-cd31-4abd-bba7-2087b2be0669,2f750c5f-4be2-43f8-8202-db045e98d2a7,5d46a8d3-ee9c-4533-be6f-1332d23e88a1,1a958fa0-48f1-4839-9213-e8a43a99b878,db8c0217-a08d-4b0a-b1c2-5eca943872cc,476d60d6-5ef3-41f0-bab0-55e3fe1dc615,3157fb8e-e099-4914-9663-79cbd9eb8382,70a155e4-0b54-4800-878c-83eea2ddac85,5205381f-33b0-4879-b7a7-6313ebb35707,7db38282-a163-455a-9209-be347aaa0f98,5de2d163-9b79-4f65-af43-6014489e407f,6c05815d-ab43-427d-b84e-33da7a542969,20b75f47-5150-41fe-b415-7ea727b83d64,cdcf14c1-5899-4d88-a126-9e12959a553a,edc3b7a4-7d90-4a74-a7cf-90daed1131c6,08b42824-3363-47ac-abd3-713daefde59c,55edfad0-e756-447f-9e65-c93ecd2539e4,865abecd-d300-46d5-ae38-b9e502686455,f81627d7-09ed-4714-97d8-b08f4708918b,92ba36b7-ce5d-477e-9b80-9e2ec53aa877,86e67efd-ffac-496c-9ca2-4d19d20d667a,542103b1-4673-4cf8-8917-2e85db1a1b9f,17978780-05c3-4b2e-b59d-d5dad8cc2879,4a9a862c-3b6a-4d4a-b748-22f5800517a5,3c20c33c-63e8-4536-a836-725a9944db41,bbaf2abe-eaab-4989-83c0-045dcee2878c,7cc6928f-ed05-4103-a604-c2bea97efe8b,844f2d06-f7d3-43be-99af-6d9aea9d016b,769ad09a-38a7-48d7-8ee5-74a20f9dbbeb,6e92724a-bc53-4ad4-b24e-86077b239287,978594f8-c9ca-470e-815b-6c9dd25afd6a,a9bb044d-43db-4f03-a8bd-6687b7bb2785,e4154083-dc29-4c36-826b-b37ad6ac771d,4f462d79-aabe-45e1-8379-0abaa62002d2,f70b35d8-f282-4373-963c-aadda071cf74,26df27c2-bacc-4670-bc8e-c0fb5574c5a9,be75274a-94dc-4418-b724-8b85cfdcbd97,2f955e4b-7923-4e2c-9894-789b014d8b05,e60cc50a-1603-4875-91c4-27af40000064,45357565-b417-4db3-8708-4688427f533f,e032b42a-9a86-4f4d-832a-674e609b8194,7e0d7f04-9084-4087-8905-3a740a706599,d4ef445b-9572-49c8-a7cf-1f37082a623c,b6ee1759-8dc3-423b-9a5e-fbb1ee63c3a3,303c2e44-89ad-415f-b833-3e4880d69a7d,46f7f4c6-01f2-4ee2-8747-51b0a3c6dcc0,ac628dee-b0b6-4085-9ee0-1fe66eee1a64,0ce0d9c9-07fe-43f7-abf9-0ef151101017,724e7ece-b213-480d-b87b-a991ac44a040,a960b97b-89aa-4242-94c7-6b3859e7086e,abcc958c-0ea9-4e19-a2ec-4aa6593cf1a2,0b4bcf75-a3d0-48e0-8d59-67118b7457ec,6c395d36-9af0-484e-9703-77b609a2fd97' -i -X DELETE \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODYxODcsInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiJlNWNiOTNlYy1iNTEyLTRhMDAtYmJiZC1kZWMyZDUxNDc2MWIiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.xegk5mgsbnGNn79nESYrBwoK7pVgPeMONVwM79J7IzXRQMU3iX8TvvirFA5h0wCtxDJAf53plggbnc6Z3FLogA'</code></pre>
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODgxMDYsInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiJhNWRlZjVkMC0xZjZlLTRkMDktODg3Ni1mMzNmZDNiYWY3NWIiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.ZHs87IrLDkZSZPWCaow5WDYTICPBBPlBh5M6i99HsPHNcPBdIyB-ewh7DCEji49hg4rTI3nLg8OfFcjqN4Fz4w'</code></pre>
 </div>
 </div>
 </div>
@@ -1163,9 +1163,9 @@ X-Frame-Options: SAMEORIGIN</code></pre>
 <h4 id="resources-order-find_curl_request"><a class="link" href="#resources-order-find_curl_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/order/e6440355-549b-41e1-ac0a-7a393f2be04e' -i -X GET \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/order/ad477339-031e-435b-a197-ab62de0ba33a' -i -X GET \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODYyMDksInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiJjYzhmZDIwNC1iMWZlLTQ0ZDctYTE2OC05MGUyNTQ3ZmM1YjgiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.RiIunuWa7eDHaJaX3eIPh8BU89TZwVk0eDsLlgGD78vNevfW0fL1Y4hChNkNhet4do4s7FDez4foRf0ibWSefg'</code></pre>
+    -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODgxMjksInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiI4Zjc0YzZkNS1iMTViLTQxYmYtOTgwOS04NjBkYmM0OTMwMjQiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.xKm4I6NA57cfTqigJNwBTWa8GdqlFhrLuHhsRxUISuxIkqVSmjb4Yquu1G0axKwT_BbStlN6j9FOQK1HTfyd9Q'</code></pre>
 </div>
 </div>
 </div>
@@ -1187,12 +1187,12 @@ X-Frame-Options: SAMEORIGIN
 Content-Length: 1902
 
 {
-  "rgsDt" : "2025-03-24T16:03:30.0030404",
-  "updDt" : "2025-03-24T16:03:30.0030404",
-  "id" : "e6440355-549b-41e1-ac0a-7a393f2be04e",
+  "rgsDt" : "2025-03-24T16:35:29.6183143",
+  "updDt" : "2025-03-24T16:35:29.6183143",
+  "id" : "ad477339-031e-435b-a197-ab62de0ba33a",
   "version" : 0,
   "orderer" : {
-    "ordererId" : "cc8fd204-b1fe-44d7-a168-90e2547fc5b8",
+    "ordererId" : "8f74c6d5-b15b-41bf-9809-860dbc493024",
     "ordererName" : "hijinhoon"
   },
   "orderLines" : [ {
@@ -1257,12 +1257,12 @@ Content-Length: 1902
     }
   },
   "orderState" : "PAYMENT_WAITING",
-  "orderDate" : "2025-03-24T16:03:30.0030404",
+  "orderDate" : "2025-03-24T16:35:29.6183143",
   "paymentType" : "CARD",
   "notYetShipped" : true,
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/order/e6440355-549b-41e1-ac0a-7a393f2be04e"
+      "href" : "http://localhost:8080/order/ad477339-031e-435b-a197-ab62de0ba33a"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-order-find"
@@ -1271,7 +1271,7 @@ Content-Length: 1902
       "href" : "http://localhost:8080/order"
     },
     "update" : {
-      "href" : "http://localhost:8080/order/e6440355-549b-41e1-ac0a-7a393f2be04e"
+      "href" : "http://localhost:8080/order/ad477339-031e-435b-a197-ab62de0ba33a"
     }
   }
 }</code></pre>
@@ -1290,7 +1290,7 @@ Content-Length: 1902
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/order?page=2&amp;size=10&amp;sort=rgsDt%2Cdesc&amp;sort=updDt&amp;ordererName=&amp;receiverName=%EB%AC%B4%EB%AA%85' -i -X GET \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODYyMTAsInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiJlMGFiMTJmZS0wOWFiLTQyZGItOWFjZC03NzExMTk0YzQ1NWUiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.JgFl2qaEn6HG4XSAP4WEy8WsMrlGzs-MkINr_a8Om-u1Csd81RUy3ykxdqVJudfHVie5fpbfGnBe_hKEc3JRjg'</code></pre>
+    -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODgxMjksInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiJhYTk2OWYxZS03NWMwLTRlYjgtODMwOS05Yzk1MWM4OTM2ZjIiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.tZStTTzlUbT5Ol3wNGlqQuL81sOpZHktjRsT9NIOmMp9eTUm-s_GTR6KFIylaw6ooz6Tfh8rkklFPb3t_rWu9g'</code></pre>
 </div>
 </div>
 </div>
@@ -1309,682 +1309,16 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
-Content-Length: 17129
+Content-Length: 17119
 
 {
   "content" : [ {
-    "rgsDt" : "2025-03-24T16:03:30.1446246",
-    "updDt" : "2025-03-24T16:03:30.1446246",
-    "id" : "5f6cf96f-3896-4a86-8c46-30c190af2a96",
+    "rgsDt" : "2025-03-24T16:35:29.7604221",
+    "updDt" : "2025-03-24T16:35:29.7604221",
+    "id" : "09286952-9a25-4f76-8c80-345c0e39fa0b",
     "version" : 0,
     "orderer" : {
-      "ordererId" : "e0ab12fe-09ab-42db-9acd-7711194c455e",
-      "ordererName" : "hijinhoon"
-    },
-    "orderLines" : [ {
-      "productId" : "1",
-      "price" : {
-        "value" : 1000
-      },
-      "quantity" : 5,
-      "amounts" : {
-        "value" : 5000
-      }
-    }, {
-      "productId" : "2",
-      "price" : {
-        "value" : 2000
-      },
-      "quantity" : 4,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "3",
-      "price" : {
-        "value" : 3000
-      },
-      "quantity" : 3,
-      "amounts" : {
-        "value" : 9000
-      }
-    }, {
-      "productId" : "4",
-      "price" : {
-        "value" : 4000
-      },
-      "quantity" : 2,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "5",
-      "price" : {
-        "value" : 5000
-      },
-      "quantity" : 1,
-      "amounts" : {
-        "value" : 5000
-      }
-    } ],
-    "totalAmounts" : {
-      "value" : 35000
-    },
-    "shippingInfo" : {
-      "address" : {
-        "zipCode" : "zipcode",
-        "address1" : "address1",
-        "address2" : "address2"
-      },
-      "message" : "sample message",
-      "receiver" : {
-        "receiverName" : "무명인91",
-        "receiverPhone" : "01000000000"
-      }
-    },
-    "orderState" : "PAYMENT_WAITING",
-    "orderDate" : "2025-03-24T16:03:30.1366238",
-    "paymentType" : "CARD",
-    "notYetShipped" : true
-  }, {
-    "rgsDt" : "2025-03-24T16:03:30.1436245",
-    "updDt" : "2025-03-24T16:03:30.1436245",
-    "id" : "7c3979fb-fc5f-4ba6-aaab-cf07614386df",
-    "version" : 0,
-    "orderer" : {
-      "ordererId" : "e0ab12fe-09ab-42db-9acd-7711194c455e",
-      "ordererName" : "hijinhoon"
-    },
-    "orderLines" : [ {
-      "productId" : "1",
-      "price" : {
-        "value" : 1000
-      },
-      "quantity" : 5,
-      "amounts" : {
-        "value" : 5000
-      }
-    }, {
-      "productId" : "2",
-      "price" : {
-        "value" : 2000
-      },
-      "quantity" : 4,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "3",
-      "price" : {
-        "value" : 3000
-      },
-      "quantity" : 3,
-      "amounts" : {
-        "value" : 9000
-      }
-    }, {
-      "productId" : "4",
-      "price" : {
-        "value" : 4000
-      },
-      "quantity" : 2,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "5",
-      "price" : {
-        "value" : 5000
-      },
-      "quantity" : 1,
-      "amounts" : {
-        "value" : 5000
-      }
-    } ],
-    "totalAmounts" : {
-      "value" : 35000
-    },
-    "shippingInfo" : {
-      "address" : {
-        "zipCode" : "zipcode",
-        "address1" : "address1",
-        "address2" : "address2"
-      },
-      "message" : "sample message",
-      "receiver" : {
-        "receiverName" : "무명인72",
-        "receiverPhone" : "01000000000"
-      }
-    },
-    "orderState" : "PAYMENT_WAITING",
-    "orderDate" : "2025-03-24T16:03:30.1366238",
-    "paymentType" : "CARD",
-    "notYetShipped" : true
-  }, {
-    "rgsDt" : "2025-03-24T16:03:30.1436245",
-    "updDt" : "2025-03-24T16:03:30.1436245",
-    "id" : "caf7d150-67fd-427b-be20-d866bab13a64",
-    "version" : 0,
-    "orderer" : {
-      "ordererId" : "e0ab12fe-09ab-42db-9acd-7711194c455e",
-      "ordererName" : "hijinhoon"
-    },
-    "orderLines" : [ {
-      "productId" : "1",
-      "price" : {
-        "value" : 1000
-      },
-      "quantity" : 5,
-      "amounts" : {
-        "value" : 5000
-      }
-    }, {
-      "productId" : "2",
-      "price" : {
-        "value" : 2000
-      },
-      "quantity" : 4,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "3",
-      "price" : {
-        "value" : 3000
-      },
-      "quantity" : 3,
-      "amounts" : {
-        "value" : 9000
-      }
-    }, {
-      "productId" : "4",
-      "price" : {
-        "value" : 4000
-      },
-      "quantity" : 2,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "5",
-      "price" : {
-        "value" : 5000
-      },
-      "quantity" : 1,
-      "amounts" : {
-        "value" : 5000
-      }
-    } ],
-    "totalAmounts" : {
-      "value" : 35000
-    },
-    "shippingInfo" : {
-      "address" : {
-        "zipCode" : "zipcode",
-        "address1" : "address1",
-        "address2" : "address2"
-      },
-      "message" : "sample message",
-      "receiver" : {
-        "receiverName" : "무명인62",
-        "receiverPhone" : "01000000000"
-      }
-    },
-    "orderState" : "PAYMENT_WAITING",
-    "orderDate" : "2025-03-24T16:03:30.1366238",
-    "paymentType" : "CARD",
-    "notYetShipped" : true
-  }, {
-    "rgsDt" : "2025-03-24T16:03:30.1436245",
-    "updDt" : "2025-03-24T16:03:30.1436245",
-    "id" : "05c4f270-29fb-4034-be05-08e27b5e96f4",
-    "version" : 0,
-    "orderer" : {
-      "ordererId" : "e0ab12fe-09ab-42db-9acd-7711194c455e",
-      "ordererName" : "hijinhoon"
-    },
-    "orderLines" : [ {
-      "productId" : "1",
-      "price" : {
-        "value" : 1000
-      },
-      "quantity" : 5,
-      "amounts" : {
-        "value" : 5000
-      }
-    }, {
-      "productId" : "2",
-      "price" : {
-        "value" : 2000
-      },
-      "quantity" : 4,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "3",
-      "price" : {
-        "value" : 3000
-      },
-      "quantity" : 3,
-      "amounts" : {
-        "value" : 9000
-      }
-    }, {
-      "productId" : "4",
-      "price" : {
-        "value" : 4000
-      },
-      "quantity" : 2,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "5",
-      "price" : {
-        "value" : 5000
-      },
-      "quantity" : 1,
-      "amounts" : {
-        "value" : 5000
-      }
-    } ],
-    "totalAmounts" : {
-      "value" : 35000
-    },
-    "shippingInfo" : {
-      "address" : {
-        "zipCode" : "zipcode",
-        "address1" : "address1",
-        "address2" : "address2"
-      },
-      "message" : "sample message",
-      "receiver" : {
-        "receiverName" : "무명인63",
-        "receiverPhone" : "01000000000"
-      }
-    },
-    "orderState" : "PAYMENT_WAITING",
-    "orderDate" : "2025-03-24T16:03:30.1366238",
-    "paymentType" : "CARD",
-    "notYetShipped" : true
-  }, {
-    "rgsDt" : "2025-03-24T16:03:30.1436245",
-    "updDt" : "2025-03-24T16:03:30.1436245",
-    "id" : "14574707-6825-4031-939f-c82167b4be6e",
-    "version" : 0,
-    "orderer" : {
-      "ordererId" : "e0ab12fe-09ab-42db-9acd-7711194c455e",
-      "ordererName" : "hijinhoon"
-    },
-    "orderLines" : [ {
-      "productId" : "1",
-      "price" : {
-        "value" : 1000
-      },
-      "quantity" : 5,
-      "amounts" : {
-        "value" : 5000
-      }
-    }, {
-      "productId" : "2",
-      "price" : {
-        "value" : 2000
-      },
-      "quantity" : 4,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "3",
-      "price" : {
-        "value" : 3000
-      },
-      "quantity" : 3,
-      "amounts" : {
-        "value" : 9000
-      }
-    }, {
-      "productId" : "4",
-      "price" : {
-        "value" : 4000
-      },
-      "quantity" : 2,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "5",
-      "price" : {
-        "value" : 5000
-      },
-      "quantity" : 1,
-      "amounts" : {
-        "value" : 5000
-      }
-    } ],
-    "totalAmounts" : {
-      "value" : 35000
-    },
-    "shippingInfo" : {
-      "address" : {
-        "zipCode" : "zipcode",
-        "address1" : "address1",
-        "address2" : "address2"
-      },
-      "message" : "sample message",
-      "receiver" : {
-        "receiverName" : "무명인64",
-        "receiverPhone" : "01000000000"
-      }
-    },
-    "orderState" : "PAYMENT_WAITING",
-    "orderDate" : "2025-03-24T16:03:30.1366238",
-    "paymentType" : "CARD",
-    "notYetShipped" : true
-  }, {
-    "rgsDt" : "2025-03-24T16:03:30.1436245",
-    "updDt" : "2025-03-24T16:03:30.1436245",
-    "id" : "406a2eee-3e9e-40d9-8ad9-ddc0ff81ce92",
-    "version" : 0,
-    "orderer" : {
-      "ordererId" : "e0ab12fe-09ab-42db-9acd-7711194c455e",
-      "ordererName" : "hijinhoon"
-    },
-    "orderLines" : [ {
-      "productId" : "1",
-      "price" : {
-        "value" : 1000
-      },
-      "quantity" : 5,
-      "amounts" : {
-        "value" : 5000
-      }
-    }, {
-      "productId" : "2",
-      "price" : {
-        "value" : 2000
-      },
-      "quantity" : 4,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "3",
-      "price" : {
-        "value" : 3000
-      },
-      "quantity" : 3,
-      "amounts" : {
-        "value" : 9000
-      }
-    }, {
-      "productId" : "4",
-      "price" : {
-        "value" : 4000
-      },
-      "quantity" : 2,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "5",
-      "price" : {
-        "value" : 5000
-      },
-      "quantity" : 1,
-      "amounts" : {
-        "value" : 5000
-      }
-    } ],
-    "totalAmounts" : {
-      "value" : 35000
-    },
-    "shippingInfo" : {
-      "address" : {
-        "zipCode" : "zipcode",
-        "address1" : "address1",
-        "address2" : "address2"
-      },
-      "message" : "sample message",
-      "receiver" : {
-        "receiverName" : "무명인65",
-        "receiverPhone" : "01000000000"
-      }
-    },
-    "orderState" : "PAYMENT_WAITING",
-    "orderDate" : "2025-03-24T16:03:30.1366238",
-    "paymentType" : "CARD",
-    "notYetShipped" : true
-  }, {
-    "rgsDt" : "2025-03-24T16:03:30.1436245",
-    "updDt" : "2025-03-24T16:03:30.1436245",
-    "id" : "bba87179-92d0-4b5e-a033-35b056be8947",
-    "version" : 0,
-    "orderer" : {
-      "ordererId" : "e0ab12fe-09ab-42db-9acd-7711194c455e",
-      "ordererName" : "hijinhoon"
-    },
-    "orderLines" : [ {
-      "productId" : "1",
-      "price" : {
-        "value" : 1000
-      },
-      "quantity" : 5,
-      "amounts" : {
-        "value" : 5000
-      }
-    }, {
-      "productId" : "2",
-      "price" : {
-        "value" : 2000
-      },
-      "quantity" : 4,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "3",
-      "price" : {
-        "value" : 3000
-      },
-      "quantity" : 3,
-      "amounts" : {
-        "value" : 9000
-      }
-    }, {
-      "productId" : "4",
-      "price" : {
-        "value" : 4000
-      },
-      "quantity" : 2,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "5",
-      "price" : {
-        "value" : 5000
-      },
-      "quantity" : 1,
-      "amounts" : {
-        "value" : 5000
-      }
-    } ],
-    "totalAmounts" : {
-      "value" : 35000
-    },
-    "shippingInfo" : {
-      "address" : {
-        "zipCode" : "zipcode",
-        "address1" : "address1",
-        "address2" : "address2"
-      },
-      "message" : "sample message",
-      "receiver" : {
-        "receiverName" : "무명인66",
-        "receiverPhone" : "01000000000"
-      }
-    },
-    "orderState" : "PAYMENT_WAITING",
-    "orderDate" : "2025-03-24T16:03:30.1366238",
-    "paymentType" : "CARD",
-    "notYetShipped" : true
-  }, {
-    "rgsDt" : "2025-03-24T16:03:30.1436245",
-    "updDt" : "2025-03-24T16:03:30.1436245",
-    "id" : "fccfb291-c5b0-467e-85c4-9efa3570d8d5",
-    "version" : 0,
-    "orderer" : {
-      "ordererId" : "e0ab12fe-09ab-42db-9acd-7711194c455e",
-      "ordererName" : "hijinhoon"
-    },
-    "orderLines" : [ {
-      "productId" : "1",
-      "price" : {
-        "value" : 1000
-      },
-      "quantity" : 5,
-      "amounts" : {
-        "value" : 5000
-      }
-    }, {
-      "productId" : "2",
-      "price" : {
-        "value" : 2000
-      },
-      "quantity" : 4,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "3",
-      "price" : {
-        "value" : 3000
-      },
-      "quantity" : 3,
-      "amounts" : {
-        "value" : 9000
-      }
-    }, {
-      "productId" : "4",
-      "price" : {
-        "value" : 4000
-      },
-      "quantity" : 2,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "5",
-      "price" : {
-        "value" : 5000
-      },
-      "quantity" : 1,
-      "amounts" : {
-        "value" : 5000
-      }
-    } ],
-    "totalAmounts" : {
-      "value" : 35000
-    },
-    "shippingInfo" : {
-      "address" : {
-        "zipCode" : "zipcode",
-        "address1" : "address1",
-        "address2" : "address2"
-      },
-      "message" : "sample message",
-      "receiver" : {
-        "receiverName" : "무명인67",
-        "receiverPhone" : "01000000000"
-      }
-    },
-    "orderState" : "PAYMENT_WAITING",
-    "orderDate" : "2025-03-24T16:03:30.1366238",
-    "paymentType" : "CARD",
-    "notYetShipped" : true
-  }, {
-    "rgsDt" : "2025-03-24T16:03:30.1436245",
-    "updDt" : "2025-03-24T16:03:30.1436245",
-    "id" : "17654186-d9f1-4071-b6a7-e644b8513aa6",
-    "version" : 0,
-    "orderer" : {
-      "ordererId" : "e0ab12fe-09ab-42db-9acd-7711194c455e",
-      "ordererName" : "hijinhoon"
-    },
-    "orderLines" : [ {
-      "productId" : "1",
-      "price" : {
-        "value" : 1000
-      },
-      "quantity" : 5,
-      "amounts" : {
-        "value" : 5000
-      }
-    }, {
-      "productId" : "2",
-      "price" : {
-        "value" : 2000
-      },
-      "quantity" : 4,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "3",
-      "price" : {
-        "value" : 3000
-      },
-      "quantity" : 3,
-      "amounts" : {
-        "value" : 9000
-      }
-    }, {
-      "productId" : "4",
-      "price" : {
-        "value" : 4000
-      },
-      "quantity" : 2,
-      "amounts" : {
-        "value" : 8000
-      }
-    }, {
-      "productId" : "5",
-      "price" : {
-        "value" : 5000
-      },
-      "quantity" : 1,
-      "amounts" : {
-        "value" : 5000
-      }
-    } ],
-    "totalAmounts" : {
-      "value" : 35000
-    },
-    "shippingInfo" : {
-      "address" : {
-        "zipCode" : "zipcode",
-        "address1" : "address1",
-        "address2" : "address2"
-      },
-      "message" : "sample message",
-      "receiver" : {
-        "receiverName" : "무명인68",
-        "receiverPhone" : "01000000000"
-      }
-    },
-    "orderState" : "PAYMENT_WAITING",
-    "orderDate" : "2025-03-24T16:03:30.1366238",
-    "paymentType" : "CARD",
-    "notYetShipped" : true
-  }, {
-    "rgsDt" : "2025-03-24T16:03:30.1436245",
-    "updDt" : "2025-03-24T16:03:30.1436245",
-    "id" : "480fa866-2303-4be4-ad31-11d17c35ecf6",
-    "version" : 0,
-    "orderer" : {
-      "ordererId" : "e0ab12fe-09ab-42db-9acd-7711194c455e",
+      "ordererId" : "aa969f1e-75c0-4eb8-8309-9c951c8936f2",
       "ordererName" : "hijinhoon"
     },
     "orderLines" : [ {
@@ -2049,15 +1383,681 @@ Content-Length: 17129
       }
     },
     "orderState" : "PAYMENT_WAITING",
-    "orderDate" : "2025-03-24T16:03:30.1366238",
+    "orderDate" : "2025-03-24T16:35:29.752422",
+    "paymentType" : "CARD",
+    "notYetShipped" : true
+  }, {
+    "rgsDt" : "2025-03-24T16:35:29.7604221",
+    "updDt" : "2025-03-24T16:35:29.7604221",
+    "id" : "23714512-161b-4261-98a3-da39383f7148",
+    "version" : 0,
+    "orderer" : {
+      "ordererId" : "aa969f1e-75c0-4eb8-8309-9c951c8936f2",
+      "ordererName" : "hijinhoon"
+    },
+    "orderLines" : [ {
+      "productId" : "1",
+      "price" : {
+        "value" : 1000
+      },
+      "quantity" : 5,
+      "amounts" : {
+        "value" : 5000
+      }
+    }, {
+      "productId" : "2",
+      "price" : {
+        "value" : 2000
+      },
+      "quantity" : 4,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "3",
+      "price" : {
+        "value" : 3000
+      },
+      "quantity" : 3,
+      "amounts" : {
+        "value" : 9000
+      }
+    }, {
+      "productId" : "4",
+      "price" : {
+        "value" : 4000
+      },
+      "quantity" : 2,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "5",
+      "price" : {
+        "value" : 5000
+      },
+      "quantity" : 1,
+      "amounts" : {
+        "value" : 5000
+      }
+    } ],
+    "totalAmounts" : {
+      "value" : 35000
+    },
+    "shippingInfo" : {
+      "address" : {
+        "zipCode" : "zipcode",
+        "address1" : "address1",
+        "address2" : "address2"
+      },
+      "message" : "sample message",
+      "receiver" : {
+        "receiverName" : "무명인86",
+        "receiverPhone" : "01000000000"
+      }
+    },
+    "orderState" : "PAYMENT_WAITING",
+    "orderDate" : "2025-03-24T16:35:29.752422",
+    "paymentType" : "CARD",
+    "notYetShipped" : true
+  }, {
+    "rgsDt" : "2025-03-24T16:35:29.7604221",
+    "updDt" : "2025-03-24T16:35:29.7604221",
+    "id" : "dd6efbbd-3dc8-48b7-9c7b-bca9cffe285b",
+    "version" : 0,
+    "orderer" : {
+      "ordererId" : "aa969f1e-75c0-4eb8-8309-9c951c8936f2",
+      "ordererName" : "hijinhoon"
+    },
+    "orderLines" : [ {
+      "productId" : "1",
+      "price" : {
+        "value" : 1000
+      },
+      "quantity" : 5,
+      "amounts" : {
+        "value" : 5000
+      }
+    }, {
+      "productId" : "2",
+      "price" : {
+        "value" : 2000
+      },
+      "quantity" : 4,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "3",
+      "price" : {
+        "value" : 3000
+      },
+      "quantity" : 3,
+      "amounts" : {
+        "value" : 9000
+      }
+    }, {
+      "productId" : "4",
+      "price" : {
+        "value" : 4000
+      },
+      "quantity" : 2,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "5",
+      "price" : {
+        "value" : 5000
+      },
+      "quantity" : 1,
+      "amounts" : {
+        "value" : 5000
+      }
+    } ],
+    "totalAmounts" : {
+      "value" : 35000
+    },
+    "shippingInfo" : {
+      "address" : {
+        "zipCode" : "zipcode",
+        "address1" : "address1",
+        "address2" : "address2"
+      },
+      "message" : "sample message",
+      "receiver" : {
+        "receiverName" : "무명인85",
+        "receiverPhone" : "01000000000"
+      }
+    },
+    "orderState" : "PAYMENT_WAITING",
+    "orderDate" : "2025-03-24T16:35:29.752422",
+    "paymentType" : "CARD",
+    "notYetShipped" : true
+  }, {
+    "rgsDt" : "2025-03-24T16:35:29.7604221",
+    "updDt" : "2025-03-24T16:35:29.7604221",
+    "id" : "4626b9fe-afc5-44ac-98bc-d16c1fc6e4ed",
+    "version" : 0,
+    "orderer" : {
+      "ordererId" : "aa969f1e-75c0-4eb8-8309-9c951c8936f2",
+      "ordererName" : "hijinhoon"
+    },
+    "orderLines" : [ {
+      "productId" : "1",
+      "price" : {
+        "value" : 1000
+      },
+      "quantity" : 5,
+      "amounts" : {
+        "value" : 5000
+      }
+    }, {
+      "productId" : "2",
+      "price" : {
+        "value" : 2000
+      },
+      "quantity" : 4,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "3",
+      "price" : {
+        "value" : 3000
+      },
+      "quantity" : 3,
+      "amounts" : {
+        "value" : 9000
+      }
+    }, {
+      "productId" : "4",
+      "price" : {
+        "value" : 4000
+      },
+      "quantity" : 2,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "5",
+      "price" : {
+        "value" : 5000
+      },
+      "quantity" : 1,
+      "amounts" : {
+        "value" : 5000
+      }
+    } ],
+    "totalAmounts" : {
+      "value" : 35000
+    },
+    "shippingInfo" : {
+      "address" : {
+        "zipCode" : "zipcode",
+        "address1" : "address1",
+        "address2" : "address2"
+      },
+      "message" : "sample message",
+      "receiver" : {
+        "receiverName" : "무명인72",
+        "receiverPhone" : "01000000000"
+      }
+    },
+    "orderState" : "PAYMENT_WAITING",
+    "orderDate" : "2025-03-24T16:35:29.752422",
+    "paymentType" : "CARD",
+    "notYetShipped" : true
+  }, {
+    "rgsDt" : "2025-03-24T16:35:29.7604221",
+    "updDt" : "2025-03-24T16:35:29.7604221",
+    "id" : "11527b1b-de91-4724-9394-165466b19ed9",
+    "version" : 0,
+    "orderer" : {
+      "ordererId" : "aa969f1e-75c0-4eb8-8309-9c951c8936f2",
+      "ordererName" : "hijinhoon"
+    },
+    "orderLines" : [ {
+      "productId" : "1",
+      "price" : {
+        "value" : 1000
+      },
+      "quantity" : 5,
+      "amounts" : {
+        "value" : 5000
+      }
+    }, {
+      "productId" : "2",
+      "price" : {
+        "value" : 2000
+      },
+      "quantity" : 4,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "3",
+      "price" : {
+        "value" : 3000
+      },
+      "quantity" : 3,
+      "amounts" : {
+        "value" : 9000
+      }
+    }, {
+      "productId" : "4",
+      "price" : {
+        "value" : 4000
+      },
+      "quantity" : 2,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "5",
+      "price" : {
+        "value" : 5000
+      },
+      "quantity" : 1,
+      "amounts" : {
+        "value" : 5000
+      }
+    } ],
+    "totalAmounts" : {
+      "value" : 35000
+    },
+    "shippingInfo" : {
+      "address" : {
+        "zipCode" : "zipcode",
+        "address1" : "address1",
+        "address2" : "address2"
+      },
+      "message" : "sample message",
+      "receiver" : {
+        "receiverName" : "무명인83",
+        "receiverPhone" : "01000000000"
+      }
+    },
+    "orderState" : "PAYMENT_WAITING",
+    "orderDate" : "2025-03-24T16:35:29.752422",
+    "paymentType" : "CARD",
+    "notYetShipped" : true
+  }, {
+    "rgsDt" : "2025-03-24T16:35:29.7604221",
+    "updDt" : "2025-03-24T16:35:29.7604221",
+    "id" : "e2d7d2d7-41c7-41e1-93b0-bed4582c38ee",
+    "version" : 0,
+    "orderer" : {
+      "ordererId" : "aa969f1e-75c0-4eb8-8309-9c951c8936f2",
+      "ordererName" : "hijinhoon"
+    },
+    "orderLines" : [ {
+      "productId" : "1",
+      "price" : {
+        "value" : 1000
+      },
+      "quantity" : 5,
+      "amounts" : {
+        "value" : 5000
+      }
+    }, {
+      "productId" : "2",
+      "price" : {
+        "value" : 2000
+      },
+      "quantity" : 4,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "3",
+      "price" : {
+        "value" : 3000
+      },
+      "quantity" : 3,
+      "amounts" : {
+        "value" : 9000
+      }
+    }, {
+      "productId" : "4",
+      "price" : {
+        "value" : 4000
+      },
+      "quantity" : 2,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "5",
+      "price" : {
+        "value" : 5000
+      },
+      "quantity" : 1,
+      "amounts" : {
+        "value" : 5000
+      }
+    } ],
+    "totalAmounts" : {
+      "value" : 35000
+    },
+    "shippingInfo" : {
+      "address" : {
+        "zipCode" : "zipcode",
+        "address1" : "address1",
+        "address2" : "address2"
+      },
+      "message" : "sample message",
+      "receiver" : {
+        "receiverName" : "무명인79",
+        "receiverPhone" : "01000000000"
+      }
+    },
+    "orderState" : "PAYMENT_WAITING",
+    "orderDate" : "2025-03-24T16:35:29.752422",
+    "paymentType" : "CARD",
+    "notYetShipped" : true
+  }, {
+    "rgsDt" : "2025-03-24T16:35:29.7604221",
+    "updDt" : "2025-03-24T16:35:29.7604221",
+    "id" : "0d772afb-7c93-4e45-ba93-bed41662d61d",
+    "version" : 0,
+    "orderer" : {
+      "ordererId" : "aa969f1e-75c0-4eb8-8309-9c951c8936f2",
+      "ordererName" : "hijinhoon"
+    },
+    "orderLines" : [ {
+      "productId" : "1",
+      "price" : {
+        "value" : 1000
+      },
+      "quantity" : 5,
+      "amounts" : {
+        "value" : 5000
+      }
+    }, {
+      "productId" : "2",
+      "price" : {
+        "value" : 2000
+      },
+      "quantity" : 4,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "3",
+      "price" : {
+        "value" : 3000
+      },
+      "quantity" : 3,
+      "amounts" : {
+        "value" : 9000
+      }
+    }, {
+      "productId" : "4",
+      "price" : {
+        "value" : 4000
+      },
+      "quantity" : 2,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "5",
+      "price" : {
+        "value" : 5000
+      },
+      "quantity" : 1,
+      "amounts" : {
+        "value" : 5000
+      }
+    } ],
+    "totalAmounts" : {
+      "value" : 35000
+    },
+    "shippingInfo" : {
+      "address" : {
+        "zipCode" : "zipcode",
+        "address1" : "address1",
+        "address2" : "address2"
+      },
+      "message" : "sample message",
+      "receiver" : {
+        "receiverName" : "무명인80",
+        "receiverPhone" : "01000000000"
+      }
+    },
+    "orderState" : "PAYMENT_WAITING",
+    "orderDate" : "2025-03-24T16:35:29.752422",
+    "paymentType" : "CARD",
+    "notYetShipped" : true
+  }, {
+    "rgsDt" : "2025-03-24T16:35:29.7604221",
+    "updDt" : "2025-03-24T16:35:29.7604221",
+    "id" : "52bb7228-dab4-4414-bd28-4194d2940b55",
+    "version" : 0,
+    "orderer" : {
+      "ordererId" : "aa969f1e-75c0-4eb8-8309-9c951c8936f2",
+      "ordererName" : "hijinhoon"
+    },
+    "orderLines" : [ {
+      "productId" : "1",
+      "price" : {
+        "value" : 1000
+      },
+      "quantity" : 5,
+      "amounts" : {
+        "value" : 5000
+      }
+    }, {
+      "productId" : "2",
+      "price" : {
+        "value" : 2000
+      },
+      "quantity" : 4,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "3",
+      "price" : {
+        "value" : 3000
+      },
+      "quantity" : 3,
+      "amounts" : {
+        "value" : 9000
+      }
+    }, {
+      "productId" : "4",
+      "price" : {
+        "value" : 4000
+      },
+      "quantity" : 2,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "5",
+      "price" : {
+        "value" : 5000
+      },
+      "quantity" : 1,
+      "amounts" : {
+        "value" : 5000
+      }
+    } ],
+    "totalAmounts" : {
+      "value" : 35000
+    },
+    "shippingInfo" : {
+      "address" : {
+        "zipCode" : "zipcode",
+        "address1" : "address1",
+        "address2" : "address2"
+      },
+      "message" : "sample message",
+      "receiver" : {
+        "receiverName" : "무명인81",
+        "receiverPhone" : "01000000000"
+      }
+    },
+    "orderState" : "PAYMENT_WAITING",
+    "orderDate" : "2025-03-24T16:35:29.752422",
+    "paymentType" : "CARD",
+    "notYetShipped" : true
+  }, {
+    "rgsDt" : "2025-03-24T16:35:29.7594217",
+    "updDt" : "2025-03-24T16:35:29.7594217",
+    "id" : "4944c79f-db22-484f-808e-c3939235619f",
+    "version" : 0,
+    "orderer" : {
+      "ordererId" : "aa969f1e-75c0-4eb8-8309-9c951c8936f2",
+      "ordererName" : "hijinhoon"
+    },
+    "orderLines" : [ {
+      "productId" : "1",
+      "price" : {
+        "value" : 1000
+      },
+      "quantity" : 5,
+      "amounts" : {
+        "value" : 5000
+      }
+    }, {
+      "productId" : "2",
+      "price" : {
+        "value" : 2000
+      },
+      "quantity" : 4,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "3",
+      "price" : {
+        "value" : 3000
+      },
+      "quantity" : 3,
+      "amounts" : {
+        "value" : 9000
+      }
+    }, {
+      "productId" : "4",
+      "price" : {
+        "value" : 4000
+      },
+      "quantity" : 2,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "5",
+      "price" : {
+        "value" : 5000
+      },
+      "quantity" : 1,
+      "amounts" : {
+        "value" : 5000
+      }
+    } ],
+    "totalAmounts" : {
+      "value" : 35000
+    },
+    "shippingInfo" : {
+      "address" : {
+        "zipCode" : "zipcode",
+        "address1" : "address1",
+        "address2" : "address2"
+      },
+      "message" : "sample message",
+      "receiver" : {
+        "receiverName" : "무명인59",
+        "receiverPhone" : "01000000000"
+      }
+    },
+    "orderState" : "PAYMENT_WAITING",
+    "orderDate" : "2025-03-24T16:35:29.752422",
+    "paymentType" : "CARD",
+    "notYetShipped" : true
+  }, {
+    "rgsDt" : "2025-03-24T16:35:29.7594217",
+    "updDt" : "2025-03-24T16:35:29.7594217",
+    "id" : "0edb48ee-fedf-43c4-a016-be43254b90d7",
+    "version" : 0,
+    "orderer" : {
+      "ordererId" : "aa969f1e-75c0-4eb8-8309-9c951c8936f2",
+      "ordererName" : "hijinhoon"
+    },
+    "orderLines" : [ {
+      "productId" : "1",
+      "price" : {
+        "value" : 1000
+      },
+      "quantity" : 5,
+      "amounts" : {
+        "value" : 5000
+      }
+    }, {
+      "productId" : "2",
+      "price" : {
+        "value" : 2000
+      },
+      "quantity" : 4,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "3",
+      "price" : {
+        "value" : 3000
+      },
+      "quantity" : 3,
+      "amounts" : {
+        "value" : 9000
+      }
+    }, {
+      "productId" : "4",
+      "price" : {
+        "value" : 4000
+      },
+      "quantity" : 2,
+      "amounts" : {
+        "value" : 8000
+      }
+    }, {
+      "productId" : "5",
+      "price" : {
+        "value" : 5000
+      },
+      "quantity" : 1,
+      "amounts" : {
+        "value" : 5000
+      }
+    } ],
+    "totalAmounts" : {
+      "value" : 35000
+    },
+    "shippingInfo" : {
+      "address" : {
+        "zipCode" : "zipcode",
+        "address1" : "address1",
+        "address2" : "address2"
+      },
+      "message" : "sample message",
+      "receiver" : {
+        "receiverName" : "무명인61",
+        "receiverPhone" : "01000000000"
+      }
+    },
+    "orderState" : "PAYMENT_WAITING",
+    "orderDate" : "2025-03-24T16:35:29.752422",
     "paymentType" : "CARD",
     "notYetShipped" : true
   } ],
   "pageable" : {
     "sort" : {
       "empty" : false,
-      "unsorted" : false,
-      "sorted" : true
+      "sorted" : true,
+      "unsorted" : false
     },
     "offset" : 20,
     "pageNumber" : 2,
@@ -2066,17 +2066,17 @@ Content-Length: 17129
     "paged" : true
   },
   "last" : false,
-  "totalPages" : 10,
   "totalElements" : 100,
+  "totalPages" : 10,
   "size" : 10,
   "number" : 2,
   "sort" : {
     "empty" : false,
-    "unsorted" : false,
-    "sorted" : true
+    "sorted" : true,
+    "unsorted" : false
   },
-  "first" : false,
   "numberOfElements" : 10,
+  "first" : false,
   "empty" : false
 }</code></pre>
 </div>
@@ -2131,7 +2131,7 @@ Content-Length: 17129
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/order' -i -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODYxOTksInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiI1NmQ2ZGFlMC05ZDliLTRmZjgtYjUzZi02OGUzZDE0NTUzN2EiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.gDRukKOLUp5x3lMknpvW9_pvh2nbNsDeHHQfQFSeKEtDOd-YSzj58J5ORCqSTGObPwNTcCz63Z808ZdvMI2oMw' \
+    -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NDI4ODgxMTksInN1YiI6ImhpamluaG9vbkBuYXZlci5jb20iLCJhdXRoIjoiUk9MRV9VU0VSIiwibWVtYmVySWQiOiI4OWZkYzI1OS05YjdkLTQyY2EtYjEwZi0yNDFhZjhlMzMyNmEiLCJuaWNrTmFtZSI6ImhpamluaG9vbiJ9.gqWaNAL5_wBjNdEJ8vBiwCyIbTL8T3NyLm2MlHn-bpemIcKi5EH38Vvnm2UzOxKEAa5DPheryr5QZjx8TN-JDA' \
     -d '{
   "orderProducts" : [ {
     "productId" : "1",
@@ -2174,7 +2174,7 @@ Content-Length: 17129
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Location: http://localhost:8080/order/5a56311f-4400-42a0-8ac7-73e67d7548d7
+Location: http://localhost:8080/order/9d93da10-4e91-4ad9-979c-e5912a7d2a3c
 Content-Type: application/hal+json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
@@ -2182,15 +2182,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
-Content-Length: 1911
+Content-Length: 1909
 
 {
-  "rgsDt" : "2025-03-24T16:03:19.6571008",
-  "updDt" : "2025-03-24T16:03:19.6571008",
-  "id" : "5a56311f-4400-42a0-8ac7-73e67d7548d7",
+  "rgsDt" : "2025-03-24T16:35:19.3206199",
+  "updDt" : "2025-03-24T16:35:19.3206199",
+  "id" : "9d93da10-4e91-4ad9-979c-e5912a7d2a3c",
   "version" : 0,
   "orderer" : {
-    "ordererId" : "56d6dae0-9d9b-4ff8-b53f-68e3d145537a",
+    "ordererId" : "89fdc259-9b7d-42ca-b10f-241af8e3326a",
     "ordererName" : "hijinhoon"
   },
   "orderLines" : [ {
@@ -2255,12 +2255,12 @@ Content-Length: 1911
     }
   },
   "orderState" : "PAYMENT_WAITING",
-  "orderDate" : "2025-03-24T16:03:19.6461093",
+  "orderDate" : "2025-03-24T16:35:19.31462",
   "paymentType" : "CARD",
   "notYetShipped" : true,
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/order/5a56311f-4400-42a0-8ac7-73e67d7548d7"
+      "href" : "http://localhost:8080/order/9d93da10-4e91-4ad9-979c-e5912a7d2a3c"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-order-create"
@@ -2269,7 +2269,7 @@ Content-Length: 1911
       "href" : "http://localhost:8080/order"
     },
     "update" : {
-      "href" : "http://localhost:8080/order/5a56311f-4400-42a0-8ac7-73e67d7548d7"
+      "href" : "http://localhost:8080/order/9d93da10-4e91-4ad9-979c-e5912a7d2a3c"
     }
   }
 }</code></pre>

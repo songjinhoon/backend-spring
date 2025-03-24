@@ -1,0 +1,32 @@
+package com.personaltoy.backend.domains.member.dto.response;
+
+import com.personaltoy.backend.domains.common.BaseDto;
+import com.personaltoy.backend.domains.member.domain.entity.Member;
+import com.personaltoy.backend.domains.member.dto.mapper.MemberMapper;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Getter
+@Setter
+public class MemberDto extends BaseDto {
+
+    private String id;
+
+    private String username;
+
+    private String nickName;
+
+    public static MemberDto of(Member member) {
+        MemberDto memberDto = MemberMapper.INSTANCE.toMemberDto(member);
+        memberDto.setId(member.getId());
+        return memberDto;
+    }
+
+    public static List<MemberDto> of(List<Member> members) {
+        return members.stream().map(MemberDto::of).collect(Collectors.toList());
+    }
+
+}
